@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
-public class student {
-    private String am;
-    private int etosEisagogis;
-    private int dm;
+public class user {
     private String name;
     private int password;
     
