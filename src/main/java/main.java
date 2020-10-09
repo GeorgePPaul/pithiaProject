@@ -1,3 +1,4 @@
+import javax.swing.ImageIcon;
 
 public class main extends javax.swing.JFrame {
 
@@ -91,7 +92,7 @@ public class main extends javax.swing.JFrame {
         );
         mainStaffLayout.setVerticalGroup(
             mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 454, Short.MAX_VALUE)
         );
 
         jLayeredPane1.add(mainStaff, "card4");
@@ -167,13 +168,19 @@ public class main extends javax.swing.JFrame {
         
         
         //Example write to userlist
+        /*
         dbHelper db = new dbHelper();
         student s1 = new student("123456","123456789");
-        db.writeUser(s1);
+        db.writeUser(s1.toString());
+        */
         
         
     }
-
+    
+    //IMAGES
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
