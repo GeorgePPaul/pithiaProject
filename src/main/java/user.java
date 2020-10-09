@@ -2,10 +2,14 @@ import java.util.ArrayList;
 
 public class user {
     private String name;
-    private int password;
+    private String id;
+    private String password;
     
     ArrayList mathimata = new ArrayList<courses>();
     
-    //hsdhs
+    user(String id,String password){
+        this.id=id;
+        this.password=password;
+    }
     
 }

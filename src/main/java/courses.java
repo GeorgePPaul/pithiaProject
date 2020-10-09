@@ -6,6 +6,8 @@ public class courses {
     private String teacher;
     private String info;
     
+    
+    
     public void getId(int x){id=x;}
     public void getSemester(int x){semester=x;}
     public void getDm(int x){dm=x;}
@@ -19,4 +21,5 @@ public class courses {
     public String setInfo(){return info;}
     
     
+   
 }

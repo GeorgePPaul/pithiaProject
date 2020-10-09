@@ -5,7 +5,7 @@ public class student extends user{
     private int dm;
     
     
-    student(){
-        super();
+    student(String id, String password ){
+        super(id,password);
     }
 }
