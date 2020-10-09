@@ -1,6 +1,5 @@
 
 public class student extends user{
-    private String am;
     private int etosEisagogis;
     private int dm;
     
@@ -8,4 +7,12 @@ public class student extends user{
     student(String id, String password ){
         super(id,password);
     }
+    
+    public void setEtosEisagogis(int x){etosEisagogis=x;}
+    public int getEtosEisagosis(){return etosEisagogis;}
+    
+    
+    
 }
+
+

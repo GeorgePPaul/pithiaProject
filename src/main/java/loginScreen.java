@@ -24,8 +24,9 @@ public class loginScreen extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
-        mainScreen = new javax.swing.JPanel();
+        mainStudent = new javax.swing.JPanel();
         logoutButton = new javax.swing.JButton();
+        mainStaff = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -70,7 +71,7 @@ public class loginScreen extends javax.swing.JFrame {
 
         jLayeredPane1.add(loginScreen, "card2");
 
-        mainScreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        mainStudent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,9 +79,22 @@ public class loginScreen extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
-        mainScreen.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
+        mainStudent.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
 
-        jLayeredPane1.add(mainScreen, "card3");
+        jLayeredPane1.add(mainStudent, "card3");
+
+        javax.swing.GroupLayout mainStaffLayout = new javax.swing.GroupLayout(mainStaff);
+        mainStaff.setLayout(mainStaffLayout);
+        mainStaffLayout.setHorizontalGroup(
+            mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 845, Short.MAX_VALUE)
+        );
+        mainStaffLayout.setVerticalGroup(
+            mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+        );
+
+        jLayeredPane1.add(mainStaff, "card4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,7 +114,7 @@ public class loginScreen extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         loginScreen.setVisible(false);
-        mainScreen.setVisible(true);
+        mainStudent.setVisible(true);
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
@@ -113,7 +127,7 @@ public class loginScreen extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         loginScreen.setVisible(true);
-        mainScreen.setVisible(false);
+        mainStudent.setVisible(false);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
@@ -160,6 +174,7 @@ public class loginScreen extends javax.swing.JFrame {
     private javax.swing.JButton loginButton;
     private javax.swing.JPanel loginScreen;
     private javax.swing.JButton logoutButton;
-    private javax.swing.JPanel mainScreen;
+    private javax.swing.JPanel mainStaff;
+    private javax.swing.JPanel mainStudent;
     // End of variables declaration//GEN-END:variables
 }

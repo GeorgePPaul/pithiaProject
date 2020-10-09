@@ -8,17 +8,17 @@ public class courses {
     
     
     
-    public void getId(int x){id=x;}
-    public void getSemester(int x){semester=x;}
-    public void getDm(int x){dm=x;}
-    public void getTeacher(String x){teacher=x;}
-    public void getInfo(String x){info=x;}
+    public void setId(int x){id=x;}
+    public void setSemester(int x){semester=x;}
+    public void setDm(int x){dm=x;}
+    public void setTeacher(String x){teacher=x;}
+    public void setInfo(String x){info=x;}
     
-    public int setId(){return id;}
-    public int setSemester(){return semester;}
-    public int setDm(){return dm;}
-    public String setTeacher(){return teacher;}
-    public String setInfo(){return info;}
+    public int getId(){return id;}
+    public int getSemester(){return semester;}
+    public int getDm(){return dm;}
+    public String getTeacher(){return teacher;}
+    public String getInfo(){return info;}
     
     
    
