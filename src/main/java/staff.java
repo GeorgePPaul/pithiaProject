@@ -1,6 +1,13 @@
 
 public class staff extends user{
-    staff(String id, String password){
-        super(id,password);
+    String tempVar="1";
+    
+    staff(String id,String name, String password){
+        super(id,name,password);
+    }
+    
+    @Override
+    public String toString(){
+        return super.toString()+" "+tempVar;
     }
 }

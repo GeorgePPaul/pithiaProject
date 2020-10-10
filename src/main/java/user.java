@@ -7,9 +7,15 @@ public class user {
     
     ArrayList mathimata = new ArrayList<courses>();
     
-    user(String id,String password){
+    user(String id,String name,String password){
         this.id=id;
+        this.name=name;
         this.password=password;
     }
     
+    
+    @Override
+    public String toString(){
+      return id+" "+name+" "+password;  
+    }
 }

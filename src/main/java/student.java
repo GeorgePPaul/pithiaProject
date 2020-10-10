@@ -4,8 +4,8 @@ public class student extends user{
     private int dm;
     
     
-    student(String id, String password ){
-        super(id,password);
+    student(String id,String name, String password ){
+        super(id,name,password);
     }
     
     public void setEtosEisagogis(int x){etosEisagogis=x;}
