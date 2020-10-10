@@ -1,4 +1,5 @@
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class main extends javax.swing.JFrame {
 
@@ -25,6 +26,7 @@ public class main extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
+        loginLogo = new javax.swing.JLabel();
         mainStudent = new javax.swing.JPanel();
         logoutButton = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
@@ -69,6 +71,10 @@ public class main extends javax.swing.JFrame {
         });
         loginScreen.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 140, 30));
         loginButton.getAccessibleContext().setAccessibleName("loginButton");
+
+        loginScreen.add(loginLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 520, 190));
+        ImageIcon icon = new ImageIcon("./images/logo-Main.png");
+        loginLogo.setIcon(icon);
 
         jLayeredPane1.add(loginScreen, "card2");
 
@@ -131,9 +137,13 @@ public class main extends javax.swing.JFrame {
         mainStudent.setVisible(false);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
+    
+    
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -163,12 +173,13 @@ public class main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
+                
             }
         });
         
         
-        //Example write to userlist
         
+        //Example write to userlist
         dbHelper db = new dbHelper();
         student s1 = new student("123456","Pavlidis","123456789");
         staff s2= new staff("admin","Mike","15948756");
@@ -179,7 +190,7 @@ public class main extends javax.swing.JFrame {
         
     }
     
-    //IMAGES
+    
     
     
     
@@ -190,6 +201,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton loginButton;
+    private javax.swing.JLabel loginLogo;
     private javax.swing.JPanel loginScreen;
     private javax.swing.JButton logoutButton;
     private javax.swing.JPanel mainStaff;
