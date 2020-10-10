@@ -4,26 +4,36 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;    
+import java.util.ArrayList;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 
 
-public class dbHelper {
+public class dbHelper implements java.io.Serializable{
+    public ArrayList list = new ArrayList<user>();
+    
+    
     
     dbHelper(){
     }
     
-    public void writeUser(String x){
+    
+    //WRITE INFO TO TXT
+    public void writeUser(String x){ //FILE PATH PARAMETER TO BE ADDED
     try(FileWriter fw = new FileWriter("./data/userlist.txt", true);
     BufferedWriter bw = new BufferedWriter(fw);
     PrintWriter out = new PrintWriter(bw))
 {
     try(BufferedReader br = new BufferedReader(new FileReader("./data/userlist.txt"))){      
         for(String line; (line = br.readLine()) != null; ) {
-            if(line.equals(x.toString()))
+            if(line.equals(x))
                 throw new EntityExistsException("This user exists in the system");
           
         }
-        out.println(x.toString());
+        out.println(x);
         
     }
     catch(EntityExistsException e){
@@ -36,23 +46,43 @@ public class dbHelper {
 }
     }
     
-    
-    /*
+    //SERIALISE ARRAY
+public void serializeToFile(Object obj){    //FILE PATH PARAMETER TO BE ADDED
     try {
-      FileWriter myWriter = new FileWriter("./data/userlist.txt");
-      myWriter.write(x.toString());
-      myWriter.append(x.toString());
-      myWriter.close();
-      System.out.println("Successfully wrote to the file.");
-      
-      
-    } 
-    catch (IOException e) {
-      System.out.println("An error occurred.");
-      e.printStackTrace();
-    }
-    
-    */
-    
-      
+         FileOutputStream fileOut = new FileOutputStream("./data/obj.ser");
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(obj);
+         out.close();
+         fileOut.close();
+         System.out.printf("Serialized data is saved in ./data/obj.ser");
+      } catch (IOException i) {
+         i.printStackTrace();
+      }
+   }
+
+    //ADD OBJ TO LIST
+public void addUserList(user u){
+    list.add(u);
 }
+
+    //LOAD SERIALIZED ARRAY
+public void desiralizeFromFile(){ //FILE PATH PARAMETER TO BE ADDED
+      try {
+         FileInputStream fileIn = new FileInputStream("./data/obj.ser");
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         list = (ArrayList)in.readObject();
+         in.close();
+         fileIn.close();
+      } catch (IOException i) {
+         i.printStackTrace();
+         return;
+      } catch (ClassNotFoundException c) {
+         System.out.println("Class not found");
+         c.printStackTrace();
+         return;
+      }
+}      
+      
+}    
+      
+

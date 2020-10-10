@@ -1,5 +1,5 @@
 
-public class student extends user{
+public class student extends user implements java.io.Serializable{
     private int etosEisagogis;
     private int dm;
     

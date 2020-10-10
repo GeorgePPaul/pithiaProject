@@ -1,5 +1,5 @@
 
-public class staff extends user{
+public class staff extends user implements java.io.Serializable{
     String tempVar="1";
     
     staff(String id,String name, String password){

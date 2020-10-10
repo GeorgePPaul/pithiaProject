@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class user {
+public class user implements java.io.Serializable{
     private String name;
     private String id;
     private String password;
