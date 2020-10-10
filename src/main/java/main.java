@@ -168,11 +168,11 @@ public class main extends javax.swing.JFrame {
         
         
         //Example write to userlist
-        /*
+        
         dbHelper db = new dbHelper();
         student s1 = new student("123456","123456789");
         db.writeUser(s1.toString());
-        */
+        
         
         
     }

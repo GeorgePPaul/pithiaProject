@@ -1,11 +1,13 @@
 import java.io.FileWriter;  
 import java.io.BufferedWriter;
 import java.io.PrintWriter;
-import java.io.IOException; 
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
 
 
 
-public class dbHelper{
+public class dbHelper {
     
     dbHelper(){
     }
@@ -15,7 +17,18 @@ public class dbHelper{
     BufferedWriter bw = new BufferedWriter(fw);
     PrintWriter out = new PrintWriter(bw))
 {
-    out.println(x.toString());
+    try(BufferedReader br = new BufferedReader(new FileReader("./data/userlist.txt"))){      
+        for(String line; (line = br.readLine()) != null; ) {
+            if(line.equals(x.toString()))
+                throw new EntityExistsException("This user exists in the system");
+          
+        }
+        out.println(x.toString());
+        
+    }
+    catch(EntityExistsException e){
+        System.out.println(e);
+    }
    
 } catch (IOException e) {
     System.out.println("An error occurred.");
