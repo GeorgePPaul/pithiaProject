@@ -184,21 +184,24 @@ public class main extends javax.swing.JFrame {
         /*
         student s1 = new student("123456","Pavlidis","123456789");
         staff s2= new staff("admin","Mike","15948756");
+        
         db.writeUser(s1.toString());
         db.writeUser(s2.toString());
-        */
+        
         //Example Serialize List
-        /*
+        
         db.addUserList(s1);
         db.addUserList(s2);
-        db.serializeToFile((Object)db.list);
+        db.serializeToFile(db.list);
         */
         //Example Load Serialized List
         db.desiralizeFromFile();
         
-        for(Object i : db.list){
-            System.out.println(i.getClass());
-        }
+        db.list.forEach((i) -> {
+            System.out.println(i);
+        });
+        
+        
         
     }
     

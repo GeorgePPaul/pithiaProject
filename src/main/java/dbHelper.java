@@ -47,11 +47,11 @@ public class dbHelper implements java.io.Serializable{
     }
     
     //SERIALISE ARRAY
-public void serializeToFile(Object obj){    //FILE PATH PARAMETER TO BE ADDED
+public void serializeToFile(ArrayList lst){    //FILE PATH PARAMETER TO BE ADDED
     try {
          FileOutputStream fileOut = new FileOutputStream("./data/obj.ser");
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
-         out.writeObject(obj);
+         out.writeObject(lst);
          out.close();
          fileOut.close();
          System.out.printf("Serialized data is saved in ./data/obj.ser");

@@ -18,4 +18,8 @@ public class user implements java.io.Serializable{
     public String toString(){
       return id+" "+name+" "+password;  
     }
+    
+    public String getName(){
+        return name;
+    }
 }
