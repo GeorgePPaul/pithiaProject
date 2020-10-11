@@ -122,6 +122,7 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        
         for(Object i : db.list){
             if((loginIDField.getText().equals(((user) i).getId()))) {
                 if(i instanceof student){
@@ -132,6 +133,7 @@ public class main extends javax.swing.JFrame {
                     loginScreen.setVisible(false);
                     mainStaff.setVisible(true);
                 }
+                break;
             } 
             else {
                 loginErrorMessage.setText("User does not exist");
@@ -139,6 +141,8 @@ public class main extends javax.swing.JFrame {
             }
         
         }
+        
+        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
@@ -161,7 +165,7 @@ public class main extends javax.swing.JFrame {
      */
     
     
-    dbHelper db = new dbHelper();
+    static dbHelper db = new dbHelper();
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -192,7 +196,7 @@ public class main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
-                
+                db.deserializeFromFile();
             }
         });
         
@@ -203,7 +207,7 @@ public class main extends javax.swing.JFrame {
         /*
         student s1 = new student("123456","Pavlidis","123456789");
         staff s2= new staff("admin","Mike","15948756");
-        
+        /*
         db.writeUser(s1.toString());
         db.writeUser(s2.toString());
         
@@ -212,11 +216,16 @@ public class main extends javax.swing.JFrame {
         db.addUserList(s1);
         db.addUserList(s2);
         db.serializeToFile(db.list);
-        */
+        
         //Example Load Serialized List
         
         
-      
+        
+        
+        for(Object i : db.list){
+            System.out.println(((user)i).toString());
+        }
+        */
         
     }
     
