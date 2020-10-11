@@ -23,10 +23,11 @@ public class main extends javax.swing.JFrame {
         loginScreen = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        loginIDField = new javax.swing.JTextField();
+        loginPasswordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
         loginLogo = new javax.swing.JLabel();
+        loginErrorMessage = new javax.swing.JLabel();
         mainStudent = new javax.swing.JPanel();
         logoutButton = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
@@ -40,27 +41,25 @@ public class main extends javax.swing.JFrame {
 
         loginScreen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Username");
+        jLabel1.setText("ID");
         loginScreen.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 100, 20));
 
         jLabel2.setText("Password");
         loginScreen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 110, 20));
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        loginIDField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                loginIDFieldActionPerformed(evt);
             }
         });
-        loginScreen.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 170, 20));
+        loginScreen.add(loginIDField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 170, 30));
 
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        loginPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                loginPasswordFieldActionPerformed(evt);
             }
         });
-        loginScreen.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 170, 30));
+        loginScreen.add(loginPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 170, 30));
 
         loginButton.setText("Login");
         loginButton.setActionCommand("loginButton");
@@ -75,6 +74,9 @@ public class main extends javax.swing.JFrame {
         loginScreen.add(loginLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 520, 190));
         ImageIcon icon = new ImageIcon("./images/logo-Main.png");
         loginLogo.setIcon(icon);
+
+        loginErrorMessage.setForeground(new java.awt.Color(255, 0, 0));
+        loginScreen.add(loginErrorMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 330, 20));
 
         jLayeredPane1.add(loginScreen, "card2");
 
@@ -120,17 +122,32 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        loginScreen.setVisible(false);
-        mainStudent.setVisible(true);
+        for(Object i : db.list){
+            if((loginIDField.getText().equals(((user) i).getId()))) {
+                if(i instanceof student){
+                    loginScreen.setVisible(false);
+                    mainStudent.setVisible(true);
+                }
+                else if(i instanceof staff){
+                    loginScreen.setVisible(false);
+                    mainStaff.setVisible(true);
+                }
+            } 
+            else {
+                loginErrorMessage.setText("User does not exist");
+                ;
+            }
+        
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_loginPasswordFieldActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void loginIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginIDFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_loginIDFieldActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         loginScreen.setVisible(true);
@@ -143,6 +160,8 @@ public class main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     
+    
+    dbHelper db = new dbHelper();
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -180,7 +199,7 @@ public class main extends javax.swing.JFrame {
         
         
         //Example write to userlist      
-        dbHelper db = new dbHelper();
+        
         /*
         student s1 = new student("123456","Pavlidis","123456789");
         staff s2= new staff("admin","Mike","15948756");
@@ -195,16 +214,7 @@ public class main extends javax.swing.JFrame {
         db.serializeToFile(db.list);
         */
         //Example Load Serialized List
-        db.deserializeFromFile();
         
-        for(Object i : db.list){
-            
-            System.out.println(i.toString());
-            System.out.println(i.getClass());
-            System.out.println(((user) i).getName());
-            
-            
-        }
         
       
         
@@ -218,10 +228,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton loginButton;
+    private javax.swing.JLabel loginErrorMessage;
+    private javax.swing.JTextField loginIDField;
     private javax.swing.JLabel loginLogo;
+    private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JPanel loginScreen;
     private javax.swing.JButton logoutButton;
     private javax.swing.JPanel mainStaff;

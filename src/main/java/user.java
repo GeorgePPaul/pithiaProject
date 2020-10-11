@@ -22,4 +22,12 @@ public class user implements java.io.Serializable{
     public String getName(){
         return name;
     }
+    
+    public String getId(){
+        return id;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
 }
