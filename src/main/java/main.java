@@ -195,13 +195,18 @@ public class main extends javax.swing.JFrame {
         db.serializeToFile(db.list);
         */
         //Example Load Serialized List
-        db.desiralizeFromFile();
+        db.deserializeFromFile();
         
-        db.list.forEach((i) -> {
-            System.out.println(i);
-        });
+        for(Object i : db.list){
+            
+            System.out.println(i.toString());
+            System.out.println(i.getClass());
+            System.out.println(((user) i).getName());
+            
+            
+        }
         
-        
+      
         
     }
     

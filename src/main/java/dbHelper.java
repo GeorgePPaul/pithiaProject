@@ -66,7 +66,7 @@ public void addUserList(user u){
 }
 
     //LOAD SERIALIZED ARRAY
-public void desiralizeFromFile(){ //FILE PATH PARAMETER TO BE ADDED
+public void deserializeFromFile(){ //FILE PATH PARAMETER TO BE ADDED
       try {
          FileInputStream fileIn = new FileInputStream("./data/obj.ser");
          ObjectInputStream in = new ObjectInputStream(fileIn);
