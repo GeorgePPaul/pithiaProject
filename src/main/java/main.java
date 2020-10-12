@@ -31,6 +31,7 @@ public class main extends javax.swing.JFrame {
         mainStudent = new javax.swing.JPanel();
         logoutButton = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
+        mainAdmin = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -105,6 +106,19 @@ public class main extends javax.swing.JFrame {
 
         jLayeredPane1.add(mainStaff, "card4");
 
+        javax.swing.GroupLayout mainAdminLayout = new javax.swing.GroupLayout(mainAdmin);
+        mainAdmin.setLayout(mainAdminLayout);
+        mainAdminLayout.setHorizontalGroup(
+            mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 845, Short.MAX_VALUE)
+        );
+        mainAdminLayout.setVerticalGroup(
+            mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 454, Short.MAX_VALUE)
+        );
+
+        jLayeredPane1.add(mainAdmin, "card5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,6 +146,10 @@ public class main extends javax.swing.JFrame {
                 else if(i instanceof staff){
                     loginScreen.setVisible(false);
                     mainStaff.setVisible(true);
+                }
+                else if(i instanceof administration){
+                    loginScreen.setVisible(false);
+                    mainAdmin.setVisible(true);
                 }
                 break;
             } 
@@ -244,6 +262,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JPanel loginScreen;
     private javax.swing.JButton logoutButton;
+    private javax.swing.JPanel mainAdmin;
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
     // End of variables declaration//GEN-END:variables
