@@ -5,7 +5,7 @@ public class user implements java.io.Serializable{
     private String id;
     private String password;
     
-    ArrayList mathimata = new ArrayList<courses>();
+    ArrayList mathimata = new ArrayList<course>();
     
     user(String id,String name,String password){
         this.id=id;

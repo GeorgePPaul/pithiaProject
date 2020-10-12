@@ -13,7 +13,8 @@ import java.io.ObjectInputStream;
 
 
 public class dbHelper implements java.io.Serializable{
-    public ArrayList list = new ArrayList<user>();
+    public ArrayList userDB = new ArrayList<user>();
+    public ArrayList courseDB = new ArrayList<course>();
     
     
     
@@ -64,11 +65,11 @@ public void serializeToFile(ArrayList lst, String filePath){    //FILE PATH PARA
 
 
     //LOAD SERIALIZED ARRAY
-public void deserializeFromFile(String filePath){ 
+public void deserializeFromFile(String filePath , ArrayList lst){ 
       try {
          FileInputStream fileIn = new FileInputStream(filePath);
          ObjectInputStream in = new ObjectInputStream(fileIn);
-         list = (ArrayList)in.readObject();
+         lst = (ArrayList)in.readObject();
          in.close();
          fileIn.close();
       } catch (IOException i) {

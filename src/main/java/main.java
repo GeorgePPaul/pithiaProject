@@ -137,7 +137,7 @@ public class main extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         
-        for(Object i : db.list){
+        for(Object i : db.userDB){
             if(((loginIDField.getText().equals(((user) i).getId()))) && (((user)i).getPassword().equals(new String (loginPasswordField.getPassword())))) {
                 if(i instanceof student){
                     loginScreen.setVisible(false);
@@ -214,7 +214,7 @@ public class main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
-                db.deserializeFromFile("./data/obj.ser");
+                db.deserializeFromFile("./data/obj.ser" , db.userDB);
                 /*
                 student s1 = new student("123456","Pavlidis","123456789");
                 staff s2= new staff("741852963","Mike","15948756");
