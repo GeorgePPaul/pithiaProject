@@ -22,18 +22,18 @@ public class dbHelper implements java.io.Serializable{
     
     
     //WRITE INFO TO TXT
-    public void writeUser(String x){ //FILE PATH PARAMETER TO BE ADDED
-    try(FileWriter fw = new FileWriter("./data/userlist.txt", true);
+    public void writeUser(String data, String filePath){ //FILE PATH PARAMETER TO BE ADDED
+    try(FileWriter fw = new FileWriter(filePath, true);
     BufferedWriter bw = new BufferedWriter(fw);
     PrintWriter out = new PrintWriter(bw))
 {
-    try(BufferedReader br = new BufferedReader(new FileReader("./data/userlist.txt"))){      
+    try(BufferedReader br = new BufferedReader(new FileReader(filePath))){      
         for(String line; (line = br.readLine()) != null; ) {
-            if(line.equals(x))
+            if(line.equals(data))
                 throw new EntityExistsException("This user exists in the system");
           
         }
-        out.println(x);
+        out.println(data);
         
     }
     catch(EntityExistsException e){
@@ -47,9 +47,9 @@ public class dbHelper implements java.io.Serializable{
     }
     
     //SERIALISE ARRAY
-public void serializeToFile(ArrayList lst){    //FILE PATH PARAMETER TO BE ADDED
+public void serializeToFile(ArrayList lst, String filePath){    //FILE PATH PARAMETER TO BE ADDED
     try {
-         FileOutputStream fileOut = new FileOutputStream("./data/obj.ser");
+         FileOutputStream fileOut = new FileOutputStream(filePath);
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
          out.writeObject(lst);
          out.close();
@@ -66,9 +66,9 @@ public void addUserList(user u){
 }
 
     //LOAD SERIALIZED ARRAY
-public void deserializeFromFile(){ //FILE PATH PARAMETER TO BE ADDED
+public void deserializeFromFile(String filePath){ //FILE PATH PARAMETER TO BE ADDED
       try {
-         FileInputStream fileIn = new FileInputStream("./data/obj.ser");
+         FileInputStream fileIn = new FileInputStream(filePath);
          ObjectInputStream in = new ObjectInputStream(fileIn);
          list = (ArrayList)in.readObject();
          in.close();

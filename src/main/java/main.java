@@ -196,7 +196,7 @@ public class main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
-                db.deserializeFromFile();
+                db.deserializeFromFile("./data/obj.ser");
             }
         });
         
