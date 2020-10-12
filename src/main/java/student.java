@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class student extends user implements java.io.Serializable{
     private int etosEisagogis;
-    private int dm;
+    private int ects;
     
     private ArrayList courseList = new ArrayList<course>();
     
@@ -11,6 +11,7 @@ public class student extends user implements java.io.Serializable{
     
     public void setEtosEisagogis(int x){etosEisagogis=x;}
     public int getEtosEisagosis(){return etosEisagogis;}
+    public int getECTS(){return ects;}
     public ArrayList getCourseList(){return courseList;};
     
     
