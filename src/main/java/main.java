@@ -124,7 +124,7 @@ public class main extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         
         for(Object i : db.list){
-            if((loginIDField.getText().equals(((user) i).getId()))) {
+            if(((loginIDField.getText().equals(((user) i).getId()))) && (((user)i).getPassword().equals(new String (loginPasswordField.getPassword())))) {
                 if(i instanceof student){
                     loginScreen.setVisible(false);
                     mainStudent.setVisible(true);
@@ -137,7 +137,7 @@ public class main extends javax.swing.JFrame {
             } 
             else {
                 loginErrorMessage.setText("User does not exist");
-                ;
+                
             }
         
         }
