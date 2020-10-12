@@ -64,7 +64,7 @@ public void serializeToFile(ArrayList lst, String filePath){    //FILE PATH PARA
 
 
     //LOAD SERIALIZED ARRAY
-public void deserializeFromFile(String filePath){ //FILE PATH PARAMETER TO BE ADDED
+public void deserializeFromFile(String filePath){ 
       try {
          FileInputStream fileIn = new FileInputStream(filePath);
          ObjectInputStream in = new ObjectInputStream(fileIn);

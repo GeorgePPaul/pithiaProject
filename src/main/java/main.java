@@ -1,5 +1,5 @@
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+
 
 public class main extends javax.swing.JFrame {
 
@@ -89,7 +89,7 @@ public class main extends javax.swing.JFrame {
                 logoutButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, -1, -1));
+        mainStudent.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, 40));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -97,7 +97,7 @@ public class main extends javax.swing.JFrame {
         mainStaff.setLayout(mainStaffLayout);
         mainStaffLayout.setHorizontalGroup(
             mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 845, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
         mainStaffLayout.setVerticalGroup(
             mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +110,7 @@ public class main extends javax.swing.JFrame {
         mainAdmin.setLayout(mainAdminLayout);
         mainAdminLayout.setHorizontalGroup(
             mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 845, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
         mainAdminLayout.setVerticalGroup(
             mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
