@@ -60,10 +60,8 @@ public void serializeToFile(ArrayList lst, String filePath){    //FILE PATH PARA
       }
    }
 
-    //ADD OBJ TO LIST
-public void addUserList(user u){
-    list.add(u);
-}
+
+
 
     //LOAD SERIALIZED ARRAY
 public void deserializeFromFile(String filePath){ //FILE PATH PARAMETER TO BE ADDED

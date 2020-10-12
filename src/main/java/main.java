@@ -215,6 +215,17 @@ public class main extends javax.swing.JFrame {
             public void run() {
                 new main().setVisible(true);
                 db.deserializeFromFile("./data/obj.ser");
+                /*
+                student s1 = new student("123456","Pavlidis","123456789");
+                staff s2= new staff("741852963","Mike","15948756");
+                administration a1 = new administration("admin","grammateia","admin123");
+                
+                db.list.add(s1);
+                db.list.add(s2);
+                db.list.add(a1);
+                
+                db.serializeToFile(db.list, "./data/obj.ser");
+                */
             }
         });
         
@@ -224,7 +235,7 @@ public class main extends javax.swing.JFrame {
         
         /*
         student s1 = new student("123456","Pavlidis","123456789");
-        staff s2= new staff("admin","Mike","15948756");
+        staff s2= new staff("741852963","Mike","15948756");
         /*
         db.writeUser(s1.toString());
         db.writeUser(s2.toString());
