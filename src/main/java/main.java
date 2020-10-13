@@ -1,7 +1,8 @@
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
 
-public class main extends javax.swing.JFrame {
+public class main extends javax.swing.JFrame  {
 
     /**
      * Creates new form loginScreen
@@ -58,6 +59,11 @@ public class main extends javax.swing.JFrame {
         loginPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginPasswordFieldActionPerformed(evt);
+            }
+        });
+        loginPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginPasswordFieldKeyPressed(evt);
             }
         });
         loginScreen.add(loginPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 170, 30));
@@ -165,6 +171,8 @@ public class main extends javax.swing.JFrame {
 
     private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_loginPasswordFieldActionPerformed
 
     private void loginIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginIDFieldActionPerformed
@@ -175,6 +183,14 @@ public class main extends javax.swing.JFrame {
         loginScreen.setVisible(true);
         mainStudent.setVisible(false);
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void loginPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginPasswordFieldKeyPressed
+        //login with enter button from password form
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+           loginButton.doClick();
+        }
+        
+    }//GEN-LAST:event_loginPasswordFieldKeyPressed
 
     
     
