@@ -48,11 +48,11 @@ public class dbHelper implements java.io.Serializable{
     }
     
     //SERIALISE ARRAY
-public void serializeToFile(ArrayList lst, String filePath){    //FILE PATH PARAMETER TO BE ADDED
+public void serializeUsers(String filePath){
     try {
          FileOutputStream fileOut = new FileOutputStream(filePath);
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
-         out.writeObject(lst);
+         out.writeObject(userDB);
          out.close();
          fileOut.close();
          System.out.printf("Serialized data is saved in ./data/obj.ser");
@@ -65,11 +65,11 @@ public void serializeToFile(ArrayList lst, String filePath){    //FILE PATH PARA
 
 
     //LOAD SERIALIZED ARRAY
-public void deserializeFromFile(String filePath , ArrayList lst){ 
+public void deserializeUsers(String filePath){ 
       try {
          FileInputStream fileIn = new FileInputStream(filePath);
          ObjectInputStream in = new ObjectInputStream(fileIn);
-         lst = (ArrayList)in.readObject();
+         userDB = (ArrayList<user>)in.readObject();
          in.close();
          fileIn.close();
       } catch (IOException i) {

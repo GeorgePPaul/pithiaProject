@@ -214,17 +214,17 @@ public class main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
-                db.deserializeFromFile("./data/obj.ser" , db.userDB);
+                db.deserializeUsers("./data/obj.ser");
                 /*
                 student s1 = new student("123456","Pavlidis","123456789");
                 staff s2= new staff("741852963","Mike","15948756");
                 administration a1 = new administration("admin","grammateia","admin123");
                 
-                db.list.add(s1);
-                db.list.add(s2);
-                db.list.add(a1);
+                db.userDB.add(s1);
+                db.userDB.add(s2);
+                db.userDB.add(a1);
                 
-                db.serializeToFile(db.list, "./data/obj.ser");
+                db.serializeUsers("./data/obj.ser");
                 */
             }
         });
