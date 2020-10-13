@@ -54,6 +54,11 @@ public class main extends javax.swing.JFrame  {
                 loginIDFieldActionPerformed(evt);
             }
         });
+        loginIDField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginIDFieldKeyPressed(evt);
+            }
+        });
         loginScreen.add(loginIDField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 170, 30));
 
         loginPasswordField.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +196,13 @@ public class main extends javax.swing.JFrame  {
         }
         
     }//GEN-LAST:event_loginPasswordFieldKeyPressed
+
+    private void loginIDFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginIDFieldKeyPressed
+        //login with enter button from password form
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+           loginButton.doClick();
+        }
+    }//GEN-LAST:event_loginIDFieldKeyPressed
 
     
     
