@@ -1,5 +1,6 @@
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+import java.awt.CardLayout;
 
 
 public class main extends javax.swing.JFrame  {
@@ -9,6 +10,9 @@ public class main extends javax.swing.JFrame  {
      */
     public main() {
         initComponents();
+        cardLayout = (CardLayout)(jPanel1.getLayout());
+        cardLayout.addLayoutComponent(jPanel2, "jPanel2");
+        cardLayout.addLayoutComponent(jPanel3, "jPanel3");
     }
 
     /**
@@ -31,6 +35,13 @@ public class main extends javax.swing.JFrame  {
         loginErrorMessage = new javax.swing.JLabel();
         mainStudent = new javax.swing.JPanel();
         logoutButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
         mainAdmin = new javax.swing.JPanel();
 
@@ -92,6 +103,7 @@ public class main extends javax.swing.JFrame  {
 
         jLayeredPane1.add(loginScreen, "card2");
 
+        mainStudent.setBackground(new java.awt.Color(153, 153, 153));
         mainStudent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoutButton.setText("Logout");
@@ -100,7 +112,69 @@ public class main extends javax.swing.JFrame  {
                 logoutButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, 40));
+        mainStudent.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        mainStudent.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        jLabel3.setText("Panel 1");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(277, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel3)
+                .addContainerGap(410, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, "card2");
+
+        jLabel4.setText("Panel 2");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(300, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel4)
+                .addContainerGap(412, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3, "card3");
+
+        mainStudent.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -112,7 +186,7 @@ public class main extends javax.swing.JFrame  {
         );
         mainStaffLayout.setVerticalGroup(
             mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
 
         jLayeredPane1.add(mainStaff, "card4");
@@ -125,7 +199,7 @@ public class main extends javax.swing.JFrame  {
         );
         mainAdminLayout.setVerticalGroup(
             mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
 
         jLayeredPane1.add(mainAdmin, "card5");
@@ -204,6 +278,15 @@ public class main extends javax.swing.JFrame  {
         }
     }//GEN-LAST:event_loginIDFieldKeyPressed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        cardLayout.show(jPanel1, "jPanel2");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        cardLayout.show(jPanel1, "jPanel3");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     
     
     /**
@@ -212,6 +295,7 @@ public class main extends javax.swing.JFrame  {
     
     
     static dbHelper db = new dbHelper();
+    CardLayout cardLayout;
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -291,9 +375,16 @@ public class main extends javax.swing.JFrame  {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
     private javax.swing.JTextField loginIDField;
