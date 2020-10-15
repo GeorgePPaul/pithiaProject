@@ -10,7 +10,8 @@ public class main extends javax.swing.JFrame  {
      */
     public main() {
         initComponents();
-        cardLayout = (CardLayout)(jPanel1.getLayout());
+        cardLayout = (CardLayout)(studentContent.getLayout());
+        cardLayout.addLayoutComponent(studentHomePage, "studentHomePage");
         cardLayout.addLayoutComponent(jPanel2, "jPanel2");
         cardLayout.addLayoutComponent(jPanel3, "jPanel3");
     }
@@ -37,7 +38,13 @@ public class main extends javax.swing.JFrame  {
         logoutButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        studentContent = new javax.swing.JPanel();
+        studentHomePage = new javax.swing.JPanel();
+        studentHomeLogo = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -130,7 +137,59 @@ public class main extends javax.swing.JFrame  {
         });
         mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
-        jPanel1.setLayout(new java.awt.CardLayout());
+        studentContent.setLayout(new java.awt.CardLayout());
+
+        jLabel5.setText("A Java Swing project by");
+
+        jLabel6.setText("- Apostolidis Mixalis -");
+
+        jLabel7.setText("- Kaloudis Alexandros - ");
+
+        jLabel8.setText("- Pavlidis Giorgos -");
+
+        javax.swing.GroupLayout studentHomePageLayout = new javax.swing.GroupLayout(studentHomePage);
+        studentHomePage.setLayout(studentHomePageLayout);
+        studentHomePageLayout.setHorizontalGroup(
+            studentHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentHomePageLayout.createSequentialGroup()
+                .addGroup(studentHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(studentHomePageLayout.createSequentialGroup()
+                        .addGap(292, 292, 292)
+                        .addGroup(studentHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7)
+                            .addGroup(studentHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addGroup(studentHomePageLayout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addComponent(jLabel6)))))
+                    .addGroup(studentHomePageLayout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(jLabel8)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentHomePageLayout.createSequentialGroup()
+                .addGap(0, 94, Short.MAX_VALUE)
+                .addComponent(studentHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+        studentHomePageLayout.setVerticalGroup(
+            studentHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentHomePageLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(studentHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        studentHomeLogo.setIcon(icon);
+
+        studentContent.add(studentHomePage, "card4");
 
         jLabel3.setText("Panel 1");
 
@@ -151,7 +210,7 @@ public class main extends javax.swing.JFrame  {
                 .addContainerGap(410, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, "card2");
+        studentContent.add(jPanel2, "card2");
 
         jLabel4.setText("Panel 2");
 
@@ -172,9 +231,9 @@ public class main extends javax.swing.JFrame  {
                 .addContainerGap(412, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, "card3");
+        studentContent.add(jPanel3, "card3");
 
-        mainStudent.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
+        mainStudent.add(studentContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -279,12 +338,12 @@ public class main extends javax.swing.JFrame  {
     }//GEN-LAST:event_loginIDFieldKeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cardLayout.show(jPanel1, "jPanel2");
+        cardLayout.show(studentContent, "jPanel2");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        cardLayout.show(jPanel1, "jPanel3");
+        cardLayout.show(studentContent, "jPanel3");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     
@@ -381,8 +440,11 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton loginButton;
@@ -395,5 +457,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel mainAdmin;
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
+    private javax.swing.JPanel studentContent;
+    private javax.swing.JLabel studentHomeLogo;
+    private javax.swing.JPanel studentHomePage;
     // End of variables declaration//GEN-END:variables
 }
