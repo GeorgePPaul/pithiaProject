@@ -50,7 +50,9 @@ public class main extends javax.swing.JFrame  {
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
+        staffContent = new javax.swing.JPanel();
         mainAdmin = new javax.swing.JPanel();
+        adminContent = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -237,29 +239,19 @@ public class main extends javax.swing.JFrame  {
 
         jLayeredPane1.add(mainStudent, "card3");
 
-        javax.swing.GroupLayout mainStaffLayout = new javax.swing.GroupLayout(mainStaff);
-        mainStaff.setLayout(mainStaffLayout);
-        mainStaffLayout.setHorizontalGroup(
-            mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
-        );
-        mainStaffLayout.setVerticalGroup(
-            mainStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-        );
+        mainStaff.setBackground(new java.awt.Color(153, 153, 153));
+        mainStaff.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        staffContent.setLayout(new java.awt.CardLayout());
+        mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         jLayeredPane1.add(mainStaff, "card4");
 
-        javax.swing.GroupLayout mainAdminLayout = new javax.swing.GroupLayout(mainAdmin);
-        mainAdmin.setLayout(mainAdminLayout);
-        mainAdminLayout.setHorizontalGroup(
-            mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
-        );
-        mainAdminLayout.setVerticalGroup(
-            mainAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-        );
+        mainAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        mainAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        adminContent.setLayout(new java.awt.CardLayout());
+        mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -434,6 +426,7 @@ public class main extends javax.swing.JFrame  {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel adminContent;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -457,6 +450,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel mainAdmin;
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
+    private javax.swing.JPanel staffContent;
     private javax.swing.JPanel studentContent;
     private javax.swing.JLabel studentHomeLogo;
     private javax.swing.JPanel studentHomePage;
