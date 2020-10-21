@@ -287,6 +287,9 @@ public class main extends javax.swing.JFrame  {
                     loginScreen.setVisible(false);
                     mainAdmin.setVisible(true);
                 }
+                loginIDField.setText("");
+                loginPasswordField.setText("");
+                loginErrorMessage.setText("");
                 break;
             } 
             else {
