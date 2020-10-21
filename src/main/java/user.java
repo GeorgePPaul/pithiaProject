@@ -11,20 +11,20 @@ public class user implements java.io.Serializable{
     
     ArrayList mathimata = new ArrayList<course>();
     
-    user(String id,String name,String password,String address,String email,int phone,String surname){
+    user(String id,String name,String surname,String password,String address,String email,int phone){
         this.id=id;
         this.name=name;
+        this.surname=surname;
         this.password=password;
         this.address=address;
         this.email=email;
-        this.phone=phone;
-        this.surname=surname;
+        this.phone=phone;      
     }
     
     
     @Override
     public String toString(){
-      return id+" "+name+" "+password+" "+address+" "+email+" "+phone+" "+surname;  
+      return id+" "+name+" "+surname+" "+password+" "+address+" "+email+" "+phone;  
     }
     
     public String getName(){

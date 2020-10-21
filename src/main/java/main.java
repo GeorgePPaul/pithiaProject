@@ -409,19 +409,24 @@ public class main extends javax.swing.JFrame  {
             public void run() {
                 new main().setVisible(true);
                 db.deserializeUsers("./data/obj.ser");
-                /*
-                student s1 = new student("123456","Pavlidis","123456789");
-                staff s2= new staff("741852963","Mike","15948756");
-                administration a1 = new administration("admin","grammateia","admin123");
+                
+        /*        student s1 = new student("123456","Georgios","Pavlidis","123456789","Papandreou 5","GeorgePaul@gmail.com",694123123);
+                staff s2= new staff("741852963","Mike","Apostolidis","15948756","Vasilis Olgas 90","MikeApostolidis@gmail.com",694789123);
+                administration a1 = new administration("admin","grammateia","suregrammateia","admin123","Sindos 10","grammateia@teithe.gr",23101234);
+                
+                
+                db.writeUser(s1.toString(),"./data/userlist.txt");
+                db.writeUser(s2.toString(),"./data/userlist.txt");
+                db.writeUser(a1.toString(),"./data/userlist.txt");
                 
                 db.userDB.add(s1);
                 db.userDB.add(s2);
                 db.userDB.add(a1);
                 
-                db.serializeUsers("./data/obj.ser");
-                */
+                db.serializeUsers("./data/obj.ser"); */
+                
             }
-        });
+        });   
         
         
         
