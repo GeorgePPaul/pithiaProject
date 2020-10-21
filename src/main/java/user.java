@@ -2,7 +2,10 @@ import java.util.ArrayList;
 
 public class user implements java.io.Serializable{
     private String name;
+    private String surname;
     private String id;
+    private int phone;
+    private String address;
     private String password;
     
     ArrayList mathimata = new ArrayList<course>();
