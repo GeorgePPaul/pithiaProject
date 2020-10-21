@@ -10,10 +10,10 @@ public class main extends javax.swing.JFrame  {
      */
     public main() {
         initComponents();
-        cardLayout = (CardLayout)(studentContent.getLayout());
-        cardLayout.addLayoutComponent(studentHomePage, "studentHomePage");
-        cardLayout.addLayoutComponent(jPanel2, "jPanel2");
-        cardLayout.addLayoutComponent(jPanel3, "jPanel3");
+        studentLayout = (CardLayout)(studentContent.getLayout());
+        studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
+        studentLayout.addLayoutComponent(jPanel2, "jPanel2");
+        studentLayout.addLayoutComponent(jPanel3, "jPanel3");
     }
 
     /**
@@ -35,7 +35,7 @@ public class main extends javax.swing.JFrame  {
         loginLogo = new javax.swing.JLabel();
         loginErrorMessage = new javax.swing.JLabel();
         mainStudent = new javax.swing.JPanel();
-        logoutButton = new javax.swing.JButton();
+        logoutButtonStudent = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         studentContent = new javax.swing.JPanel();
@@ -51,8 +51,10 @@ public class main extends javax.swing.JFrame  {
         jLabel4 = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
+        logoutButtonStaff = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
+        logoutButtonAdmin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -115,13 +117,13 @@ public class main extends javax.swing.JFrame  {
         mainStudent.setBackground(new java.awt.Color(153, 153, 153));
         mainStudent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoutButton.setText("Logout");
-        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+        logoutButtonStudent.setText("Logout");
+        logoutButtonStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutButtonActionPerformed(evt);
+                logoutButtonStudentActionPerformed(evt);
             }
         });
-        mainStudent.add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
+        mainStudent.add(logoutButtonStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +247,14 @@ public class main extends javax.swing.JFrame  {
         staffContent.setLayout(new java.awt.CardLayout());
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
+        logoutButtonStaff.setText("Logout");
+        logoutButtonStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonStaffActionPerformed(evt);
+            }
+        });
+        mainStaff.add(logoutButtonStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
+
         jLayeredPane1.add(mainStaff, "card4");
 
         mainAdmin.setBackground(new java.awt.Color(153, 153, 153));
@@ -252,6 +262,14 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.setLayout(new java.awt.CardLayout());
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
+
+        logoutButtonAdmin.setText("Logout");
+        logoutButtonAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonAdminActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(logoutButtonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -312,10 +330,10 @@ public class main extends javax.swing.JFrame  {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginIDFieldActionPerformed
 
-    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+    private void logoutButtonStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonStudentActionPerformed
         loginScreen.setVisible(true);
         mainStudent.setVisible(false);
-    }//GEN-LAST:event_logoutButtonActionPerformed
+    }//GEN-LAST:event_logoutButtonStudentActionPerformed
 
     private void loginPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginPasswordFieldKeyPressed
         //login with enter button from password form
@@ -333,13 +351,23 @@ public class main extends javax.swing.JFrame  {
     }//GEN-LAST:event_loginIDFieldKeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cardLayout.show(studentContent, "jPanel2");
+        studentLayout.show(studentContent, "jPanel2");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        cardLayout.show(studentContent, "jPanel3");
+        studentLayout.show(studentContent, "jPanel3");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void logoutButtonStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonStaffActionPerformed
+        loginScreen.setVisible(true);
+        mainStaff.setVisible(false);
+    }//GEN-LAST:event_logoutButtonStaffActionPerformed
+
+    private void logoutButtonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonAdminActionPerformed
+        loginScreen.setVisible(true);
+        mainAdmin.setVisible(false);
+    }//GEN-LAST:event_logoutButtonAdminActionPerformed
 
     
     
@@ -349,7 +377,7 @@ public class main extends javax.swing.JFrame  {
     
     
     static dbHelper db = new dbHelper();
-    CardLayout cardLayout;
+    CardLayout studentLayout;
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -417,7 +445,7 @@ public class main extends javax.swing.JFrame  {
         
         
         
-        for(Object i : db.list){
+        for(Object i : db.userDB){
             System.out.println(((user)i).toString());
         }
         */
@@ -449,7 +477,9 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel loginLogo;
     private javax.swing.JPasswordField loginPasswordField;
     private javax.swing.JPanel loginScreen;
-    private javax.swing.JButton logoutButton;
+    private javax.swing.JButton logoutButtonAdmin;
+    private javax.swing.JButton logoutButtonStaff;
+    private javax.swing.JButton logoutButtonStudent;
     private javax.swing.JPanel mainAdmin;
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
