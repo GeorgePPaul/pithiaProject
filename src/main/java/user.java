@@ -7,6 +7,7 @@ public class user implements java.io.Serializable{
     private int phone;
     private String address;
     private String password;
+    private String email;
     
     ArrayList mathimata = new ArrayList<course>();
     
