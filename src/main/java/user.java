@@ -31,10 +31,6 @@ public class user implements java.io.Serializable{
         return name;
     }
     
-    public String getSurname(){
-        return surname;
-    }
-    
     public String getId(){
         return id;
     }
