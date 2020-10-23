@@ -12,7 +12,7 @@ public class main extends javax.swing.JFrame  {
         initComponents();
         studentLayout = (CardLayout)(studentContent.getLayout());
         studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
-        studentLayout.addLayoutComponent(studentDetailsPanel, "jPanel2");
+        studentLayout.addLayoutComponent(studentDetailsPanel, "studentDetailsPanel");
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
     }
 
@@ -435,7 +435,7 @@ public class main extends javax.swing.JFrame  {
         studentDetailYearLabel.setText(Integer.toString(((student)loggedUser).getEtosEisagosis()));
         studentDetailECTSLabel.setText(Integer.toString(((student)loggedUser).getECTS()));
         
-        studentLayout.show(studentContent, "jPanel2");
+        studentLayout.show(studentContent, "studentDetailsPanel");
         
     }//GEN-LAST:event_studentDetailsButtonActionPerformed
 
