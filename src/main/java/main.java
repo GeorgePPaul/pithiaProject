@@ -14,6 +14,10 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
         studentLayout.addLayoutComponent(studentDetailsPanel, "studentDetailsPanel");
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
+        
+        staffLayout = (CardLayout) (staffContent.getLayout());
+        staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
+        
     }
 
     /**
@@ -71,7 +75,25 @@ public class main extends javax.swing.JFrame  {
         jLabel4 = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
+        staffHomePage = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        staffDetailsPanel = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        staffDetailNameLabel = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        staffDetailIDlabel = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        staffDetailAddressLabel = new javax.swing.JLabel();
+        staffDetailEmailLabel = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        staffDetailSurnameLabel = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        staffDetailPhoneLabel = new javax.swing.JLabel();
         logoutButtonStaff = new javax.swing.JButton();
+        staffDetailsButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         logoutButtonAdmin = new javax.swing.JButton();
@@ -316,7 +338,67 @@ public class main extends javax.swing.JFrame  {
         mainStaff.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         staffContent.setLayout(new java.awt.CardLayout());
-        mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
+
+        jLabel20.setText("HOME PAGE");
+
+        javax.swing.GroupLayout staffHomePageLayout = new javax.swing.GroupLayout(staffHomePage);
+        staffHomePage.setLayout(staffHomePageLayout);
+        staffHomePageLayout.setHorizontalGroup(
+            staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffHomePageLayout.createSequentialGroup()
+                .addContainerGap(341, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(284, 284, 284))
+        );
+        staffHomePageLayout.setVerticalGroup(
+            staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffHomePageLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel20)
+                .addContainerGap(286, Short.MAX_VALUE))
+        );
+
+        staffContent.add(staffHomePage, "card3");
+
+        staffDetailsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setText("Name:");
+        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 15, 40, -1));
+        jPanel5.add(staffDetailNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 15, 105, 14));
+
+        jLabel22.setText("Staff ID:");
+        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 53, -1));
+        jPanel5.add(staffDetailIDlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 15, 116, 14));
+
+        staffDetailsPanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 710, 40));
+
+        jPanel6.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setText("Address");
+        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 47, 18));
+        jPanel6.add(staffDetailAddressLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 11, 117, 18));
+        jPanel6.add(staffDetailEmailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 11, 200, 14));
+
+        jLabel21.setText("E-mail:");
+        jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 70, -1));
+
+        staffDetailsPanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 710, 40));
+
+        jLabel18.setText("Surname:");
+        staffDetailsPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        staffDetailsPanel.add(staffDetailSurnameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 110, 20));
+
+        jLabel24.setText("Phone Number:");
+        staffDetailsPanel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
+        staffDetailsPanel.add(staffDetailPhoneLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 180, 20));
+
+        staffContent.add(staffDetailsPanel, "card2");
+
+        mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
 
         logoutButtonStaff.setText("Logout");
         logoutButtonStaff.addActionListener(new java.awt.event.ActionListener() {
@@ -325,6 +407,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStaff.add(logoutButtonStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
+
+        staffDetailsButton.setText("staffDetailsButton");
+        staffDetailsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffDetailsButtonActionPerformed(evt);
+            }
+        });
+        mainStaff.add(staffDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
 
         jLayeredPane1.add(mainStaff, "card4");
 
@@ -453,6 +543,18 @@ public class main extends javax.swing.JFrame  {
         mainAdmin.setVisible(false);
     }//GEN-LAST:event_logoutButtonAdminActionPerformed
 
+    private void staffDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffDetailsButtonActionPerformed
+        staffDetailNameLabel.setText(((staff)loggedUser).getName());
+        staffDetailSurnameLabel.setText(((staff)loggedUser).getSurname());
+        staffDetailPhoneLabel.setText(Integer.toString(((staff)loggedUser).getPhone()));
+        staffDetailAddressLabel.setText(((staff)loggedUser).getAddress());
+        staffDetailEmailLabel.setText(((staff)loggedUser).getEmail());
+        staffDetailIDlabel.setText(((staff)loggedUser).getId());
+        
+        
+        staffLayout.show(staffContent, "staffDetailsPanel"); 
+    }//GEN-LAST:event_staffDetailsButtonActionPerformed
+
     
     
     /**
@@ -462,6 +564,7 @@ public class main extends javax.swing.JFrame  {
     
     static dbHelper db = new dbHelper();
     CardLayout studentLayout;
+    CardLayout staffLayout;
     user loggedUser;
     
     public static void main(String args[]) {
@@ -557,7 +660,14 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -570,6 +680,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
     private javax.swing.JTextField loginIDField;
@@ -583,6 +695,15 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
     private javax.swing.JPanel staffContent;
+    private javax.swing.JLabel staffDetailAddressLabel;
+    private javax.swing.JLabel staffDetailEmailLabel;
+    private javax.swing.JLabel staffDetailIDlabel;
+    private javax.swing.JLabel staffDetailNameLabel;
+    private javax.swing.JLabel staffDetailPhoneLabel;
+    private javax.swing.JLabel staffDetailSurnameLabel;
+    private javax.swing.JButton staffDetailsButton;
+    private javax.swing.JPanel staffDetailsPanel;
+    private javax.swing.JPanel staffHomePage;
     private javax.swing.JPanel studentContent;
     private javax.swing.JLabel studentDetailAddressLabel;
     private javax.swing.JLabel studentDetailECTSLabel;
