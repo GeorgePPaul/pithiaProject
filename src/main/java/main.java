@@ -14,6 +14,10 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
         studentLayout.addLayoutComponent(jPanel2, "jPanel2");
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
+        adminLayout = (CardLayout)(adminContent.getLayout());
+        adminLayout.addLayoutComponent(adminHomePage,"adminHomePage");
+        adminLayout.addLayoutComponent(adminPanel1,"adminPanel1");
+        adminLayout.addLayoutComponent(adminPanel2,"adminPanel2");
     }
 
     /**
@@ -49,12 +53,18 @@ public class main extends javax.swing.JFrame  {
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        anchorLogo1 = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         logoutButtonStaff = new javax.swing.JButton();
+        anchorLogo2 = new javax.swing.JLabel();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
+        adminHomePage = new javax.swing.JPanel();
+        adminPanel1 = new javax.swing.JPanel();
+        adminPanel2 = new javax.swing.JPanel();
         logoutButtonAdmin = new javax.swing.JButton();
+        anchorLogo3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -239,6 +249,14 @@ public class main extends javax.swing.JFrame  {
 
         mainStudent.add(studentContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
+        anchorLogo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\alex\\Documents\\GitHub\\pithiaProject\\src\\main\\java\\images\\Webp.net-resizeimage.png")); // NOI18N
+        anchorLogo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                anchorLogo1MouseClicked(evt);
+            }
+        });
+        mainStudent.add(anchorLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
         jLayeredPane1.add(mainStudent, "card3");
 
         mainStaff.setBackground(new java.awt.Color(153, 153, 153));
@@ -255,12 +273,60 @@ public class main extends javax.swing.JFrame  {
         });
         mainStaff.add(logoutButtonStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
 
+        anchorLogo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\alex\\Documents\\GitHub\\pithiaProject\\src\\main\\java\\images\\Webp.net-resizeimage.png")); // NOI18N
+        anchorLogo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                anchorLogo2MouseClicked(evt);
+            }
+        });
+        mainStaff.add(anchorLogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
         jLayeredPane1.add(mainStaff, "card4");
 
         mainAdmin.setBackground(new java.awt.Color(153, 153, 153));
         mainAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         adminContent.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout adminHomePageLayout = new javax.swing.GroupLayout(adminHomePage);
+        adminHomePage.setLayout(adminHomePageLayout);
+        adminHomePageLayout.setHorizontalGroup(
+            adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        adminHomePageLayout.setVerticalGroup(
+            adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+
+        adminContent.add(adminHomePage, "card2");
+
+        javax.swing.GroupLayout adminPanel1Layout = new javax.swing.GroupLayout(adminPanel1);
+        adminPanel1.setLayout(adminPanel1Layout);
+        adminPanel1Layout.setHorizontalGroup(
+            adminPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        adminPanel1Layout.setVerticalGroup(
+            adminPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+
+        adminContent.add(adminPanel1, "card3");
+
+        javax.swing.GroupLayout adminPanel2Layout = new javax.swing.GroupLayout(adminPanel2);
+        adminPanel2.setLayout(adminPanel2Layout);
+        adminPanel2Layout.setHorizontalGroup(
+            adminPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        adminPanel2Layout.setVerticalGroup(
+            adminPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+
+        adminContent.add(adminPanel2, "card4");
+
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         logoutButtonAdmin.setText("Logout");
@@ -270,6 +336,10 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(logoutButtonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
+
+        anchorLogo3.setIcon(new javax.swing.ImageIcon("C:\\Users\\alex\\Documents\\GitHub\\pithiaProject\\src\\main\\java\\images\\Webp.net-resizeimage.png")); // NOI18N
+        anchorLogo3.setInheritsPopupMenu(false);
+        mainAdmin.add(anchorLogo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -369,6 +439,16 @@ public class main extends javax.swing.JFrame  {
         mainAdmin.setVisible(false);
     }//GEN-LAST:event_logoutButtonAdminActionPerformed
 
+    private void anchorLogo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_anchorLogo1MouseClicked
+        //onclick epistrofh sto homepage
+        studentLayout.show(studentContent,"studentHomePage");
+    }//GEN-LAST:event_anchorLogo1MouseClicked
+
+    private void anchorLogo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_anchorLogo2MouseClicked
+        // onclick got to admin homepage
+        adminLayout.show(adminContent,"adminHomePage");
+    }//GEN-LAST:event_anchorLogo2MouseClicked
+
     
     
     /**
@@ -378,6 +458,7 @@ public class main extends javax.swing.JFrame  {
     
     static dbHelper db = new dbHelper();
     CardLayout studentLayout;
+    CardLayout adminLayout;
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -463,6 +544,12 @@ public class main extends javax.swing.JFrame  {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adminContent;
+    private javax.swing.JPanel adminHomePage;
+    private javax.swing.JPanel adminPanel1;
+    private javax.swing.JPanel adminPanel2;
+    private javax.swing.JLabel anchorLogo1;
+    private javax.swing.JLabel anchorLogo2;
+    private javax.swing.JLabel anchorLogo3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
