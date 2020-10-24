@@ -16,7 +16,12 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
+        staffLayout.addLayoutComponent(staffHomePage,"staffHomepage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
+        
+        adminLayout = (CardLayout)(adminContent.getLayout());
+        adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
+        
         
     }
 
@@ -73,6 +78,7 @@ public class main extends javax.swing.JFrame  {
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        studentHomeLabel = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         staffHomePage = new javax.swing.JPanel();
@@ -94,9 +100,12 @@ public class main extends javax.swing.JFrame  {
         staffDetailPhoneLabel = new javax.swing.JLabel();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
+        staffHomeLabel = new javax.swing.JLabel();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
+        adminHomePage = new javax.swing.JPanel();
         logoutButtonAdmin = new javax.swing.JButton();
+        adminHomeLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -332,6 +341,14 @@ public class main extends javax.swing.JFrame  {
 
         mainStudent.add(studentContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
+        studentHomeLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\alex\\Documents\\GitHub\\pithiaProject\\src\\main\\java\\images\\Webp.net-resizeimage.png")); // NOI18N
+        studentHomeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                studentHomeLabelMouseClicked(evt);
+            }
+        });
+        mainStudent.add(studentHomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
         jLayeredPane1.add(mainStudent, "card3");
 
         mainStaff.setBackground(new java.awt.Color(153, 153, 153));
@@ -416,12 +433,35 @@ public class main extends javax.swing.JFrame  {
         });
         mainStaff.add(staffDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
 
+        staffHomeLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\alex\\Documents\\GitHub\\pithiaProject\\src\\main\\java\\images\\Webp.net-resizeimage.png")); // NOI18N
+        staffHomeLabel.setText("jLabel23");
+        staffHomeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                staffHomeLabelMouseClicked(evt);
+            }
+        });
+        mainStaff.add(staffHomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
         jLayeredPane1.add(mainStaff, "card4");
 
         mainAdmin.setBackground(new java.awt.Color(153, 153, 153));
         mainAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         adminContent.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout adminHomePageLayout = new javax.swing.GroupLayout(adminHomePage);
+        adminHomePage.setLayout(adminHomePageLayout);
+        adminHomePageLayout.setHorizontalGroup(
+            adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        adminHomePageLayout.setVerticalGroup(
+            adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+
+        adminContent.add(adminHomePage, "card2");
+
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         logoutButtonAdmin.setText("Logout");
@@ -431,6 +471,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(logoutButtonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
+
+        adminHomeLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\alex\\Documents\\GitHub\\pithiaProject\\src\\main\\java\\images\\Webp.net-resizeimage.png")); // NOI18N
+        adminHomeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminHomeLabelMouseClicked(evt);
+            }
+        });
+        mainAdmin.add(adminHomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -555,6 +603,21 @@ public class main extends javax.swing.JFrame  {
         staffLayout.show(staffContent, "staffDetailsPanel"); 
     }//GEN-LAST:event_staffDetailsButtonActionPerformed
 
+    private void adminHomeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeLabelMouseClicked
+        //go to admin home page
+       adminLayout.show(adminContent,"adminHomePage"); 
+    }//GEN-LAST:event_adminHomeLabelMouseClicked
+
+    private void staffHomeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffHomeLabelMouseClicked
+        // go tp staff home page
+        staffLayout.show(staffContent,"staffHomePage");
+    }//GEN-LAST:event_staffHomeLabelMouseClicked
+
+    private void studentHomeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_studentHomeLabelMouseClicked
+        //go to student home page
+        studentLayout.show(studentContent, "studentHomePage");
+    }//GEN-LAST:event_studentHomeLabelMouseClicked
+
     
     
     /**
@@ -565,6 +628,7 @@ public class main extends javax.swing.JFrame  {
     static dbHelper db = new dbHelper();
     CardLayout studentLayout;
     CardLayout staffLayout;
+    CardLayout adminLayout;
     user loggedUser;
     
     public static void main(String args[]) {
@@ -651,6 +715,8 @@ public class main extends javax.swing.JFrame  {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adminContent;
+    private javax.swing.JLabel adminHomeLabel;
+    private javax.swing.JPanel adminHomePage;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -703,6 +769,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel staffDetailSurnameLabel;
     private javax.swing.JButton staffDetailsButton;
     private javax.swing.JPanel staffDetailsPanel;
+    private javax.swing.JLabel staffHomeLabel;
     private javax.swing.JPanel staffHomePage;
     private javax.swing.JPanel studentContent;
     private javax.swing.JLabel studentDetailAddressLabel;
@@ -716,6 +783,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel studentDetailYearLabel;
     private javax.swing.JButton studentDetailsButton;
     private javax.swing.JPanel studentDetailsPanel;
+    private javax.swing.JLabel studentHomeLabel;
     private javax.swing.JLabel studentHomeLogo;
     private javax.swing.JPanel studentHomePage;
     // End of variables declaration//GEN-END:variables
