@@ -23,7 +23,7 @@ public class main extends javax.swing.JFrame  {
         
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
-        
+        adminLayout.addLayoutComponent(adminUserListPanel, "adminUserListPanel");
         
     }
 
@@ -110,8 +110,13 @@ public class main extends javax.swing.JFrame  {
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
+        adminUserListPanel = new javax.swing.JPanel();
+        adminAddUserButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        adminUserTable = new javax.swing.JTable();
         logoutButtonAdmin = new javax.swing.JButton();
         adminLogo = new javax.swing.JLabel();
+        adminUserListButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -434,9 +439,16 @@ public class main extends javax.swing.JFrame  {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         staffUserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -502,6 +514,56 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.add(adminHomePage, "card2");
 
+        adminAddUserButton.setText("Add User");
+
+        adminUserTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Surname", "Name", "E-mail", "Phone", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(adminUserTable);
+
+        javax.swing.GroupLayout adminUserListPanelLayout = new javax.swing.GroupLayout(adminUserListPanel);
+        adminUserListPanel.setLayout(adminUserListPanelLayout);
+        adminUserListPanelLayout.setHorizontalGroup(
+            adminUserListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminUserListPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(adminUserListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminAddUserButton)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        adminUserListPanelLayout.setVerticalGroup(
+            adminUserListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminUserListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminAddUserButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        adminContent.add(adminUserListPanel, "card3");
+
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         logoutButtonAdmin.setText("Logout");
@@ -520,6 +582,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(adminLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        adminUserListButton.setText("User List");
+        adminUserListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminUserListButtonActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(adminUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, -1));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -661,6 +731,7 @@ public class main extends javax.swing.JFrame  {
 
     private void staffUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUserListButtonActionPerformed
         DefaultTableModel staffUserDTable = (DefaultTableModel) staffUserTable.getModel();
+        staffUserDTable.setRowCount(0);
         for(Object i : db.userDB){           
             staffUserDTable.addRow(new Object[]{((user)i).getId(),((user)i).getSurname(),((user)i).getName(),((user)i).getEmail()});
             
@@ -668,6 +739,17 @@ public class main extends javax.swing.JFrame  {
         
         staffLayout.show(staffContent,"staffUserListPanel");
     }//GEN-LAST:event_staffUserListButtonActionPerformed
+
+    private void adminUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUserListButtonActionPerformed
+        DefaultTableModel adminUserDTable = (DefaultTableModel) adminUserTable.getModel();
+        adminUserDTable.setRowCount(0);
+        for(Object i : db.userDB){           
+            adminUserDTable.addRow(new Object[]{((user)i).getId(),((user)i).getSurname(),((user)i).getName(),((user)i).getEmail(),((user)i).getPhone(),((user)i).getAddress()});
+            
+            }
+        
+        adminLayout.show(adminContent,"adminUserListPanel");
+    }//GEN-LAST:event_adminUserListButtonActionPerformed
 
     
     
@@ -765,9 +847,13 @@ public class main extends javax.swing.JFrame  {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton adminAddUserButton;
     private javax.swing.JPanel adminContent;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
+    private javax.swing.JButton adminUserListButton;
+    private javax.swing.JPanel adminUserListPanel;
+    private javax.swing.JTable adminUserTable;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -800,6 +886,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
     private javax.swing.JTextField loginIDField;
