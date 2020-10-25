@@ -1,6 +1,7 @@
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import java.awt.CardLayout;
+import javax.swing.table.DefaultTableModel;
 
 
 public class main extends javax.swing.JFrame  {
@@ -18,6 +19,7 @@ public class main extends javax.swing.JFrame  {
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomepage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
+        staffLayout.addLayoutComponent(staffUserListPanel, "staffUserListPanel");
         
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
@@ -98,9 +100,13 @@ public class main extends javax.swing.JFrame  {
         staffDetailSurnameLabel = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         staffDetailPhoneLabel = new javax.swing.JLabel();
+        staffUserListPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        staffUserTable = new javax.swing.JTable();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
         staffLogo = new javax.swing.JLabel();
+        staffUserListButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
@@ -182,15 +188,14 @@ public class main extends javax.swing.JFrame  {
                 studentDetailsButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, 20));
 
         studentContent.setLayout(new java.awt.CardLayout());
 
@@ -416,6 +421,32 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.add(staffDetailsPanel, "card2");
 
+        staffUserListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        staffUserTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Surname", "Name", "E-mail"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        staffUserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        staffUserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(staffUserTable);
+
+        staffUserListPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 660, -1));
+
+        staffContent.add(staffUserListPanel, "card4");
+
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
 
         logoutButtonStaff.setText("Logout");
@@ -426,7 +457,7 @@ public class main extends javax.swing.JFrame  {
         });
         mainStaff.add(logoutButtonStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
 
-        staffDetailsButton.setText("staffDetailsButton");
+        staffDetailsButton.setText("Personal Details");
         staffDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 staffDetailsButtonActionPerformed(evt);
@@ -442,6 +473,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStaff.add(staffLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        staffUserListButton.setText("User List");
+        staffUserListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffUserListButtonActionPerformed(evt);
+            }
+        });
+        mainStaff.add(staffUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 130, -1));
 
         jLayeredPane1.add(mainStaff, "card4");
 
@@ -620,6 +659,16 @@ public class main extends javax.swing.JFrame  {
         studentLayout.show(studentContent, "studentHomePage");
     }//GEN-LAST:event_studentLogoMouseClicked
 
+    private void staffUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUserListButtonActionPerformed
+        DefaultTableModel staffUserDTable = (DefaultTableModel) staffUserTable.getModel();
+        for(Object i : db.userDB){           
+            staffUserDTable.addRow(new Object[]{((user)i).getId(),((user)i).getSurname(),((user)i).getName(),((user)i).getEmail()});
+            
+            }
+        
+        staffLayout.show(staffContent,"staffUserListPanel");
+    }//GEN-LAST:event_staffUserListButtonActionPerformed
+
     
     
     /**
@@ -750,6 +799,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
     private javax.swing.JTextField loginIDField;
@@ -773,6 +823,9 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel staffDetailsPanel;
     private javax.swing.JPanel staffHomePage;
     private javax.swing.JLabel staffLogo;
+    private javax.swing.JButton staffUserListButton;
+    private javax.swing.JPanel staffUserListPanel;
+    private javax.swing.JTable staffUserTable;
     private javax.swing.JPanel studentContent;
     private javax.swing.JLabel studentDetailAddressLabel;
     private javax.swing.JLabel studentDetailECTSLabel;
