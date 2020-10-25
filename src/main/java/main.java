@@ -24,6 +24,7 @@ public class main extends javax.swing.JFrame  {
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
         adminLayout.addLayoutComponent(adminUserListPanel, "adminUserListPanel");
+        adminLayout.addLayoutComponent(adminAddUserPanel, "adminAddUserPanel");
         
     }
 
@@ -114,6 +115,8 @@ public class main extends javax.swing.JFrame  {
         adminAddUserButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         adminUserTable = new javax.swing.JTable();
+        adminAddUserPanel = new javax.swing.JPanel();
+        adminBacktoUserListButton = new javax.swing.JButton();
         logoutButtonAdmin = new javax.swing.JButton();
         adminLogo = new javax.swing.JLabel();
         adminUserListButton = new javax.swing.JButton();
@@ -515,6 +518,11 @@ public class main extends javax.swing.JFrame  {
         adminContent.add(adminHomePage, "card2");
 
         adminAddUserButton.setText("Add User");
+        adminAddUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddUserButtonActionPerformed(evt);
+            }
+        });
 
         adminUserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -563,6 +571,32 @@ public class main extends javax.swing.JFrame  {
         );
 
         adminContent.add(adminUserListPanel, "card3");
+
+        adminBacktoUserListButton.setText("Back");
+        adminBacktoUserListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminBacktoUserListButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout adminAddUserPanelLayout = new javax.swing.GroupLayout(adminAddUserPanel);
+        adminAddUserPanel.setLayout(adminAddUserPanelLayout);
+        adminAddUserPanelLayout.setHorizontalGroup(
+            adminAddUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddUserPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminBacktoUserListButton)
+                .addContainerGap(645, Short.MAX_VALUE))
+        );
+        adminAddUserPanelLayout.setVerticalGroup(
+            adminAddUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddUserPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminBacktoUserListButton)
+                .addContainerGap(426, Short.MAX_VALUE))
+        );
+
+        adminContent.add(adminAddUserPanel, "card4");
 
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
@@ -751,6 +785,14 @@ public class main extends javax.swing.JFrame  {
         adminLayout.show(adminContent,"adminUserListPanel");
     }//GEN-LAST:event_adminUserListButtonActionPerformed
 
+    private void adminBacktoUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBacktoUserListButtonActionPerformed
+        this.adminUserListButton.doClick();
+    }//GEN-LAST:event_adminBacktoUserListButtonActionPerformed
+
+    private void adminAddUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddUserButtonActionPerformed
+        adminLayout.show(adminContent,"adminAddUserPanel");
+    }//GEN-LAST:event_adminAddUserButtonActionPerformed
+
     
     
     /**
@@ -810,6 +852,7 @@ public class main extends javax.swing.JFrame  {
                 
                 db.serializeUsers("./data/obj.ser"); 
                 */
+                
             }
         });   
         
@@ -848,6 +891,8 @@ public class main extends javax.swing.JFrame  {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminAddUserButton;
+    private javax.swing.JPanel adminAddUserPanel;
+    private javax.swing.JButton adminBacktoUserListButton;
     private javax.swing.JPanel adminContent;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
