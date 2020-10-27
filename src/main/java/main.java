@@ -1,6 +1,7 @@
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import java.awt.CardLayout;
+import javax.swing.table.DefaultTableModel;
 
 
 public class main extends javax.swing.JFrame  {
@@ -18,10 +19,12 @@ public class main extends javax.swing.JFrame  {
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomepage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
+        staffLayout.addLayoutComponent(staffUserListPanel, "staffUserListPanel");
         
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
-        
+        adminLayout.addLayoutComponent(adminUserListPanel, "adminUserListPanel");
+        adminLayout.addLayoutComponent(adminAddUserPanel, "adminAddUserPanel");
         
     }
 
@@ -98,14 +101,51 @@ public class main extends javax.swing.JFrame  {
         staffDetailSurnameLabel = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         staffDetailPhoneLabel = new javax.swing.JLabel();
+        staffUserListPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        staffUserTable = new javax.swing.JTable();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
         staffLogo = new javax.swing.JLabel();
+        staffUserListButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
+        adminUserListPanel = new javax.swing.JPanel();
+        adminAddUserButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        adminUserTable = new javax.swing.JTable();
+        adminAddUserPanel = new javax.swing.JPanel();
+        adminBacktoUserListButton = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        adminAddStudentPanel = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        adminAddStudentIDField = new javax.swing.JTextField();
+        adminAddStudentSurnameField = new javax.swing.JTextField();
+        adminAddStudentNameField = new javax.swing.JTextField();
+        adminAddStudentPasswordField = new javax.swing.JTextField();
+        adminAddStudentAddressField = new javax.swing.JTextField();
+        adminAddStudentEmailField = new javax.swing.JTextField();
+        adminAddStudentPhoneField = new javax.swing.JTextField();
+        adminAddStudentYearField = new javax.swing.JTextField();
+        adminAddStudentSemesterField = new javax.swing.JTextField();
+        adminAddStudentECTSField = new javax.swing.JTextField();
+        adminAddStudentButton = new javax.swing.JButton();
+        adminAddStudentErrorMessage = new javax.swing.JLabel();
+        adminAddStaffPanel = new javax.swing.JPanel();
+        adminAddAdminPanel = new javax.swing.JPanel();
         logoutButtonAdmin = new javax.swing.JButton();
         adminLogo = new javax.swing.JLabel();
+        adminUserListButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -182,15 +222,14 @@ public class main extends javax.swing.JFrame  {
                 studentDetailsButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, 20));
 
         studentContent.setLayout(new java.awt.CardLayout());
 
@@ -416,6 +455,39 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.add(staffDetailsPanel, "card2");
 
+        staffUserListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        staffUserTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Surname", "Name", "E-mail"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        staffUserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        staffUserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(staffUserTable);
+
+        staffUserListPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 660, -1));
+
+        staffContent.add(staffUserListPanel, "card4");
+
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
 
         logoutButtonStaff.setText("Logout");
@@ -426,7 +498,7 @@ public class main extends javax.swing.JFrame  {
         });
         mainStaff.add(logoutButtonStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
 
-        staffDetailsButton.setText("staffDetailsButton");
+        staffDetailsButton.setText("Personal Details");
         staffDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 staffDetailsButtonActionPerformed(evt);
@@ -442,6 +514,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStaff.add(staffLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        staffUserListButton.setText("User List");
+        staffUserListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffUserListButtonActionPerformed(evt);
+            }
+        });
+        mainStaff.add(staffUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 130, -1));
 
         jLayeredPane1.add(mainStaff, "card4");
 
@@ -463,6 +543,244 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.add(adminHomePage, "card2");
 
+        adminAddUserButton.setText("Add User");
+        adminAddUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddUserButtonActionPerformed(evt);
+            }
+        });
+
+        adminUserTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Surname", "Name", "E-mail", "Phone", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(adminUserTable);
+
+        javax.swing.GroupLayout adminUserListPanelLayout = new javax.swing.GroupLayout(adminUserListPanel);
+        adminUserListPanel.setLayout(adminUserListPanelLayout);
+        adminUserListPanelLayout.setHorizontalGroup(
+            adminUserListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminUserListPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(adminUserListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminAddUserButton)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        adminUserListPanelLayout.setVerticalGroup(
+            adminUserListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminUserListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminAddUserButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        adminContent.add(adminUserListPanel, "card3");
+
+        adminBacktoUserListButton.setText("Back");
+        adminBacktoUserListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminBacktoUserListButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("ID");
+
+        jLabel25.setText("Surname");
+
+        jLabel26.setText("Name");
+
+        jLabel27.setText("Password");
+
+        jLabel28.setText("Address");
+
+        jLabel29.setText("E-mail");
+
+        jLabel30.setText("Phone");
+
+        jLabel31.setText("Year");
+
+        jLabel32.setText("Semester");
+
+        jLabel33.setText("ECTS");
+
+        adminAddStudentYearField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddStudentYearFieldActionPerformed(evt);
+            }
+        });
+
+        adminAddStudentButton.setText("Add Student");
+        adminAddStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddStudentButtonActionPerformed(evt);
+            }
+        });
+
+        adminAddStudentErrorMessage.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout adminAddStudentPanelLayout = new javax.swing.GroupLayout(adminAddStudentPanel);
+        adminAddStudentPanel.setLayout(adminAddStudentPanelLayout);
+        adminAddStudentPanelLayout.setHorizontalGroup(
+            adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(adminAddStudentIDField)
+                    .addComponent(adminAddStudentSurnameField)
+                    .addComponent(adminAddStudentNameField)
+                    .addComponent(adminAddStudentPasswordField)
+                    .addComponent(adminAddStudentAddressField)
+                    .addComponent(adminAddStudentEmailField)
+                    .addComponent(adminAddStudentPhoneField, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
+                .addGap(82, 82, 82)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33))
+                .addGap(26, 26, 26)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(adminAddStudentYearField)
+                    .addComponent(adminAddStudentSemesterField)
+                    .addComponent(adminAddStudentECTSField, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                .addGap(67, 67, 67))
+            .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(adminAddStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addComponent(adminAddStudentErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(160, Short.MAX_VALUE))
+        );
+        adminAddStudentPanelLayout.setVerticalGroup(
+            adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel31)
+                    .addComponent(adminAddStudentIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminAddStudentYearField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel32)
+                    .addComponent(adminAddStudentSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminAddStudentSemesterField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel33)
+                    .addComponent(adminAddStudentNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminAddStudentECTSField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(adminAddStudentPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(adminAddStudentAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(adminAddStudentEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(adminAddStudentPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(adminAddStudentButton)
+                .addGap(18, 18, 18)
+                .addComponent(adminAddStudentErrorMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Add Student", adminAddStudentPanel);
+
+        javax.swing.GroupLayout adminAddStaffPanelLayout = new javax.swing.GroupLayout(adminAddStaffPanel);
+        adminAddStaffPanel.setLayout(adminAddStaffPanelLayout);
+        adminAddStaffPanelLayout.setHorizontalGroup(
+            adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 685, Short.MAX_VALUE)
+        );
+        adminAddStaffPanelLayout.setVerticalGroup(
+            adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 381, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("AddStaff", adminAddStaffPanel);
+
+        javax.swing.GroupLayout adminAddAdminPanelLayout = new javax.swing.GroupLayout(adminAddAdminPanel);
+        adminAddAdminPanel.setLayout(adminAddAdminPanelLayout);
+        adminAddAdminPanelLayout.setHorizontalGroup(
+            adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 685, Short.MAX_VALUE)
+        );
+        adminAddAdminPanelLayout.setVerticalGroup(
+            adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 381, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("AddAdmin", adminAddAdminPanel);
+
+        javax.swing.GroupLayout adminAddUserPanelLayout = new javax.swing.GroupLayout(adminAddUserPanel);
+        adminAddUserPanel.setLayout(adminAddUserPanelLayout);
+        adminAddUserPanelLayout.setHorizontalGroup(
+            adminAddUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddUserPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminAddUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1)
+                    .addGroup(adminAddUserPanelLayout.createSequentialGroup()
+                        .addComponent(adminBacktoUserListButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        adminAddUserPanelLayout.setVerticalGroup(
+            adminAddUserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddUserPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminBacktoUserListButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+
+        adminContent.add(adminAddUserPanel, "card4");
+
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         logoutButtonAdmin.setText("Logout");
@@ -481,6 +799,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(adminLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        adminUserListButton.setText("User List");
+        adminUserListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminUserListButtonActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(adminUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, -1));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -620,6 +946,51 @@ public class main extends javax.swing.JFrame  {
         studentLayout.show(studentContent, "studentHomePage");
     }//GEN-LAST:event_studentLogoMouseClicked
 
+    private void staffUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffUserListButtonActionPerformed
+        DefaultTableModel staffUserDTable = (DefaultTableModel) staffUserTable.getModel();
+        staffUserDTable.setRowCount(0);
+        for(Object i : db.userDB){           
+            staffUserDTable.addRow(new Object[]{((user)i).getId(),((user)i).getSurname(),((user)i).getName(),((user)i).getEmail()});
+            
+            }
+        
+        staffLayout.show(staffContent,"staffUserListPanel");
+    }//GEN-LAST:event_staffUserListButtonActionPerformed
+
+    private void adminUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUserListButtonActionPerformed
+        DefaultTableModel adminUserDTable = (DefaultTableModel) adminUserTable.getModel();
+        adminUserDTable.setRowCount(0);
+        for(Object i : db.userDB){           
+            adminUserDTable.addRow(new Object[]{((user)i).getId(),((user)i).getSurname(),((user)i).getName(),((user)i).getEmail(),((user)i).getPhone(),((user)i).getAddress()});
+            
+            }
+        
+        adminLayout.show(adminContent,"adminUserListPanel");
+    }//GEN-LAST:event_adminUserListButtonActionPerformed
+
+    private void adminBacktoUserListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBacktoUserListButtonActionPerformed
+        this.adminUserListButton.doClick();
+    }//GEN-LAST:event_adminBacktoUserListButtonActionPerformed
+
+    private void adminAddUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddUserButtonActionPerformed
+        adminLayout.show(adminContent,"adminAddUserPanel");
+    }//GEN-LAST:event_adminAddUserButtonActionPerformed
+
+    private void adminAddStudentYearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddStudentYearFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminAddStudentYearFieldActionPerformed
+
+    private void adminAddStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddStudentButtonActionPerformed
+        if(adminAddStudentIDField.equals("") || adminAddStudentSurnameField.equals("") || adminAddStudentNameField.equals("") || adminAddStudentPasswordField.equals("") || adminAddStudentAddressField.equals("") || adminAddStudentEmailField.equals("") || adminAddStudentNameField.equals("") || adminAddStudentPhoneField.equals("") || adminAddStudentYearField.equals("") || adminAddStudentSemesterField.equals("") || adminAddStudentECTSField.equals(""))
+            adminAddStudentErrorMessage.setText("Please fill in all the fields");
+        else
+        {
+            db.userDB.add(new student(adminAddStudentIDField.getText(),adminAddStudentNameField.getText(),adminAddStudentSurnameField.getText(),adminAddStudentPasswordField.getText(),adminAddStudentAddressField.getText(),adminAddStudentEmailField.getText(),Integer.valueOf(adminAddStudentPhoneField.getText()),Integer.valueOf(adminAddStudentYearField.getText()),adminAddStudentSemesterField.getText(),Integer.valueOf(adminAddStudentECTSField.getText())));
+            adminAddStudentErrorMessage.setText("");
+            db.serializeUsers("./data/obj.ser");
+        }                 
+    }//GEN-LAST:event_adminAddStudentButtonActionPerformed
+
     
     
     /**
@@ -679,6 +1050,7 @@ public class main extends javax.swing.JFrame  {
                 
                 db.serializeUsers("./data/obj.ser"); 
                 */
+                
             }
         });   
         
@@ -716,9 +1088,30 @@ public class main extends javax.swing.JFrame  {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel adminAddAdminPanel;
+    private javax.swing.JPanel adminAddStaffPanel;
+    private javax.swing.JTextField adminAddStudentAddressField;
+    private javax.swing.JButton adminAddStudentButton;
+    private javax.swing.JTextField adminAddStudentECTSField;
+    private javax.swing.JTextField adminAddStudentEmailField;
+    private javax.swing.JLabel adminAddStudentErrorMessage;
+    private javax.swing.JTextField adminAddStudentIDField;
+    private javax.swing.JTextField adminAddStudentNameField;
+    private javax.swing.JPanel adminAddStudentPanel;
+    private javax.swing.JTextField adminAddStudentPasswordField;
+    private javax.swing.JTextField adminAddStudentPhoneField;
+    private javax.swing.JTextField adminAddStudentSemesterField;
+    private javax.swing.JTextField adminAddStudentSurnameField;
+    private javax.swing.JTextField adminAddStudentYearField;
+    private javax.swing.JButton adminAddUserButton;
+    private javax.swing.JPanel adminAddUserPanel;
+    private javax.swing.JButton adminBacktoUserListButton;
     private javax.swing.JPanel adminContent;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
+    private javax.swing.JButton adminUserListButton;
+    private javax.swing.JPanel adminUserListPanel;
+    private javax.swing.JTable adminUserTable;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -735,8 +1128,18 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -750,6 +1153,9 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
     private javax.swing.JTextField loginIDField;
@@ -773,6 +1179,9 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel staffDetailsPanel;
     private javax.swing.JPanel staffHomePage;
     private javax.swing.JLabel staffLogo;
+    private javax.swing.JButton staffUserListButton;
+    private javax.swing.JPanel staffUserListPanel;
+    private javax.swing.JTable staffUserTable;
     private javax.swing.JPanel studentContent;
     private javax.swing.JLabel studentDetailAddressLabel;
     private javax.swing.JLabel studentDetailECTSLabel;
