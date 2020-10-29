@@ -55,12 +55,24 @@ public void serializeUsers(String filePath){
          out.writeObject(userDB);
          out.close();
          fileOut.close();
-         System.out.printf("Serialized data is saved in ./data/obj.ser");
+         System.out.printf("Serialized data is saved");
       } catch (IOException i) {
          i.printStackTrace();
       }
    }
 
+public void serializeCourses(String filePath){
+    try {
+         FileOutputStream fileOut = new FileOutputStream(filePath);
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(courseDB);
+         out.close();
+         fileOut.close();
+         System.out.printf("Serialized data is saved");
+      } catch (IOException i) {
+         i.printStackTrace();
+      }
+   }
 
 
 
@@ -82,6 +94,22 @@ public void deserializeUsers(String filePath){
       }
 }
 
+public void deserializeCourses(String filePath){ 
+      try {
+         FileInputStream fileIn = new FileInputStream(filePath);
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         courseDB = (ArrayList<course>)in.readObject();
+         in.close();
+         fileIn.close();
+      } catch (IOException i) {
+         i.printStackTrace();
+         return;
+      } catch (ClassNotFoundException c) {
+         System.out.println("Class not found");
+         c.printStackTrace();
+         return;
+      }
+}
       
 }    
       

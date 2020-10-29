@@ -25,6 +25,9 @@ public class main extends javax.swing.JFrame  {
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
         adminLayout.addLayoutComponent(adminUserListPanel, "adminUserListPanel");
         adminLayout.addLayoutComponent(adminAddUserPanel, "adminAddUserPanel");
+        adminLayout.addLayoutComponent(adminCourseListPanel, "adminCourseListPanel");
+        adminLayout.addLayoutComponent(adminAddCoursePanel, "adminAddCoursePanel");
+
         
     }
 
@@ -143,9 +146,31 @@ public class main extends javax.swing.JFrame  {
         adminAddStudentErrorMessage = new javax.swing.JLabel();
         adminAddStaffPanel = new javax.swing.JPanel();
         adminAddAdminPanel = new javax.swing.JPanel();
+        adminCourseListPanel = new javax.swing.JPanel();
+        adminAddCourseButton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        adminCourseTable = new javax.swing.JTable();
+        adminAddCoursePanel = new javax.swing.JPanel();
+        adminBackToCourseListButton = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        adminAddCourseIDField = new javax.swing.JTextField();
+        adminAddCourseNameField = new javax.swing.JTextField();
+        adminAddCourseECTSField = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        adminAddCourseInfoField = new javax.swing.JTextArea();
+        adminAddCourseLecturerField = new javax.swing.JComboBox<>();
+        adminAddCourseFinalButton = new javax.swing.JButton();
+        adminAddCourseSemesterField = new javax.swing.JComboBox<>();
+        adminAddCourseErrorMessage = new javax.swing.JLabel();
         logoutButtonAdmin = new javax.swing.JButton();
         adminLogo = new javax.swing.JLabel();
         adminUserListButton = new javax.swing.JButton();
+        adminCourseListButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -781,6 +806,161 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.add(adminAddUserPanel, "card4");
 
+        adminAddCourseButton.setText("Add Course");
+        adminAddCourseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddCourseButtonActionPerformed(evt);
+            }
+        });
+
+        adminCourseTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Semester", "ECTS", "Lecturer"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(adminCourseTable);
+
+        javax.swing.GroupLayout adminCourseListPanelLayout = new javax.swing.GroupLayout(adminCourseListPanel);
+        adminCourseListPanel.setLayout(adminCourseListPanelLayout);
+        adminCourseListPanelLayout.setHorizontalGroup(
+            adminCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminCourseListPanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(adminCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminAddCourseButton)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        adminCourseListPanelLayout.setVerticalGroup(
+            adminCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminCourseListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adminAddCourseButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        adminContent.add(adminCourseListPanel, "card5");
+
+        adminBackToCourseListButton.setText("Back");
+        adminBackToCourseListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminBackToCourseListButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel34.setText("ID");
+
+        jLabel35.setText("Name");
+
+        jLabel36.setText("Semester");
+
+        jLabel37.setText("ECTS");
+
+        jLabel38.setText("Lecturer");
+
+        jLabel39.setText("Info");
+
+        adminAddCourseInfoField.setColumns(20);
+        adminAddCourseInfoField.setRows(5);
+        jScrollPane3.setViewportView(adminAddCourseInfoField);
+
+        adminAddCourseFinalButton.setText("Add Course");
+        adminAddCourseFinalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddCourseFinalButtonActionPerformed(evt);
+            }
+        });
+
+        adminAddCourseSemesterField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H" }));
+
+        adminAddCourseErrorMessage.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout adminAddCoursePanelLayout = new javax.swing.GroupLayout(adminAddCoursePanel);
+        adminAddCoursePanel.setLayout(adminAddCoursePanelLayout);
+        adminAddCoursePanelLayout.setHorizontalGroup(
+            adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddCoursePanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminAddCoursePanelLayout.createSequentialGroup()
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adminBackToCourseListButton)
+                            .addGroup(adminAddCoursePanelLayout.createSequentialGroup()
+                                .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel38))
+                                .addGap(45, 45, 45)
+                                .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(adminAddCourseErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(adminAddCourseNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(adminAddCourseIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(adminAddCourseECTSField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+                                        .addComponent(adminAddCourseLecturerField, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(adminAddCourseSemesterField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(261, Short.MAX_VALUE))
+                    .addGroup(adminAddCoursePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(adminAddCourseFinalButton)
+                        .addGap(96, 96, 96))))
+        );
+        adminAddCoursePanelLayout.setVerticalGroup(
+            adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminAddCoursePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(adminAddCourseFinalButton)
+                    .addGroup(adminAddCoursePanelLayout.createSequentialGroup()
+                        .addComponent(adminBackToCourseListButton)
+                        .addGap(18, 18, 18)
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(adminAddCourseIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel35)
+                            .addComponent(adminAddCourseNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(adminAddCourseSemesterField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel37)
+                            .addComponent(adminAddCourseECTSField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17)
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel38)
+                            .addComponent(adminAddCourseLecturerField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(adminAddCoursePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel39)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(adminAddCourseErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        adminContent.add(adminAddCoursePanel, "card6");
+
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         logoutButtonAdmin.setText("Logout");
@@ -807,6 +987,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(adminUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, -1));
+
+        adminCourseListButton.setText("Course List");
+        adminCourseListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminCourseListButtonActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(adminCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 120, -1));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -991,6 +1179,65 @@ public class main extends javax.swing.JFrame  {
         }                 
     }//GEN-LAST:event_adminAddStudentButtonActionPerformed
 
+    private void adminBackToCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBackToCourseListButtonActionPerformed
+        this.adminCourseListButton.doClick();
+    }//GEN-LAST:event_adminBackToCourseListButtonActionPerformed
+
+    private void adminCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCourseListButtonActionPerformed
+        DefaultTableModel adminCourseDTable = (DefaultTableModel) adminCourseTable.getModel();
+        adminCourseDTable.setRowCount(0);
+        for(Object i : db.courseDB){
+            adminCourseDTable.addRow(new Object[]{((course)i).getId(),((course)i).getName(),((course)i).getSemester(),((course)i).getECTS(),((course)i).getTeacher().getSurname() + " " + ((course)i).getTeacher().getName()});
+        }
+        adminLayout.show(adminContent,"adminCourseListPanel");
+        
+    }//GEN-LAST:event_adminCourseListButtonActionPerformed
+
+     
+    private void adminAddCourseFinalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddCourseFinalButtonActionPerformed
+        staff tempstaff=null; 
+        if(adminAddCourseIDField.getText().equals("") || adminAddCourseNameField.getText().equals("") || adminAddCourseECTSField.getText().equals("") || adminAddCourseInfoField.getText().equals(""))
+            adminAddCourseErrorMessage.setText("Please fill in all the fields");
+        else
+        {
+            int index = 0;
+            String staffID="";
+            
+            do{
+                staffID+=adminAddCourseLecturerField.getSelectedItem().toString().charAt(index);
+                index++;
+            }
+            while(adminAddCourseLecturerField.getSelectedItem().toString().charAt(index) != ' ');
+            for (Object i : db.userDB){
+                if(((user)i).getId().equals(staffID)){
+                    tempstaff=(staff)i;
+                    break;
+                }
+            }
+        db.courseDB.add(new course(adminAddCourseIDField.getText(),adminAddCourseNameField.getText(),adminAddCourseSemesterField.getSelectedItem().toString(),Integer.valueOf(adminAddCourseECTSField.getText()),tempstaff,adminAddCourseInfoField.getText()));
+        adminAddCourseIDField.setText("");
+        adminAddCourseNameField.setText("");
+        adminAddCourseSemesterField.setSelectedIndex(0);
+        adminAddCourseECTSField.setText("");
+        adminAddCourseInfoField.setText("");
+        adminAddCourseErrorMessage.setText("");
+        db.serializeCourses("./data/courses.ser");    
+                
+        }
+            
+        
+    }//GEN-LAST:event_adminAddCourseFinalButtonActionPerformed
+
+    private void adminAddCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddCourseButtonActionPerformed
+        adminAddCourseLecturerField.removeAllItems();
+        for (Object i : db.userDB){
+            if(i instanceof staff){
+                adminAddCourseLecturerField.addItem(((staff)i).getId() + " " + ((staff)i).getSurname() + " " + ((staff)i).getName());
+            }
+        }
+        adminLayout.show(adminContent,"adminAddCoursePanel");
+    }//GEN-LAST:event_adminAddCourseButtonActionPerformed
+    
     
     
     /**
@@ -1033,6 +1280,7 @@ public class main extends javax.swing.JFrame  {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main().setVisible(true);
+                db.deserializeCourses("./data/courses.ser");
                 db.deserializeUsers("./data/obj.ser");
                 /*
                 student s1 = new student("123456","Georgios","Pavlidis","123456789","Papandreou 5","GeorgePaul@gmail.com",694123123,2017,"H",160);
@@ -1050,36 +1298,26 @@ public class main extends javax.swing.JFrame  {
                 
                 db.serializeUsers("./data/obj.ser"); 
                 */
+                /*
+                staff s2= new staff("741852963","Mike","Apostolidis","15948756","Vasilis Olgas 90","MikeApostolidis@gmail.com",694789123);
+                course c1 = new course("101","Java 1","A",6,s2,"Info 2");
+                course c2 = new course("201","Java 2","B",6,s2,"Info 2");
+                
+                
+                db.courseDB.add(c1);
+                db.courseDB.add(c2);
+                
+                
+                db.serializeCourses("./data/courses.ser");
+                */
+                
+                
+               
                 
             }
         });   
         
         
-        
-        //Example write to userlist      
-        
-        /*
-        student s1 = new student("123456","Pavlidis","123456789");
-        staff s2= new staff("741852963","Mike","15948756");
-        /*
-        db.writeUser(s1.toString());
-        db.writeUser(s2.toString());
-        
-        //Example Serialize List
-        
-        db.addUserList(s1);
-        db.addUserList(s2);
-        db.serializeToFile(db.list);
-        
-        //Example Load Serialized List
-        
-        
-        
-        
-        for(Object i : db.userDB){
-            System.out.println(((user)i).toString());
-        }
-        */
         
     }
     
@@ -1089,6 +1327,16 @@ public class main extends javax.swing.JFrame  {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adminAddAdminPanel;
+    private javax.swing.JButton adminAddCourseButton;
+    private javax.swing.JTextField adminAddCourseECTSField;
+    private javax.swing.JLabel adminAddCourseErrorMessage;
+    private javax.swing.JButton adminAddCourseFinalButton;
+    private javax.swing.JTextField adminAddCourseIDField;
+    private javax.swing.JTextArea adminAddCourseInfoField;
+    private javax.swing.JComboBox<String> adminAddCourseLecturerField;
+    private javax.swing.JTextField adminAddCourseNameField;
+    private javax.swing.JPanel adminAddCoursePanel;
+    private javax.swing.JComboBox<String> adminAddCourseSemesterField;
     private javax.swing.JPanel adminAddStaffPanel;
     private javax.swing.JTextField adminAddStudentAddressField;
     private javax.swing.JButton adminAddStudentButton;
@@ -1105,8 +1353,12 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JTextField adminAddStudentYearField;
     private javax.swing.JButton adminAddUserButton;
     private javax.swing.JPanel adminAddUserPanel;
+    private javax.swing.JButton adminBackToCourseListButton;
     private javax.swing.JButton adminBacktoUserListButton;
     private javax.swing.JPanel adminContent;
+    private javax.swing.JButton adminCourseListButton;
+    private javax.swing.JPanel adminCourseListPanel;
+    private javax.swing.JTable adminCourseTable;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
     private javax.swing.JButton adminUserListButton;
@@ -1140,6 +1392,12 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1155,6 +1413,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
