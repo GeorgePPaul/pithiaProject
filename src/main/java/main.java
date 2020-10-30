@@ -17,7 +17,7 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
-        staffLayout.addLayoutComponent(staffHomePage,"staffHomepage");
+        staffLayout.addLayoutComponent(staffHomePage,"staffHomePage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
         staffLayout.addLayoutComponent(staffUserListPanel, "staffUserListPanel");
         
