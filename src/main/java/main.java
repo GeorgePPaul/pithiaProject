@@ -87,8 +87,6 @@ public class main extends javax.swing.JFrame  {
         studentLogo = new javax.swing.JLabel();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
-        staffHomePage = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
         staffDetailsPanel = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -107,13 +105,24 @@ public class main extends javax.swing.JFrame  {
         staffUserListPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         staffUserTable = new javax.swing.JTable();
+        staffHomePage = new javax.swing.JPanel();
+        staffHomeLogo = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        staffLogo = new javax.swing.JLabel();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
-        staffLogo = new javax.swing.JLabel();
         staffUserListButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
+        adminHomeLogo = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         adminUserListPanel = new javax.swing.JPanel();
         adminAddUserButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -167,8 +176,8 @@ public class main extends javax.swing.JFrame  {
         adminAddCourseFinalButton = new javax.swing.JButton();
         adminAddCourseSemesterField = new javax.swing.JComboBox<>();
         adminAddCourseErrorMessage = new javax.swing.JLabel();
-        logoutButtonAdmin = new javax.swing.JButton();
         adminLogo = new javax.swing.JLabel();
+        logoutButtonAdmin = new javax.swing.JButton();
         adminUserListButton = new javax.swing.JButton();
         adminCourseListButton = new javax.swing.JButton();
 
@@ -421,27 +430,6 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.setLayout(new java.awt.CardLayout());
 
-        jLabel20.setText("HOME PAGE");
-
-        javax.swing.GroupLayout staffHomePageLayout = new javax.swing.GroupLayout(staffHomePage);
-        staffHomePage.setLayout(staffHomePageLayout);
-        staffHomePageLayout.setHorizontalGroup(
-            staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffHomePageLayout.createSequentialGroup()
-                .addContainerGap(341, Short.MAX_VALUE)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(284, 284, 284))
-        );
-        staffHomePageLayout.setVerticalGroup(
-            staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(staffHomePageLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel20)
-                .addContainerGap(286, Short.MAX_VALUE))
-        );
-
-        staffContent.add(staffHomePage, "card3");
-
         staffDetailsPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 255));
@@ -513,7 +501,67 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.add(staffUserListPanel, "card4");
 
+        jLabel20.setText("A Java Swing project by");
+
+        jLabel40.setText("-Apostolidis Mixalhs-");
+
+        jLabel41.setText("-Kaloudis Alexis-");
+
+        jLabel42.setText("-Paulidis Giorgos-");
+
+        javax.swing.GroupLayout staffHomePageLayout = new javax.swing.GroupLayout(staffHomePage);
+        staffHomePage.setLayout(staffHomePageLayout);
+        staffHomePageLayout.setHorizontalGroup(
+            staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(staffHomePageLayout.createSequentialGroup()
+                .addGroup(staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(staffHomePageLayout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(jLabel20))
+                    .addGroup(staffHomePageLayout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addGroup(staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+                            .addGroup(staffHomePageLayout.createSequentialGroup()
+                                .addGroup(staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel41)
+                                    .addComponent(jLabel42))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(staffHomePageLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(staffHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+        staffHomePageLayout.setVerticalGroup(
+            staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffHomePageLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(staffHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel42)
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+
+        staffHomeLogo.setIcon(icon);
+
+        staffContent.add(staffHomePage, "card3");
+
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
+
+        ImageIcon icon2 = new ImageIcon("./images/homePageLogo.png");
+        staffLogo.setIcon(icon2);
+        staffLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                staffLogoMouseClicked(evt);
+            }
+        });
+        mainStaff.add(staffLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
 
         logoutButtonStaff.setText("Logout");
         logoutButtonStaff.addActionListener(new java.awt.event.ActionListener() {
@@ -531,15 +579,6 @@ public class main extends javax.swing.JFrame  {
         });
         mainStaff.add(staffDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
 
-        ImageIcon icon2 = new ImageIcon("./images/logo-Main.png");
-        staffLogo.setIcon(icon2);
-        staffLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                staffLogoMouseClicked(evt);
-            }
-        });
-        mainStaff.add(staffLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
-
         staffUserListButton.setText("User List");
         staffUserListButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -555,16 +594,50 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.setLayout(new java.awt.CardLayout());
 
+        jLabel43.setText("A Java Swing Project by");
+
+        jLabel44.setText("-Apostolidis Mixalhs-");
+
+        jLabel45.setText("-Kaloudis Alexandros-");
+
+        jLabel46.setText("-Paulidis Giorgos-");
+
         javax.swing.GroupLayout adminHomePageLayout = new javax.swing.GroupLayout(adminHomePage);
         adminHomePage.setLayout(adminHomePageLayout);
         adminHomePageLayout.setHorizontalGroup(
             adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(adminHomePageLayout.createSequentialGroup()
+                .addGroup(adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminHomePageLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(adminHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(adminHomePageLayout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addGroup(adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         adminHomePageLayout.setVerticalGroup(
             adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(adminHomePageLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(adminHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel43)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel44)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel45)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel46)
+                .addContainerGap(95, Short.MAX_VALUE))
         );
+
+        adminHomeLogo.setIcon(icon);
 
         adminContent.add(adminHomePage, "card2");
 
@@ -963,15 +1036,7 @@ public class main extends javax.swing.JFrame  {
 
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
-        logoutButtonAdmin.setText("Logout");
-        logoutButtonAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutButtonAdminActionPerformed(evt);
-            }
-        });
-        mainAdmin.add(logoutButtonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
-
-        ImageIcon icon3 = new ImageIcon("./images/logo-Main.png");
+        ImageIcon icon3 = new ImageIcon("./images/homePageLogo.png");
         adminLogo.setIcon(icon3);
         adminLogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -979,6 +1044,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(adminLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 50));
+
+        logoutButtonAdmin.setText("Logout");
+        logoutButtonAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonAdminActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(logoutButtonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 40));
 
         adminUserListButton.setText("User List");
         adminUserListButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1026,11 +1099,13 @@ public class main extends javax.swing.JFrame  {
                 else if(i instanceof staff){
                     loginScreen.setVisible(false);
                     mainStaff.setVisible(true);
+                    staffLayout.show(staffContent,"staffHomePage");
                     
                 }
                 else if(i instanceof administration){
                     loginScreen.setVisible(false);
                     mainAdmin.setVisible(true);
+                    adminLayout.show(adminContent,"adminHomePage");
                 }
                 loginIDField.setText("");
                 loginPasswordField.setText("");
@@ -1125,7 +1200,7 @@ public class main extends javax.swing.JFrame  {
     }//GEN-LAST:event_adminLogoMouseClicked
 
     private void staffLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffLogoMouseClicked
-        // go tp staff home page
+        // go to staff home page
         staffLayout.show(staffContent,"staffHomePage");
     }//GEN-LAST:event_staffLogoMouseClicked
 
@@ -1359,6 +1434,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton adminCourseListButton;
     private javax.swing.JPanel adminCourseListPanel;
     private javax.swing.JTable adminCourseTable;
+    private javax.swing.JLabel adminHomeLogo;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
     private javax.swing.JButton adminUserListButton;
@@ -1399,6 +1475,13 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1437,6 +1520,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel staffDetailSurnameLabel;
     private javax.swing.JButton staffDetailsButton;
     private javax.swing.JPanel staffDetailsPanel;
+    private javax.swing.JLabel staffHomeLogo;
     private javax.swing.JPanel staffHomePage;
     private javax.swing.JLabel staffLogo;
     private javax.swing.JButton staffUserListButton;
