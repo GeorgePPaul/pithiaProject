@@ -90,7 +90,11 @@ public class main extends javax.swing.JFrame  {
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         staffHomePage = new javax.swing.JPanel();
+        staffHomeLogo = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         staffDetailsPanel = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -116,6 +120,11 @@ public class main extends javax.swing.JFrame  {
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
+        adminHomeLogo = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         adminUserListPanel = new javax.swing.JPanel();
         adminAddUserButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -422,23 +431,53 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.setLayout(new java.awt.CardLayout());
 
-        jLabel20.setText("HOME PAGE");
+        staffHomeLogo.setIcon(icon);
+
+        jLabel20.setText("A Java Swing project by:");
+
+        jLabel40.setText("- Apostolidis Mixalis ");
+
+        jLabel41.setText("- Kaloudis Alexandros");
+
+        jLabel42.setText("- Pavlidis Giorgos");
 
         javax.swing.GroupLayout staffHomePageLayout = new javax.swing.GroupLayout(staffHomePage);
         staffHomePage.setLayout(staffHomePageLayout);
         staffHomePageLayout.setHorizontalGroup(
             staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffHomePageLayout.createSequentialGroup()
-                .addContainerGap(341, Short.MAX_VALUE)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(284, 284, 284))
+                .addContainerGap(86, Short.MAX_VALUE)
+                .addComponent(staffHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(staffHomePageLayout.createSequentialGroup()
+                .addGroup(staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(staffHomePageLayout.createSequentialGroup()
+                        .addGap(286, 286, 286)
+                        .addGroup(staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel40)
+                            .addGroup(staffHomePageLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel42))))
+                    .addGroup(staffHomePageLayout.createSequentialGroup()
+                        .addGap(278, 278, 278)
+                        .addComponent(jLabel20)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         staffHomePageLayout.setVerticalGroup(
             staffHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(staffHomePageLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addGap(20, 20, 20)
+                .addComponent(staffHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel20)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel40)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel41)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel42)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         staffContent.add(staffHomePage, "card3");
@@ -555,15 +594,53 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.setLayout(new java.awt.CardLayout());
 
+        adminHomeLogo.setIcon(icon);
+
+        jLabel43.setText("A Java Swing project by:");
+
+        jLabel44.setText("- Apostolidis Mixalis");
+
+        jLabel45.setText("- Kaloudis Alexandros");
+
+        jLabel46.setText("- Pavlidis Giorgos");
+
         javax.swing.GroupLayout adminHomePageLayout = new javax.swing.GroupLayout(adminHomePage);
         adminHomePage.setLayout(adminHomePageLayout);
         adminHomePageLayout.setHorizontalGroup(
             adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminHomePageLayout.createSequentialGroup()
+                .addContainerGap(95, Short.MAX_VALUE)
+                .addComponent(adminHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(adminHomePageLayout.createSequentialGroup()
+                .addGroup(adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminHomePageLayout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addGroup(adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel45)
+                            .addGroup(adminHomePageLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel46))))
+                    .addGroup(adminHomePageLayout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(jLabel43)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         adminHomePageLayout.setVerticalGroup(
             adminHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(adminHomePageLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(adminHomeLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel43)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel44)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel45)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel46)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         adminContent.add(adminHomePage, "card2");
@@ -1361,6 +1438,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton adminCourseListButton;
     private javax.swing.JPanel adminCourseListPanel;
     private javax.swing.JTable adminCourseTable;
+    private javax.swing.JLabel adminHomeLogo;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
     private javax.swing.JButton adminUserListButton;
@@ -1401,6 +1479,13 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1439,6 +1524,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel staffDetailSurnameLabel;
     private javax.swing.JButton staffDetailsButton;
     private javax.swing.JPanel staffDetailsPanel;
+    private javax.swing.JLabel staffHomeLogo;
     private javax.swing.JPanel staffHomePage;
     private javax.swing.JLabel staffLogo;
     private javax.swing.JButton staffUserListButton;
