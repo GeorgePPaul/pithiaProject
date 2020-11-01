@@ -183,7 +183,6 @@ public class main extends javax.swing.JFrame  {
         adminLogo = new javax.swing.JLabel();
         adminUserListButton = new javax.swing.JButton();
         adminCourseListButton = new javax.swing.JButton();
-        forgotPasswordPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -1084,26 +1083,6 @@ public class main extends javax.swing.JFrame  {
 
         jLayeredPane1.add(mainAdmin, "card5");
 
-        forgotPasswordPanel.setBackground(new java.awt.Color(153, 153, 153));
-        forgotPasswordPanel.setAlignmentX(0.0F);
-        forgotPasswordPanel.setAlignmentY(0.0F);
-        forgotPasswordPanel.setMinimumSize(new java.awt.Dimension(850, 460));
-        forgotPasswordPanel.setName(""); // NOI18N
-        forgotPasswordPanel.setPreferredSize(new java.awt.Dimension(850, 460));
-
-        javax.swing.GroupLayout forgotPasswordPanelLayout = new javax.swing.GroupLayout(forgotPasswordPanel);
-        forgotPasswordPanel.setLayout(forgotPasswordPanelLayout);
-        forgotPasswordPanelLayout.setHorizontalGroup(
-            forgotPasswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
-        );
-        forgotPasswordPanelLayout.setVerticalGroup(
-            forgotPasswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-        );
-
-        jLayeredPane1.add(forgotPasswordPanel, "card6");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1479,7 +1458,6 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel adminUserListPanel;
     private javax.swing.JTable adminUserTable;
     private javax.swing.JLabel forgotPassw;
-    private javax.swing.JPanel forgotPasswordPanel;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
