@@ -51,6 +51,7 @@ public class main extends javax.swing.JFrame  {
         loginButton = new javax.swing.JButton();
         loginLogo = new javax.swing.JLabel();
         loginErrorMessage = new javax.swing.JLabel();
+        forgotPassw = new javax.swing.JLabel();
         mainStudent = new javax.swing.JPanel();
         logoutButtonStudent = new javax.swing.JButton();
         studentDetailsButton = new javax.swing.JButton();
@@ -182,6 +183,7 @@ public class main extends javax.swing.JFrame  {
         adminLogo = new javax.swing.JLabel();
         adminUserListButton = new javax.swing.JButton();
         adminCourseListButton = new javax.swing.JButton();
+        forgotPasswordPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -238,6 +240,14 @@ public class main extends javax.swing.JFrame  {
 
         loginErrorMessage.setForeground(new java.awt.Color(255, 0, 0));
         loginScreen.add(loginErrorMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 330, 20));
+
+        forgotPassw.setText("ξέχασες τον κωδικό;");
+        forgotPassw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                forgotPasswMouseClicked(evt);
+            }
+        });
+        loginScreen.add(forgotPassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, -1, -1));
 
         jLayeredPane1.add(loginScreen, "card2");
 
@@ -1074,6 +1084,26 @@ public class main extends javax.swing.JFrame  {
 
         jLayeredPane1.add(mainAdmin, "card5");
 
+        forgotPasswordPanel.setBackground(new java.awt.Color(153, 153, 153));
+        forgotPasswordPanel.setAlignmentX(0.0F);
+        forgotPasswordPanel.setAlignmentY(0.0F);
+        forgotPasswordPanel.setMinimumSize(new java.awt.Dimension(850, 460));
+        forgotPasswordPanel.setName(""); // NOI18N
+        forgotPasswordPanel.setPreferredSize(new java.awt.Dimension(850, 460));
+
+        javax.swing.GroupLayout forgotPasswordPanelLayout = new javax.swing.GroupLayout(forgotPasswordPanel);
+        forgotPasswordPanel.setLayout(forgotPasswordPanelLayout);
+        forgotPasswordPanelLayout.setHorizontalGroup(
+            forgotPasswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 850, Short.MAX_VALUE)
+        );
+        forgotPasswordPanelLayout.setVerticalGroup(
+            forgotPasswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+
+        jLayeredPane1.add(forgotPasswordPanel, "card6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1315,6 +1345,10 @@ public class main extends javax.swing.JFrame  {
         }
         adminLayout.show(adminContent,"adminAddCoursePanel");
     }//GEN-LAST:event_adminAddCourseButtonActionPerformed
+
+    private void forgotPasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotPasswMouseClicked
+        //
+    }//GEN-LAST:event_forgotPasswMouseClicked
     
     
     
@@ -1444,6 +1478,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton adminUserListButton;
     private javax.swing.JPanel adminUserListPanel;
     private javax.swing.JTable adminUserTable;
+    private javax.swing.JLabel forgotPassw;
+    private javax.swing.JPanel forgotPasswordPanel;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
