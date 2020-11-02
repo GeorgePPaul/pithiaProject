@@ -17,6 +17,7 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
         studentLayout.addLayoutComponent(studentDetailsPanel, "studentDetailsPanel");
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
+        studentLayout.addLayoutComponent(changePassword,"changePassword");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomePage");
@@ -51,7 +52,6 @@ public class main extends javax.swing.JFrame  {
         loginButton = new javax.swing.JButton();
         loginLogo = new javax.swing.JLabel();
         loginErrorMessage = new javax.swing.JLabel();
-        forgotPassw = new javax.swing.JLabel();
         mainStudent = new javax.swing.JPanel();
         logoutButtonStudent = new javax.swing.JButton();
         studentDetailsButton = new javax.swing.JButton();
@@ -87,7 +87,13 @@ public class main extends javax.swing.JFrame  {
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        changePassword = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordField2 = new javax.swing.JPasswordField();
         studentLogo = new javax.swing.JLabel();
+        changePassw = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         staffHomePage = new javax.swing.JPanel();
@@ -199,11 +205,6 @@ public class main extends javax.swing.JFrame  {
         jLabel2.setText("Password");
         loginScreen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 110, 20));
 
-        loginIDField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginIDFieldActionPerformed(evt);
-            }
-        });
         loginIDField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 loginIDFieldKeyPressed(evt);
@@ -211,11 +212,6 @@ public class main extends javax.swing.JFrame  {
         });
         loginScreen.add(loginIDField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 170, 30));
 
-        loginPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginPasswordFieldActionPerformed(evt);
-            }
-        });
         loginPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 loginPasswordFieldKeyPressed(evt);
@@ -239,14 +235,6 @@ public class main extends javax.swing.JFrame  {
 
         loginErrorMessage.setForeground(new java.awt.Color(255, 0, 0));
         loginScreen.add(loginErrorMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 330, 20));
-
-        forgotPassw.setText("ξέχασες τον κωδικό;");
-        forgotPassw.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                forgotPasswMouseClicked(evt);
-            }
-        });
-        loginScreen.add(forgotPassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, -1, -1));
 
         jLayeredPane1.add(loginScreen, "card2");
 
@@ -423,6 +411,45 @@ public class main extends javax.swing.JFrame  {
 
         studentContent.add(jPanel3, "card3");
 
+        jLabel47.setText("jLabel47");
+
+        jLabel48.setText("jLabel48");
+
+        jPasswordField1.setText("jPasswordField1");
+
+        jPasswordField2.setText("jPasswordField2");
+
+        javax.swing.GroupLayout changePasswordLayout = new javax.swing.GroupLayout(changePassword);
+        changePassword.setLayout(changePasswordLayout);
+        changePasswordLayout.setHorizontalGroup(
+            changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(changePasswordLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel48)
+                    .addComponent(jLabel47))
+                .addGap(18, 18, 18)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(426, Short.MAX_VALUE))
+        );
+        changePasswordLayout.setVerticalGroup(
+            changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(changePasswordLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(229, Short.MAX_VALUE))
+        );
+
+        studentContent.add(changePassword, "card5");
+
         mainStudent.add(studentContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         studentLogo.setIcon(mini);
@@ -432,6 +459,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStudent.add(studentLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 70, 50));
+
+        changePassw.setText("change password");
+        changePassw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changePasswMouseClicked(evt);
+            }
+        });
+        mainStudent.add(changePassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, -1));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -1135,16 +1170,6 @@ public class main extends javax.swing.JFrame  {
         
     }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_loginPasswordFieldActionPerformed
-
-    private void loginIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginIDFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginIDFieldActionPerformed
-
     private void logoutButtonStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonStudentActionPerformed
         loginScreen.setVisible(true);
         mainStudent.setVisible(false);
@@ -1325,9 +1350,10 @@ public class main extends javax.swing.JFrame  {
         adminLayout.show(adminContent,"adminAddCoursePanel");
     }//GEN-LAST:event_adminAddCourseButtonActionPerformed
 
-    private void forgotPasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotPasswMouseClicked
-        //
-    }//GEN-LAST:event_forgotPasswMouseClicked
+    private void changePasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswMouseClicked
+        //go to change password pane when the button is clicked
+        studentLayout.show(studentContent,"changePassword");
+    }//GEN-LAST:event_changePasswMouseClicked
     
     
     
@@ -1457,7 +1483,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton adminUserListButton;
     private javax.swing.JPanel adminUserListPanel;
     private javax.swing.JTable adminUserTable;
-    private javax.swing.JLabel forgotPassw;
+    private javax.swing.JButton changePassw;
+    private javax.swing.JPanel changePassword;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1500,6 +1527,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1512,6 +1541,8 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
