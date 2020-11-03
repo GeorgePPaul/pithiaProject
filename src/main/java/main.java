@@ -18,6 +18,7 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(studentDetailsPanel, "studentDetailsPanel");
         studentLayout.addLayoutComponent(jPanel3, "jPanel3");
         studentLayout.addLayoutComponent(changePassword,"changePassword");
+        studentLayout.addLayoutComponent(oldPassConfirm,"oldPassConfirm");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomePage");
@@ -87,15 +88,17 @@ public class main extends javax.swing.JFrame  {
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        oldPassConfirm = new javax.swing.JPanel();
+        oldCodeLbl = new javax.swing.JLabel();
+        oldPasswordField = new javax.swing.JPasswordField();
+        errorLabel = new javax.swing.JLabel();
+        submitCode = new javax.swing.JButton();
         changePassword = new javax.swing.JPanel();
-        oldCode = new javax.swing.JLabel();
         newCode = new javax.swing.JLabel();
-        PasswordField1 = new javax.swing.JPasswordField();
         PasswordField2 = new javax.swing.JPasswordField();
         submit2 = new javax.swing.JButton();
         PasswordField3 = new javax.swing.JPasswordField();
         confirmNewCode = new javax.swing.JLabel();
-        errorLabel1 = new javax.swing.JLabel();
         studentLogo = new javax.swing.JLabel();
         changePassw = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
@@ -415,17 +418,75 @@ public class main extends javax.swing.JFrame  {
 
         studentContent.add(jPanel3, "card3");
 
-        oldCode.setText("old code");
+        oldPassConfirm.setAlignmentX(0.0F);
+        oldPassConfirm.setAlignmentY(0.0F);
+
+        oldCodeLbl.setText("old code");
+
+        oldPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                oldPasswordFieldKeyPressed(evt);
+            }
+        });
+
+        errorLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        errorLabel.setForeground(new java.awt.Color(255, 0, 51));
+
+        submitCode.setText("submit");
+        submitCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitCodeActionPerformed(evt);
+            }
+        });
+        submitCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                submitCodeKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout oldPassConfirmLayout = new javax.swing.GroupLayout(oldPassConfirm);
+        oldPassConfirm.setLayout(oldPassConfirmLayout);
+        oldPassConfirmLayout.setHorizontalGroup(
+            oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                .addGap(197, 197, 197)
+                .addGroup(oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(submitCode))
+                    .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                        .addComponent(oldCodeLbl)
+                        .addGap(48, 48, 48)
+                        .addComponent(oldPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(182, Short.MAX_VALUE))
+        );
+        oldPassConfirmLayout.setVerticalGroup(
+            oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addGroup(oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(oldPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(oldCodeLbl))
+                .addGap(36, 36, 36)
+                .addComponent(submitCode)
+                .addContainerGap(253, Short.MAX_VALUE))
+        );
+
+        studentContent.add(oldPassConfirm, "card6");
 
         newCode.setText("new code");
 
-        PasswordField1.setText("jPasswordField1");
-
-        PasswordField2.setText("jPasswordField2");
-
         submit2.setText("submit");
 
-        PasswordField3.setText("jPasswordField3");
+        PasswordField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordField3ActionPerformed(evt);
+            }
+        });
 
         confirmNewCode.setText("confirm new code");
 
@@ -437,30 +498,20 @@ public class main extends javax.swing.JFrame  {
                 .addGap(114, 114, 114)
                 .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(newCode)
-                    .addComponent(oldCode)
                     .addComponent(confirmNewCode))
                 .addGap(18, 18, 18)
-                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(changePasswordLayout.createSequentialGroup()
-                        .addComponent(PasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(errorLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(PasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submit2))
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(submit2)
+                    .addComponent(PasswordField3, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                    .addComponent(PasswordField2))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
         changePasswordLayout.setVerticalGroup(
             changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(changePasswordLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(163, 163, 163)
                 .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(changePasswordLayout.createSequentialGroup()
-                        .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(oldCode)
-                            .addComponent(PasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(errorLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(PasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(newCode))
@@ -1376,8 +1427,43 @@ public class main extends javax.swing.JFrame  {
 
     private void changePasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswMouseClicked
         //go to change password pane when the button is clicked
-        studentLayout.show(studentContent,"changePassword");
+        studentLayout.show(studentContent,"oldPassConfirm");
     }//GEN-LAST:event_changePasswMouseClicked
+
+    private void submitCodeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitCodeMouseClicked
+        //if old code input is valid proceed to change password
+       
+    }//GEN-LAST:event_submitCodeMouseClicked
+
+    private void submitCodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_submitCodeKeyPressed
+        //procced to change password if ENTER is pressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            submitCode.doClick();
+        }
+    }//GEN-LAST:event_submitCodeKeyPressed
+
+    private void oldPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oldPasswordFieldKeyPressed
+        //procced to change password if ENTER is pressed
+       if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            submitCode.doClick();
+        }
+    }//GEN-LAST:event_oldPasswordFieldKeyPressed
+
+    private void PasswordField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordField3ActionPerformed
+
+    private void submitCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitCodeActionPerformed
+        //on click submit old code
+        for(var i : db.userDB){
+           if(((user)i).getPassword().equals(new String (oldPasswordField.getPassword()))){
+               oldPassConfirm.setVisible(false);
+               studentLayout.show(studentContent,"changePassword"); 
+           }else{
+             errorLabel.setText("wrong password");  
+           }
+       } 
+    }//GEN-LAST:event_submitCodeActionPerformed
     
     
     
@@ -1468,7 +1554,6 @@ public class main extends javax.swing.JFrame  {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField PasswordField1;
     private javax.swing.JPasswordField PasswordField2;
     private javax.swing.JPasswordField PasswordField3;
     private javax.swing.JPanel adminAddAdminPanel;
@@ -1513,7 +1598,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton changePassw;
     private javax.swing.JPanel changePassword;
     private javax.swing.JLabel confirmNewCode;
-    private javax.swing.JLabel errorLabel1;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1586,7 +1671,9 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
     private javax.swing.JLabel newCode;
-    private javax.swing.JLabel oldCode;
+    private javax.swing.JLabel oldCodeLbl;
+    private javax.swing.JPanel oldPassConfirm;
+    private javax.swing.JPasswordField oldPasswordField;
     private javax.swing.JPanel staffContent;
     private javax.swing.JLabel staffDetailAddressLabel;
     private javax.swing.JLabel staffDetailEmailLabel;
@@ -1618,5 +1705,6 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel studentHomePage;
     private javax.swing.JLabel studentLogo;
     private javax.swing.JButton submit2;
+    private javax.swing.JButton submitCode;
     // End of variables declaration//GEN-END:variables
 }
