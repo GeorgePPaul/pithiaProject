@@ -422,7 +422,7 @@ public class main extends javax.swing.JFrame  {
                 studentLogoMouseClicked(evt);
             }
         });
-        mainStudent.add(studentLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 70, 50));
+        mainStudent.add(studentLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 50, 50));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -577,7 +577,7 @@ public class main extends javax.swing.JFrame  {
                 staffLogoMouseClicked(evt);
             }
         });
-        mainStaff.add(staffLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 80, 50));
+        mainStaff.add(staffLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 50, 50));
 
         staffUserListButton.setText("User List");
         staffUserListButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1054,7 +1054,7 @@ public class main extends javax.swing.JFrame  {
                 adminLogoMouseClicked(evt);
             }
         });
-        mainAdmin.add(adminLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 80, 50));
+        mainAdmin.add(adminLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 50, 50));
 
         adminUserListButton.setText("User List");
         adminUserListButton.addActionListener(new java.awt.event.ActionListener() {
