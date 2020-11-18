@@ -16,13 +16,12 @@ public class main extends javax.swing.JFrame  {
         studentLayout = (CardLayout)(studentContent.getLayout());
         studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
         studentLayout.addLayoutComponent(studentDetailsPanel, "studentDetailsPanel");
-        studentLayout.addLayoutComponent(studentCourseListPanel, "studentCourseListPanel");
+        studentLayout.addLayoutComponent(jPanel3, "jPanel3");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomePage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
         staffLayout.addLayoutComponent(staffUserListPanel, "staffUserListPanel");
-        staffLayout.addLayoutComponent(staffCourseListPanel, "staffCourseListPanel");
         
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
@@ -55,6 +54,7 @@ public class main extends javax.swing.JFrame  {
         mainStudent = new javax.swing.JPanel();
         logoutButtonStudent = new javax.swing.JButton();
         studentDetailsButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         studentContent = new javax.swing.JPanel();
         studentHomePage = new javax.swing.JPanel();
         studentHomeLogo = new javax.swing.JLabel();
@@ -84,11 +84,9 @@ public class main extends javax.swing.JFrame  {
         jPanel2 = new javax.swing.JPanel();
         studentDetailPhoneLabel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        studentCourseListPanel = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        studentCourseTable = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         studentLogo = new javax.swing.JLabel();
-        studentCourseListButton = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         staffHomePage = new javax.swing.JPanel();
@@ -115,14 +113,10 @@ public class main extends javax.swing.JFrame  {
         staffUserListPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         staffUserTable = new javax.swing.JTable();
-        staffCourseListPanel = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        staffCourseTable = new javax.swing.JTable();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
         staffLogo = new javax.swing.JLabel();
         staffUserListButton = new javax.swing.JButton();
-        staffCourseListButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
@@ -266,6 +260,13 @@ public class main extends javax.swing.JFrame  {
         });
         mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, 20));
+
         studentContent.setLayout(new java.awt.CardLayout());
 
         jLabel5.setText("A Java Swing project by");
@@ -392,42 +393,26 @@ public class main extends javax.swing.JFrame  {
 
         studentContent.add(studentDetailsPanel, "card2");
 
-        studentCourseTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jLabel4.setText("Panel 2");
 
-            },
-            new String [] {
-                "ID", "Name", "Semester", "ECTS", "Lecturer"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane5.setViewportView(studentCourseTable);
-
-        javax.swing.GroupLayout studentCourseListPanelLayout = new javax.swing.GroupLayout(studentCourseListPanel);
-        studentCourseListPanel.setLayout(studentCourseListPanelLayout);
-        studentCourseListPanelLayout.setHorizontalGroup(
-            studentCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(studentCourseListPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(300, Short.MAX_VALUE))
         );
-        studentCourseListPanelLayout.setVerticalGroup(
-            studentCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentCourseListPanelLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel4)
+                .addContainerGap(412, Short.MAX_VALUE))
         );
 
-        studentContent.add(studentCourseListPanel, "card3");
+        studentContent.add(jPanel3, "card3");
 
         mainStudent.add(studentContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
@@ -438,14 +423,6 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStudent.add(studentLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 70, 50));
-
-        studentCourseListButton.setText("Course List");
-        studentCourseListButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentCourseListButtonActionPerformed(evt);
-            }
-        });
-        mainStudent.add(studentCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, -1));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -576,43 +553,6 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.add(staffUserListPanel, "card4");
 
-        staffCourseTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Name", "Semester", "ECTS", "Lecturer"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane6.setViewportView(staffCourseTable);
-
-        javax.swing.GroupLayout staffCourseListPanelLayout = new javax.swing.GroupLayout(staffCourseListPanel);
-        staffCourseListPanel.setLayout(staffCourseListPanelLayout);
-        staffCourseListPanelLayout.setHorizontalGroup(
-            staffCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffCourseListPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        staffCourseListPanelLayout.setVerticalGroup(
-            staffCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffCourseListPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        staffContent.add(staffCourseListPanel, "card5");
-
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
 
         logoutButtonStaff.setText("Logout");
@@ -646,14 +586,6 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStaff.add(staffUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 130, -1));
-
-        staffCourseListButton.setText("Course List");
-        staffCourseListButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staffCourseListButtonActionPerformed(evt);
-            }
-        });
-        mainStaff.add(staffCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 130, -1));
 
         jLayeredPane1.add(mainStaff, "card4");
 
@@ -1239,6 +1171,10 @@ public class main extends javax.swing.JFrame  {
         
     }//GEN-LAST:event_studentDetailsButtonActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        studentLayout.show(studentContent, "jPanel3");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void logoutButtonStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonStaffActionPerformed
         loginScreen.setVisible(true);
         mainStaff.setVisible(false);
@@ -1379,25 +1315,6 @@ public class main extends javax.swing.JFrame  {
         }
         adminLayout.show(adminContent,"adminAddCoursePanel");
     }//GEN-LAST:event_adminAddCourseButtonActionPerformed
-
-    private void studentCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseListButtonActionPerformed
-        DefaultTableModel studentCourseDTable = (DefaultTableModel) studentCourseTable.getModel();
-        studentCourseDTable.setRowCount(0);
-        for(Object i : db.courseDB){
-            studentCourseDTable.addRow(new Object[]{((course)i).getId(),((course)i).getName(),((course)i).getSemester(),((course)i).getECTS(),((course)i).getTeacher().getSurname() + " " + ((course)i).getTeacher().getName()});
-        }
-        studentLayout.show(studentContent,"studentCourseListPanel");
-        
-    }//GEN-LAST:event_studentCourseListButtonActionPerformed
-
-    private void staffCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffCourseListButtonActionPerformed
-        DefaultTableModel staffCourseDTable = (DefaultTableModel) staffCourseTable.getModel();
-        staffCourseDTable.setRowCount(0);
-        for(Object i : db.courseDB){
-            staffCourseDTable.addRow(new Object[]{((course)i).getId(),((course)i).getName(),((course)i).getSemester(),((course)i).getECTS(),((course)i).getTeacher().getSurname() + " " + ((course)i).getTeacher().getName()});
-        }
-        staffLayout.show(staffContent,"staffCourseListPanel");      
-    }//GEN-LAST:event_staffCourseListButtonActionPerformed
     
     
     
@@ -1527,6 +1444,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton adminUserListButton;
     private javax.swing.JPanel adminUserListPanel;
     private javax.swing.JTable adminUserTable;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1560,6 +1478,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -1575,6 +1494,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -1582,8 +1502,6 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
@@ -1598,9 +1516,6 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
     private javax.swing.JPanel staffContent;
-    private javax.swing.JButton staffCourseListButton;
-    private javax.swing.JPanel staffCourseListPanel;
-    private javax.swing.JTable staffCourseTable;
     private javax.swing.JLabel staffDetailAddressLabel;
     private javax.swing.JLabel staffDetailEmailLabel;
     private javax.swing.JLabel staffDetailIDlabel;
@@ -1616,9 +1531,6 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel staffUserListPanel;
     private javax.swing.JTable staffUserTable;
     private javax.swing.JPanel studentContent;
-    private javax.swing.JButton studentCourseListButton;
-    private javax.swing.JPanel studentCourseListPanel;
-    private javax.swing.JTable studentCourseTable;
     private javax.swing.JLabel studentDetailAddressLabel;
     private javax.swing.JLabel studentDetailECTSLabel;
     private javax.swing.JLabel studentDetailEmailLabel;
