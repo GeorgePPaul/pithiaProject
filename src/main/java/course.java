@@ -32,6 +32,8 @@ public class course implements java.io.Serializable{
     public String getInfo(){return info;}
     public String getName(){return name;}
     
+    
+    
 
    
 }

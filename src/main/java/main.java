@@ -16,15 +16,19 @@ public class main extends javax.swing.JFrame  {
         studentLayout = (CardLayout)(studentContent.getLayout());
         studentLayout.addLayoutComponent(studentHomePage, "studentHomePage");
         studentLayout.addLayoutComponent(studentDetailsPanel, "studentDetailsPanel");
-        studentLayout.addLayoutComponent(jPanel3, "jPanel3");
+        studentLayout.addLayoutComponent(studentCourseListPanel, "studentCourseListPanel");
+        studentLayout.addLayoutComponent(changePassword,"changePassword");
+        studentLayout.addLayoutComponent(oldPassConfirm,"oldPassConfirm");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomePage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
         staffLayout.addLayoutComponent(staffUserListPanel, "staffUserListPanel");
+        staffLayout.addLayoutComponent(staffCourseListPanel,"staffCourseListPanel");
         
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
+        adminLayout.addLayoutComponent(adminDetailsPanel, "adminDetailsPanel");
         adminLayout.addLayoutComponent(adminUserListPanel, "adminUserListPanel");
         adminLayout.addLayoutComponent(adminAddUserPanel, "adminAddUserPanel");
         adminLayout.addLayoutComponent(adminCourseListPanel, "adminCourseListPanel");
@@ -54,7 +58,7 @@ public class main extends javax.swing.JFrame  {
         mainStudent = new javax.swing.JPanel();
         logoutButtonStudent = new javax.swing.JButton();
         studentDetailsButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        studentCourseListButton = new javax.swing.JButton();
         studentContent = new javax.swing.JPanel();
         studentHomePage = new javax.swing.JPanel();
         studentHomeLogo = new javax.swing.JLabel();
@@ -84,9 +88,22 @@ public class main extends javax.swing.JFrame  {
         jPanel2 = new javax.swing.JPanel();
         studentDetailPhoneLabel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        studentCourseListPanel = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        studentCourseTable = new javax.swing.JTable();
+        oldPassConfirm = new javax.swing.JPanel();
+        oldCodeLbl = new javax.swing.JLabel();
+        oldPasswordField = new javax.swing.JPasswordField();
+        errorLabel = new javax.swing.JLabel();
+        submitCode = new javax.swing.JButton();
+        changePassword = new javax.swing.JPanel();
+        newCode = new javax.swing.JLabel();
+        PasswordField2 = new javax.swing.JPasswordField();
+        submit2 = new javax.swing.JButton();
+        PasswordField3 = new javax.swing.JPasswordField();
+        confirmNewCode = new javax.swing.JLabel();
         studentLogo = new javax.swing.JLabel();
+        changePassw = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         staffHomePage = new javax.swing.JPanel();
@@ -113,10 +130,14 @@ public class main extends javax.swing.JFrame  {
         staffUserListPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         staffUserTable = new javax.swing.JTable();
+        staffCourseListPanel = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        staffCourseTable = new javax.swing.JTable();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
         staffLogo = new javax.swing.JLabel();
         staffUserListButton = new javax.swing.JButton();
+        staffCourseListButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
@@ -125,6 +146,21 @@ public class main extends javax.swing.JFrame  {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
+        adminDetailsPanel = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        adminDetailNameLabel = new javax.swing.JLabel();
+        adminDetailIDLabel = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        adminDetailAddressLabel = new javax.swing.JLabel();
+        adminDetailEmailLabel = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        adminDetailSurnameLabel = new javax.swing.JLabel();
+        adminDetailPhoneLabel = new javax.swing.JLabel();
         adminUserListPanel = new javax.swing.JPanel();
         adminAddUserButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -182,6 +218,7 @@ public class main extends javax.swing.JFrame  {
         adminLogo = new javax.swing.JLabel();
         adminUserListButton = new javax.swing.JButton();
         adminCourseListButton = new javax.swing.JButton();
+        adminDetailsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -198,11 +235,6 @@ public class main extends javax.swing.JFrame  {
         jLabel2.setText("Password");
         loginScreen.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 110, 20));
 
-        loginIDField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginIDFieldActionPerformed(evt);
-            }
-        });
         loginIDField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 loginIDFieldKeyPressed(evt);
@@ -210,11 +242,6 @@ public class main extends javax.swing.JFrame  {
         });
         loginScreen.add(loginIDField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 170, 30));
 
-        loginPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginPasswordFieldActionPerformed(evt);
-            }
-        });
         loginPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 loginPasswordFieldKeyPressed(evt);
@@ -260,12 +287,13 @@ public class main extends javax.swing.JFrame  {
         });
         mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        studentCourseListButton.setText("Course List");
+        studentCourseListButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                studentCourseListButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, 20));
+        mainStudent.add(studentCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, -1));
 
         studentContent.setLayout(new java.awt.CardLayout());
 
@@ -393,26 +421,156 @@ public class main extends javax.swing.JFrame  {
 
         studentContent.add(studentDetailsPanel, "card2");
 
-        jLabel4.setText("Panel 2");
+        studentCourseTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(281, 281, 281)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(300, Short.MAX_VALUE))
+            },
+            new String [] {
+                "ID", "Name", "Semester", "ECTS", "Lecturer"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(studentCourseTable);
+
+        javax.swing.GroupLayout studentCourseListPanelLayout = new javax.swing.GroupLayout(studentCourseListPanel);
+        studentCourseListPanel.setLayout(studentCourseListPanelLayout);
+        studentCourseListPanelLayout.setHorizontalGroup(
+            studentCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentCourseListPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel4)
-                .addContainerGap(412, Short.MAX_VALUE))
+        studentCourseListPanelLayout.setVerticalGroup(
+            studentCourseListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentCourseListPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        studentContent.add(jPanel3, "card3");
+        studentContent.add(studentCourseListPanel, "card3");
+
+        oldPassConfirm.setAlignmentX(0.0F);
+        oldPassConfirm.setAlignmentY(0.0F);
+
+        oldCodeLbl.setText("old code");
+
+        oldPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                oldPasswordFieldKeyPressed(evt);
+            }
+        });
+
+        errorLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        errorLabel.setForeground(new java.awt.Color(255, 0, 51));
+
+        submitCode.setText("submit");
+        submitCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitCodeActionPerformed(evt);
+            }
+        });
+        submitCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                submitCodeKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout oldPassConfirmLayout = new javax.swing.GroupLayout(oldPassConfirm);
+        oldPassConfirm.setLayout(oldPassConfirmLayout);
+        oldPassConfirmLayout.setHorizontalGroup(
+            oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                .addGap(197, 197, 197)
+                .addGroup(oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(submitCode))
+                    .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                        .addComponent(oldCodeLbl)
+                        .addGap(48, 48, 48)
+                        .addComponent(oldPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(182, Short.MAX_VALUE))
+        );
+        oldPassConfirmLayout.setVerticalGroup(
+            oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(oldPassConfirmLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addGroup(oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(oldPassConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(oldPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(oldCodeLbl))
+                .addGap(36, 36, 36)
+                .addComponent(submitCode)
+                .addContainerGap(253, Short.MAX_VALUE))
+        );
+
+        studentContent.add(oldPassConfirm, "card6");
+
+        newCode.setText("new code");
+
+        submit2.setText("submit");
+
+        PasswordField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordField3ActionPerformed(evt);
+            }
+        });
+
+        confirmNewCode.setText("confirm new code");
+
+        javax.swing.GroupLayout changePasswordLayout = new javax.swing.GroupLayout(changePassword);
+        changePassword.setLayout(changePasswordLayout);
+        changePasswordLayout.setHorizontalGroup(
+            changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(changePasswordLayout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(newCode)
+                    .addComponent(confirmNewCode))
+                .addGap(18, 18, 18)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(submit2)
+                    .addComponent(PasswordField3, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                    .addComponent(PasswordField2))
+                .addContainerGap(395, Short.MAX_VALUE))
+        );
+        changePasswordLayout.setVerticalGroup(
+            changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(changePasswordLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(changePasswordLayout.createSequentialGroup()
+                        .addGroup(changePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(newCode))
+                        .addGap(18, 18, 18)
+                        .addComponent(PasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(confirmNewCode))
+                .addGap(18, 18, 18)
+                .addComponent(submit2)
+                .addContainerGap(198, Short.MAX_VALUE))
+        );
+
+        studentContent.add(changePassword, "card5");
 
         mainStudent.add(studentContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
@@ -423,6 +581,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStudent.add(studentLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 50, 50));
+
+        changePassw.setText("change password");
+        changePassw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changePasswMouseClicked(evt);
+            }
+        });
+        mainStudent.add(changePassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, -1));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -553,6 +719,37 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.add(staffUserListPanel, "card4");
 
+        staffCourseListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        staffCourseTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Semester", "ECTS", "Lecturer"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(staffCourseTable);
+
+        staffCourseListPanel.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 19, 657, -1));
+
+        staffContent.add(staffCourseListPanel, "card5");
+
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
 
         logoutButtonStaff.setText("Logout");
@@ -569,7 +766,7 @@ public class main extends javax.swing.JFrame  {
                 staffDetailsButtonActionPerformed(evt);
             }
         });
-        mainStaff.add(staffDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 20));
+        mainStaff.add(staffDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 130, 30));
 
         staffLogo.setIcon(mini);
         staffLogo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -586,6 +783,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStaff.add(staffUserListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 130, -1));
+
+        staffCourseListButton.setText("Course List");
+        staffCourseListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffCourseListButtonActionPerformed(evt);
+            }
+        });
+        mainStaff.add(staffCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, -1));
 
         jLayeredPane1.add(mainStaff, "card4");
 
@@ -644,6 +849,112 @@ public class main extends javax.swing.JFrame  {
         );
 
         adminContent.add(adminHomePage, "card2");
+
+        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel4.setText("Name:");
+
+        jLabel49.setText("Admin ID:");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(adminDetailNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101)
+                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(adminDetailIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(adminDetailIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                    .addComponent(adminDetailNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jPanel10.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel48.setText("Address:");
+
+        jLabel51.setText("E-mail:");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(adminDetailAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(adminDetailEmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(adminDetailEmailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(adminDetailAddressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        jLabel47.setText("Surname:");
+
+        jLabel50.setText("Phone Number:");
+
+        javax.swing.GroupLayout adminDetailsPanelLayout = new javax.swing.GroupLayout(adminDetailsPanel);
+        adminDetailsPanel.setLayout(adminDetailsPanelLayout);
+        adminDetailsPanelLayout.setHorizontalGroup(
+            adminDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminDetailsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(adminDetailSurnameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel50)
+                .addGap(35, 35, 35)
+                .addComponent(adminDetailPhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminDetailsPanelLayout.setVerticalGroup(
+            adminDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminDetailsPanelLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(adminDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminDetailSurnameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminDetailPhoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(262, 262, 262))
+        );
+
+        adminContent.add(adminDetailsPanel, "card7");
 
         adminAddUserButton.setText("Add User");
         adminAddUserButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1072,6 +1383,14 @@ public class main extends javax.swing.JFrame  {
         });
         mainAdmin.add(adminCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 120, -1));
 
+        adminDetailsButton.setText("Personal Details");
+        adminDetailsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminDetailsButtonActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(adminDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 120, -1));
+
         jLayeredPane1.add(mainAdmin, "card5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1126,16 +1445,6 @@ public class main extends javax.swing.JFrame  {
         
     }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void loginPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPasswordFieldActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_loginPasswordFieldActionPerformed
-
-    private void loginIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginIDFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginIDFieldActionPerformed
-
     private void logoutButtonStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonStudentActionPerformed
         loginScreen.setVisible(true);
         mainStudent.setVisible(false);
@@ -1171,9 +1480,14 @@ public class main extends javax.swing.JFrame  {
         
     }//GEN-LAST:event_studentDetailsButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        studentLayout.show(studentContent, "jPanel3");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void studentCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseListButtonActionPerformed
+        DefaultTableModel studentCourseDTable = (DefaultTableModel) studentCourseTable.getModel();
+        studentCourseDTable.setRowCount(0);
+        for(Object i : db.courseDB){
+            studentCourseDTable.addRow(new Object[]{((course)i).getId(),((course)i).getName(),((course)i).getSemester(),((course)i).getECTS(),((course)i).getTeacher().getSurname() + " " + ((course)i).getTeacher().getName()});
+        }
+        studentLayout.show(studentContent,"studentCourseListPanel");
+    }//GEN-LAST:event_studentCourseListButtonActionPerformed
 
     private void logoutButtonStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonStaffActionPerformed
         loginScreen.setVisible(true);
@@ -1315,6 +1629,67 @@ public class main extends javax.swing.JFrame  {
         }
         adminLayout.show(adminContent,"adminAddCoursePanel");
     }//GEN-LAST:event_adminAddCourseButtonActionPerformed
+
+    private void changePasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswMouseClicked
+        //go to change password pane when the button is clicked
+        studentLayout.show(studentContent,"oldPassConfirm");
+    }//GEN-LAST:event_changePasswMouseClicked
+
+    private void submitCodeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitCodeMouseClicked
+        //if old code input is valid proceed to change password
+       
+    }//GEN-LAST:event_submitCodeMouseClicked
+
+    private void submitCodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_submitCodeKeyPressed
+        //procced to change password if ENTER is pressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            submitCode.doClick();
+        }
+    }//GEN-LAST:event_submitCodeKeyPressed
+
+    private void oldPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_oldPasswordFieldKeyPressed
+        //procced to change password if ENTER is pressed
+       if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            submitCode.doClick();
+        }
+    }//GEN-LAST:event_oldPasswordFieldKeyPressed
+
+    private void PasswordField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordField3ActionPerformed
+
+    private void submitCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitCodeActionPerformed
+        //on click submit old code
+        for(var i : db.userDB){
+           if(((user)i).getPassword().equals(new String (oldPasswordField.getPassword()))){
+               oldPassConfirm.setVisible(false);
+               studentLayout.show(studentContent,"changePassword"); 
+           }else{
+             errorLabel.setText("wrong password");  
+           }
+       } 
+    }//GEN-LAST:event_submitCodeActionPerformed
+
+    private void staffCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffCourseListButtonActionPerformed
+        DefaultTableModel staffCourseDTable = (DefaultTableModel) staffCourseTable.getModel();
+        staffCourseDTable.setRowCount(0);
+        for(Object i : db.courseDB){
+            staffCourseDTable.addRow(new Object[]{((course)i).getId(),((course)i).getName(),((course)i).getSemester(),((course)i).getECTS(),((course)i).getTeacher().getSurname() + " " + ((course)i).getTeacher().getName()});
+        }
+        staffLayout.show(staffContent,"staffCourseListPanel");
+    }//GEN-LAST:event_staffCourseListButtonActionPerformed
+
+    private void adminDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDetailsButtonActionPerformed
+        adminDetailNameLabel.setText(((administration)loggedUser).getName());
+        adminDetailSurnameLabel.setText(((administration)loggedUser).getSurname());
+        adminDetailPhoneLabel.setText(Integer.toString(((administration)loggedUser).getPhone()));
+        adminDetailAddressLabel.setText(((administration)loggedUser).getAddress());
+        adminDetailEmailLabel.setText(((administration)loggedUser).getEmail());
+        adminDetailIDLabel.setText(((administration)loggedUser).getId());
+        
+        
+        adminLayout.show(adminContent, "adminDetailsPanel");
+    }//GEN-LAST:event_adminDetailsButtonActionPerformed
     
     
     
@@ -1405,6 +1780,8 @@ public class main extends javax.swing.JFrame  {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField PasswordField2;
+    private javax.swing.JPasswordField PasswordField3;
     private javax.swing.JPanel adminAddAdminPanel;
     private javax.swing.JButton adminAddCourseButton;
     private javax.swing.JTextField adminAddCourseECTSField;
@@ -1438,13 +1815,24 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JButton adminCourseListButton;
     private javax.swing.JPanel adminCourseListPanel;
     private javax.swing.JTable adminCourseTable;
+    private javax.swing.JLabel adminDetailAddressLabel;
+    private javax.swing.JLabel adminDetailEmailLabel;
+    private javax.swing.JLabel adminDetailIDLabel;
+    private javax.swing.JLabel adminDetailNameLabel;
+    private javax.swing.JLabel adminDetailPhoneLabel;
+    private javax.swing.JLabel adminDetailSurnameLabel;
+    private javax.swing.JButton adminDetailsButton;
+    private javax.swing.JPanel adminDetailsPanel;
     private javax.swing.JLabel adminHomeLogo;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
     private javax.swing.JButton adminUserListButton;
     private javax.swing.JPanel adminUserListPanel;
     private javax.swing.JTable adminUserTable;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton changePassw;
+    private javax.swing.JPanel changePassword;
+    private javax.swing.JLabel confirmNewCode;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1486,22 +1874,32 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
@@ -1515,7 +1913,14 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel mainAdmin;
     private javax.swing.JPanel mainStaff;
     private javax.swing.JPanel mainStudent;
+    private javax.swing.JLabel newCode;
+    private javax.swing.JLabel oldCodeLbl;
+    private javax.swing.JPanel oldPassConfirm;
+    private javax.swing.JPasswordField oldPasswordField;
     private javax.swing.JPanel staffContent;
+    private javax.swing.JButton staffCourseListButton;
+    private javax.swing.JPanel staffCourseListPanel;
+    private javax.swing.JTable staffCourseTable;
     private javax.swing.JLabel staffDetailAddressLabel;
     private javax.swing.JLabel staffDetailEmailLabel;
     private javax.swing.JLabel staffDetailIDlabel;
@@ -1531,6 +1936,9 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel staffUserListPanel;
     private javax.swing.JTable staffUserTable;
     private javax.swing.JPanel studentContent;
+    private javax.swing.JButton studentCourseListButton;
+    private javax.swing.JPanel studentCourseListPanel;
+    private javax.swing.JTable studentCourseTable;
     private javax.swing.JLabel studentDetailAddressLabel;
     private javax.swing.JLabel studentDetailECTSLabel;
     private javax.swing.JLabel studentDetailEmailLabel;
@@ -1545,5 +1953,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel studentHomeLogo;
     private javax.swing.JPanel studentHomePage;
     private javax.swing.JLabel studentLogo;
+    private javax.swing.JButton submit2;
+    private javax.swing.JButton submitCode;
     // End of variables declaration//GEN-END:variables
 }
