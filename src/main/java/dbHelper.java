@@ -12,17 +12,23 @@ import java.io.ObjectInputStream;
 
 
 
+
 public class dbHelper implements java.io.Serializable{
     public ArrayList userDB = new ArrayList<user>();
     public ArrayList courseDB = new ArrayList<course>();
-    
-    
-    
+    public ArrayList cRegDB = new ArrayList<CourseRegistration>();
+    public ArrayList gradesDB = new ArrayList<grade>();
+
+    public String currentSemester = "September-February";
+
     dbHelper(){
+        
     }
     
     
-    //WRITE INFO TO TXT
+
+
+//WRITE INFO TO TXT
     public void writeUser(String data, String filePath){ //FILE PATH PARAMETER TO BE ADDED
     try(FileWriter fw = new FileWriter(filePath, true);
     BufferedWriter bw = new BufferedWriter(fw);
@@ -74,6 +80,32 @@ public void serializeCourses(String filePath){
       }
    }
 
+public void serializeCourseRegistrations(String filePath){
+    try {
+         FileOutputStream fileOut = new FileOutputStream(filePath);
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(cRegDB);
+         out.close();
+         fileOut.close();
+         System.out.printf("Serialized data is saved");
+      } catch (IOException i) {
+         i.printStackTrace();
+      }
+   }
+
+public void serializeGrades(String filePath){
+    try {
+         FileOutputStream fileOut = new FileOutputStream(filePath);
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(gradesDB);
+         out.close();
+         fileOut.close();
+         System.out.printf("Serialized data is saved");
+      } catch (IOException i) {
+         i.printStackTrace();
+      }
+   }
+
 
 
     //LOAD SERIALIZED ARRAY
@@ -82,6 +114,23 @@ public void deserializeUsers(String filePath){
          FileInputStream fileIn = new FileInputStream(filePath);
          ObjectInputStream in = new ObjectInputStream(fileIn);
          userDB = (ArrayList<user>)in.readObject();
+         in.close();
+         fileIn.close();
+      } catch (IOException i) {
+         i.printStackTrace();
+         return;
+      } catch (ClassNotFoundException c) {
+         System.out.println("Class not found");
+         c.printStackTrace();
+         return;
+      }
+}
+
+public void deserializeCourseRegistrations(String filePath){ 
+      try {
+         FileInputStream fileIn = new FileInputStream(filePath);
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         cRegDB = (ArrayList<CourseRegistration>)in.readObject();
          in.close();
          fileIn.close();
       } catch (IOException i) {
@@ -110,6 +159,24 @@ public void deserializeCourses(String filePath){
          return;
       }
 }
+
+public void deserializeGrades(String filePath){ 
+      try {
+         FileInputStream fileIn = new FileInputStream(filePath);
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         gradesDB = (ArrayList<grade>)in.readObject();
+         in.close();
+         fileIn.close();
+      } catch (IOException i) {
+         i.printStackTrace();
+         return;
+      } catch (ClassNotFoundException c) {
+         System.out.println("Class not found");
+         c.printStackTrace();
+         return;
+      }
+}
+
       
 }    
       

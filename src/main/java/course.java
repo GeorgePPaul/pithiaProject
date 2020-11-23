@@ -32,7 +32,10 @@ public class course implements java.io.Serializable{
     public String getInfo(){return info;}
     public String getName(){return name;}
     
-    
+    @Override
+    public String toString(){
+        return id+" "+name+" "+semester+" "+String.valueOf(ECTS);
+    }
     
 
    

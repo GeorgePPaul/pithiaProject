@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 import javax.swing.table.DefaultTableModel;
 
 
+
 public class main extends javax.swing.JFrame  {
 
     /**
@@ -19,12 +20,17 @@ public class main extends javax.swing.JFrame  {
         studentLayout.addLayoutComponent(studentCourseListPanel, "studentCourseListPanel");
         studentLayout.addLayoutComponent(changePassword,"changePassword");
         studentLayout.addLayoutComponent(oldPassConfirm,"oldPassConfirm");
+        studentLayout.addLayoutComponent(studentCourseRegistrationPanel, "studentCourseRegistrationPanel");
+        studentLayout.addLayoutComponent(studentNewCourseRegistrationPanel, "studentNewCourseRegistrationPanel");
+        studentLayout.addLayoutComponent(studentCourseRegistrationFinalPanel, "studentCourseRegistrationFinalPanel");
+        studentLayout.addLayoutComponent(studentMyCoursesPanel, "studentMyCoursesPanel");
         
         staffLayout = (CardLayout) (staffContent.getLayout());
         staffLayout.addLayoutComponent(staffHomePage,"staffHomePage");
         staffLayout.addLayoutComponent(staffDetailsPanel, "staffDetailsPanel");
         staffLayout.addLayoutComponent(staffUserListPanel, "staffUserListPanel");
         staffLayout.addLayoutComponent(staffCourseListPanel,"staffCourseListPanel");
+        staffLayout.addLayoutComponent(staffMyCoursesPanel, "staffMyCoursesPanel");
         
         adminLayout = (CardLayout)(adminContent.getLayout());
         adminLayout.addLayoutComponent(adminHomePage, "adminHomePage");
@@ -33,6 +39,9 @@ public class main extends javax.swing.JFrame  {
         adminLayout.addLayoutComponent(adminAddUserPanel, "adminAddUserPanel");
         adminLayout.addLayoutComponent(adminCourseListPanel, "adminCourseListPanel");
         adminLayout.addLayoutComponent(adminAddCoursePanel, "adminAddCoursePanel");
+        adminLayout.addLayoutComponent(adminCourseRegistrationPanel, "adminCourseRegistrationPanel");
+        adminLayout.addLayoutComponent(adminCourseRegistrationFinalPanel, "adminCourseRegistrationFinalPanel");
+        adminLayout.addLayoutComponent(adminGradesPanel, "adminGradesPanel");
 
         
     }
@@ -59,6 +68,7 @@ public class main extends javax.swing.JFrame  {
         logoutButtonStudent = new javax.swing.JButton();
         studentDetailsButton = new javax.swing.JButton();
         studentCourseListButton = new javax.swing.JButton();
+        studentCourseRegistrationButton = new javax.swing.JButton();
         studentContent = new javax.swing.JPanel();
         studentHomePage = new javax.swing.JPanel();
         studentHomeLogo = new javax.swing.JLabel();
@@ -91,6 +101,25 @@ public class main extends javax.swing.JFrame  {
         studentCourseListPanel = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         studentCourseTable = new javax.swing.JTable();
+        studentCourseRegistrationPanel = new javax.swing.JPanel();
+        studentNewCourseRegistrationButton = new javax.swing.JButton();
+        studentNewCourseRegistrationPanel = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        studentCourseRegistrationTable = new javax.swing.JTable();
+        studentCourseRegistrationAddButton = new javax.swing.JButton();
+        studentNewCourseRegistrationNextButton = new javax.swing.JButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        studentCourseRegistrationSelectedCoursesTable = new javax.swing.JTable();
+        studentCourseRegistrationRemoveButton = new javax.swing.JButton();
+        studentCourseRegistrationFinalPanel = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        studentCourseRegistrationFinalTable = new javax.swing.JTable();
+        studentCourseRegistrationFinalFinalizeButton = new javax.swing.JButton();
+        studentCourseRegistrationFinalBackButton = new javax.swing.JButton();
+        studentCourseRegistrationFinalErrorMessage = new javax.swing.JLabel();
+        studentMyCoursesPanel = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        studentMyCoursesTable = new javax.swing.JTable();
         oldPassConfirm = new javax.swing.JPanel();
         oldCodeLbl = new javax.swing.JLabel();
         oldPasswordField = new javax.swing.JPasswordField();
@@ -104,6 +133,7 @@ public class main extends javax.swing.JFrame  {
         confirmNewCode = new javax.swing.JLabel();
         studentLogo = new javax.swing.JLabel();
         changePassw = new javax.swing.JButton();
+        studentMyCoursesButton = new javax.swing.JButton();
         mainStaff = new javax.swing.JPanel();
         staffContent = new javax.swing.JPanel();
         staffHomePage = new javax.swing.JPanel();
@@ -133,11 +163,21 @@ public class main extends javax.swing.JFrame  {
         staffCourseListPanel = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         staffCourseTable = new javax.swing.JTable();
+        staffMyCoursesPanel = new javax.swing.JPanel();
+        staffMyCoursesComboBox = new javax.swing.JComboBox<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        staffStudentsInCourseTable = new javax.swing.JTable();
+        jLabel33 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        staffMyCoursesNewGradeField = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        staffMyCoursesReasonComboBox = new javax.swing.JComboBox<>();
         logoutButtonStaff = new javax.swing.JButton();
         staffDetailsButton = new javax.swing.JButton();
         staffLogo = new javax.swing.JLabel();
         staffUserListButton = new javax.swing.JButton();
         staffCourseListButton = new javax.swing.JButton();
+        staffMyCoursesButton = new javax.swing.JButton();
         mainAdmin = new javax.swing.JPanel();
         adminContent = new javax.swing.JPanel();
         adminHomePage = new javax.swing.JPanel();
@@ -178,7 +218,6 @@ public class main extends javax.swing.JFrame  {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
         adminAddStudentIDField = new javax.swing.JTextField();
         adminAddStudentSurnameField = new javax.swing.JTextField();
         adminAddStudentNameField = new javax.swing.JTextField();
@@ -188,11 +227,42 @@ public class main extends javax.swing.JFrame  {
         adminAddStudentPhoneField = new javax.swing.JTextField();
         adminAddStudentYearField = new javax.swing.JTextField();
         adminAddStudentSemesterField = new javax.swing.JTextField();
-        adminAddStudentECTSField = new javax.swing.JTextField();
         adminAddStudentButton = new javax.swing.JButton();
         adminAddStudentErrorMessage = new javax.swing.JLabel();
         adminAddStaffPanel = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        adminAddStaffPasswordField = new javax.swing.JTextField();
+        adminAddStaffSurnameField = new javax.swing.JTextField();
+        adminAddStaffNameField = new javax.swing.JTextField();
+        adminAddStaffPhoneField = new javax.swing.JTextField();
+        adminAddStaffAddressField = new javax.swing.JTextField();
+        adminAddStaffEmailField = new javax.swing.JTextField();
+        adminAddStaffIDField = new javax.swing.JTextField();
+        adminAddStaffButton = new javax.swing.JButton();
+        adminAddStaffErrorMessage = new javax.swing.JLabel();
         adminAddAdminPanel = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        adminAddAdminIDField = new javax.swing.JTextField();
+        adminAddAdminSurnameField = new javax.swing.JTextField();
+        adminAddAdminNameField = new javax.swing.JTextField();
+        adminAddAdminPhoneField = new javax.swing.JTextField();
+        adminAddAdminAddressField = new javax.swing.JTextField();
+        adminAddAdminEmailField = new javax.swing.JTextField();
+        adminAddAdminPasswordField = new javax.swing.JTextField();
+        adminAddAdminButton = new javax.swing.JButton();
+        adminAddAdminErrorMessage = new javax.swing.JLabel();
         adminCourseListPanel = new javax.swing.JPanel();
         adminAddCourseButton = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -214,11 +284,38 @@ public class main extends javax.swing.JFrame  {
         adminAddCourseFinalButton = new javax.swing.JButton();
         adminAddCourseSemesterField = new javax.swing.JComboBox<>();
         adminAddCourseErrorMessage = new javax.swing.JLabel();
+        adminCourseRegistrationPanel = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        adminCourseRegistrationTable = new javax.swing.JTable();
+        adminCourseRegistrationSelectButton = new javax.swing.JButton();
+        adminCourseRegistrationFinalPanel = new javax.swing.JPanel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        adminCourseRegistrationFinalNumberLabel = new javax.swing.JLabel();
+        adminCourseRegistrationFinalSemesterLabel = new javax.swing.JLabel();
+        adminCourseRegistrationFinalNameLabel = new javax.swing.JLabel();
+        adminCourseRegistrationFinalDateLabel = new javax.swing.JLabel();
+        adminCourseRegistrationFinalIDLabel = new javax.swing.JLabel();
+        adminCourseRegistrationFinalStatusLabel = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        adminCourseRegistrationFinalTable = new javax.swing.JTable();
+        jLabel72 = new javax.swing.JLabel();
+        adminCourseRegistrationFinalAcceptButton = new javax.swing.JButton();
+        adminGradesPanel = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        adminGradesTable = new javax.swing.JTable();
+        adminGradesAcceptButton = new javax.swing.JButton();
         logoutButtonAdmin = new javax.swing.JButton();
         adminLogo = new javax.swing.JLabel();
         adminUserListButton = new javax.swing.JButton();
         adminCourseListButton = new javax.swing.JButton();
         adminDetailsButton = new javax.swing.JButton();
+        adminCourseRegistrationButton = new javax.swing.JButton();
+        adminGradesButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 204));
@@ -285,7 +382,7 @@ public class main extends javax.swing.JFrame  {
                 studentDetailsButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+        mainStudent.add(studentDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 30));
 
         studentCourseListButton.setText("Course List");
         studentCourseListButton.addActionListener(new java.awt.event.ActionListener() {
@@ -293,7 +390,15 @@ public class main extends javax.swing.JFrame  {
                 studentCourseListButtonActionPerformed(evt);
             }
         });
-        mainStudent.add(studentCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, -1));
+        mainStudent.add(studentCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, 30));
+
+        studentCourseRegistrationButton.setText("Registration");
+        studentCourseRegistrationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentCourseRegistrationButtonActionPerformed(evt);
+            }
+        });
+        mainStudent.add(studentCourseRegistrationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 110, 30));
 
         studentContent.setLayout(new java.awt.CardLayout());
 
@@ -465,6 +570,257 @@ public class main extends javax.swing.JFrame  {
 
         studentContent.add(studentCourseListPanel, "card3");
 
+        studentNewCourseRegistrationButton.setText("New Registration");
+        studentNewCourseRegistrationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentNewCourseRegistrationButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout studentCourseRegistrationPanelLayout = new javax.swing.GroupLayout(studentCourseRegistrationPanel);
+        studentCourseRegistrationPanel.setLayout(studentCourseRegistrationPanelLayout);
+        studentCourseRegistrationPanelLayout.setHorizontalGroup(
+            studentCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentCourseRegistrationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentNewCourseRegistrationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(549, Short.MAX_VALUE))
+        );
+        studentCourseRegistrationPanelLayout.setVerticalGroup(
+            studentCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentCourseRegistrationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentNewCourseRegistrationButton)
+                .addContainerGap(426, Short.MAX_VALUE))
+        );
+
+        studentContent.add(studentCourseRegistrationPanel, "card8");
+
+        studentCourseRegistrationTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Semester", "ECTS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        studentCourseRegistrationTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane8.setViewportView(studentCourseRegistrationTable);
+
+        studentCourseRegistrationAddButton.setText("Add Courses");
+        studentCourseRegistrationAddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentCourseRegistrationAddButtonActionPerformed(evt);
+            }
+        });
+
+        studentNewCourseRegistrationNextButton.setText("Next");
+        studentNewCourseRegistrationNextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentNewCourseRegistrationNextButtonActionPerformed(evt);
+            }
+        });
+
+        studentCourseRegistrationSelectedCoursesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Semester", "ECTS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        studentCourseRegistrationSelectedCoursesTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane12.setViewportView(studentCourseRegistrationSelectedCoursesTable);
+
+        studentCourseRegistrationRemoveButton.setText("Remove Course");
+        studentCourseRegistrationRemoveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentCourseRegistrationRemoveButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout studentNewCourseRegistrationPanelLayout = new javax.swing.GroupLayout(studentNewCourseRegistrationPanel);
+        studentNewCourseRegistrationPanel.setLayout(studentNewCourseRegistrationPanelLayout);
+        studentNewCourseRegistrationPanelLayout.setHorizontalGroup(
+            studentNewCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentNewCourseRegistrationPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(studentNewCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(studentNewCourseRegistrationPanelLayout.createSequentialGroup()
+                        .addComponent(studentCourseRegistrationAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(studentCourseRegistrationRemoveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(studentNewCourseRegistrationNextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(studentNewCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        studentNewCourseRegistrationPanelLayout.setVerticalGroup(
+            studentNewCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentNewCourseRegistrationPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(studentNewCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(studentNewCourseRegistrationNextButton)
+                    .addComponent(studentCourseRegistrationAddButton)
+                    .addComponent(studentCourseRegistrationRemoveButton))
+                .addContainerGap())
+        );
+
+        studentContent.add(studentNewCourseRegistrationPanel, "card7");
+
+        studentCourseRegistrationFinalTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Course", "ID", "Semester", "ECTS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane9.setViewportView(studentCourseRegistrationFinalTable);
+
+        studentCourseRegistrationFinalFinalizeButton.setText("Finalize");
+        studentCourseRegistrationFinalFinalizeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentCourseRegistrationFinalFinalizeButtonActionPerformed(evt);
+            }
+        });
+
+        studentCourseRegistrationFinalBackButton.setText("Back");
+        studentCourseRegistrationFinalBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentCourseRegistrationFinalBackButtonActionPerformed(evt);
+            }
+        });
+
+        studentCourseRegistrationFinalErrorMessage.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout studentCourseRegistrationFinalPanelLayout = new javax.swing.GroupLayout(studentCourseRegistrationFinalPanel);
+        studentCourseRegistrationFinalPanel.setLayout(studentCourseRegistrationFinalPanelLayout);
+        studentCourseRegistrationFinalPanelLayout.setHorizontalGroup(
+            studentCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(studentCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(studentCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                        .addComponent(studentCourseRegistrationFinalBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(studentCourseRegistrationFinalErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(studentCourseRegistrationFinalFinalizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        studentCourseRegistrationFinalPanelLayout.setVerticalGroup(
+            studentCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(studentCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(studentCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(studentCourseRegistrationFinalFinalizeButton)
+                        .addComponent(studentCourseRegistrationFinalBackButton))
+                    .addComponent(studentCourseRegistrationFinalErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
+        studentContent.add(studentCourseRegistrationFinalPanel, "card9");
+
+        studentMyCoursesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Semester", "Grade", "Status", "ECTS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane14.setViewportView(studentMyCoursesTable);
+
+        javax.swing.GroupLayout studentMyCoursesPanelLayout = new javax.swing.GroupLayout(studentMyCoursesPanel);
+        studentMyCoursesPanel.setLayout(studentMyCoursesPanelLayout);
+        studentMyCoursesPanelLayout.setHorizontalGroup(
+            studentMyCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentMyCoursesPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        studentMyCoursesPanelLayout.setVerticalGroup(
+            studentMyCoursesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentMyCoursesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        studentContent.add(studentMyCoursesPanel, "card10");
+
         oldPassConfirm.setAlignmentX(0.0F);
         oldPassConfirm.setAlignmentY(0.0F);
 
@@ -588,7 +944,15 @@ public class main extends javax.swing.JFrame  {
                 changePasswMouseClicked(evt);
             }
         });
-        mainStudent.add(changePassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, -1));
+        mainStudent.add(changePassw, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 110, -1));
+
+        studentMyCoursesButton.setText("My Courses");
+        studentMyCoursesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentMyCoursesButtonActionPerformed(evt);
+            }
+        });
+        mainStudent.add(studentMyCoursesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 110, 30));
 
         jLayeredPane1.add(mainStudent, "card3");
 
@@ -750,6 +1114,63 @@ public class main extends javax.swing.JFrame  {
 
         staffContent.add(staffCourseListPanel, "card5");
 
+        staffMyCoursesPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        staffMyCoursesComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                staffMyCoursesComboBoxItemStateChanged(evt);
+            }
+        });
+        staffMyCoursesPanel.add(staffMyCoursesComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 300, -1));
+
+        staffStudentsInCourseTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Student ID", "Surname", "Name", "Grade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        staffStudentsInCourseTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane7.setViewportView(staffStudentsInCourseTable);
+
+        staffMyCoursesPanel.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 650, 260));
+
+        jLabel33.setText("Students in this Course:");
+        staffMyCoursesPanel.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 74, 190, 20));
+
+        jButton1.setText("Change Student Grade");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        staffMyCoursesPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 150, 30));
+        staffMyCoursesPanel.add(staffMyCoursesNewGradeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 130, 30));
+
+        jLabel73.setText("New Grade:");
+        staffMyCoursesPanel.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, -1, -1));
+
+        staffMyCoursesReasonComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Initial Grade", "Re-evaluation" }));
+        staffMyCoursesPanel.add(staffMyCoursesReasonComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 110, 30));
+
+        staffContent.add(staffMyCoursesPanel, "card6");
+
         mainStaff.add(staffContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 700, 460));
 
         logoutButtonStaff.setText("Logout");
@@ -791,6 +1212,14 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainStaff.add(staffCourseListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, -1));
+
+        staffMyCoursesButton.setText("My Courses");
+        staffMyCoursesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffMyCoursesButtonActionPerformed(evt);
+            }
+        });
+        mainStaff.add(staffMyCoursesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 130, -1));
 
         jLayeredPane1.add(mainStaff, "card4");
 
@@ -944,11 +1373,11 @@ public class main extends javax.swing.JFrame  {
                 .addGap(51, 51, 51)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(adminDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminDetailSurnameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(adminDetailPhoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(adminDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminDetailSurnameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminDetailPhoneLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(262, 262, 262))
@@ -1036,8 +1465,6 @@ public class main extends javax.swing.JFrame  {
 
         jLabel32.setText("Semester");
 
-        jLabel33.setText("ECTS");
-
         adminAddStudentYearField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminAddStudentYearFieldActionPerformed(evt);
@@ -1067,7 +1494,7 @@ public class main extends javax.swing.JFrame  {
                     .addComponent(jLabel28)
                     .addComponent(jLabel29)
                     .addComponent(jLabel30))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(adminAddStudentIDField)
                     .addComponent(adminAddStudentSurnameField)
@@ -1078,24 +1505,20 @@ public class main extends javax.swing.JFrame  {
                     .addComponent(adminAddStudentPhoneField, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
                 .addGap(82, 82, 82)
                 .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel33))
-                .addGap(26, 26, 26)
-                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(adminAddStudentYearField)
-                    .addComponent(adminAddStudentSemesterField)
-                    .addComponent(adminAddStudentECTSField, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
-                .addGap(67, 67, 67))
+                    .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                        .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel32))
+                        .addGap(26, 26, 26)
+                        .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(adminAddStudentYearField, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(adminAddStudentSemesterField)))
+                    .addComponent(adminAddStudentErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
             .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
-                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(adminAddStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(adminAddStudentErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(285, 285, 285)
+                .addComponent(adminAddStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         adminAddStudentPanelLayout.setVerticalGroup(
             adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1115,59 +1538,226 @@ public class main extends javax.swing.JFrame  {
                 .addGap(18, 18, 18)
                 .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(jLabel33)
-                    .addComponent(adminAddStudentNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminAddStudentECTSField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(adminAddStudentNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(adminAddStudentPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(18, 29, Short.MAX_VALUE)
                 .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
                     .addComponent(adminAddStudentAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(adminAddStudentEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(adminAddStudentPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(adminAddStudentPanelLayout.createSequentialGroup()
+                        .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(adminAddStudentEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(adminAddStudentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(adminAddStudentPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(adminAddStudentErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(adminAddStudentButton)
-                .addGap(18, 18, 18)
-                .addComponent(adminAddStudentErrorMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(46, 46, 46))
         );
 
         jTabbedPane1.addTab("Add Student", adminAddStudentPanel);
+
+        jLabel52.setText("ID:");
+
+        jLabel53.setText("Surname:");
+
+        jLabel54.setText("Name:");
+
+        jLabel55.setText("Phone:");
+
+        jLabel56.setText("Address:");
+
+        jLabel57.setText("E-mail:");
+
+        jLabel58.setText("Password:");
+
+        adminAddStaffButton.setText("Add Staff");
+        adminAddStaffButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddStaffButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout adminAddStaffPanelLayout = new javax.swing.GroupLayout(adminAddStaffPanel);
         adminAddStaffPanel.setLayout(adminAddStaffPanelLayout);
         adminAddStaffPanelLayout.setHorizontalGroup(
             adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel52)
+                        .addGap(53, 53, 53)
+                        .addComponent(adminAddStaffIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(adminAddStaffButton))
+                    .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel57)
+                            .addComponent(jLabel56)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel53))
+                        .addGap(18, 18, 18)
+                        .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adminAddStaffSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddStaffNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddStaffPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(adminAddStaffAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(adminAddStaffPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(adminAddStaffEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(153, 153, 153)
+                                .addComponent(adminAddStaffErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         adminAddStaffPanelLayout.setVerticalGroup(
             adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 381, Short.MAX_VALUE)
+            .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(adminAddStaffIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(adminAddStaffSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(adminAddStaffNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(adminAddStaffPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminAddStaffPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel56)
+                            .addComponent(adminAddStaffAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel57)
+                            .addComponent(adminAddStaffEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
+                        .addGroup(adminAddStaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel58)
+                            .addComponent(adminAddStaffPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminAddStaffPanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(adminAddStaffErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(42, 42, 42)
+                .addComponent(adminAddStaffButton)
+                .addGap(56, 56, 56))
         );
 
-        jTabbedPane1.addTab("AddStaff", adminAddStaffPanel);
+        jTabbedPane1.addTab("Add Staff", adminAddStaffPanel);
+
+        jLabel59.setText("ID:");
+
+        jLabel60.setText("Surname:");
+
+        jLabel61.setText("Name:");
+
+        jLabel62.setText("Phone:");
+
+        jLabel63.setText("Address:");
+
+        jLabel64.setText("E-mail:");
+
+        jLabel65.setText("Password:");
+
+        adminAddAdminButton.setText("Add Administrator");
+        adminAddAdminButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddAdminButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout adminAddAdminPanelLayout = new javax.swing.GroupLayout(adminAddAdminPanel);
         adminAddAdminPanel.setLayout(adminAddAdminPanelLayout);
         adminAddAdminPanelLayout.setHorizontalGroup(
             adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGroup(adminAddAdminPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel59)
+                    .addComponent(jLabel60)
+                    .addComponent(jLabel61)
+                    .addComponent(jLabel62)
+                    .addComponent(jLabel63)
+                    .addComponent(jLabel64)
+                    .addComponent(jLabel65))
+                .addGap(31, 31, 31)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminAddAdminSurnameField)
+                    .addComponent(adminAddAdminNameField)
+                    .addComponent(adminAddAdminPhoneField)
+                    .addComponent(adminAddAdminAddressField)
+                    .addComponent(adminAddAdminPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminAddAdminEmailField)
+                    .addComponent(adminAddAdminIDField))
+                .addGap(171, 171, 171)
+                .addComponent(adminAddAdminErrorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(adminAddAdminPanelLayout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(adminAddAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         adminAddAdminPanelLayout.setVerticalGroup(
             adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 381, Short.MAX_VALUE)
+            .addGroup(adminAddAdminPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59)
+                    .addComponent(adminAddAdminIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(adminAddAdminSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel61)
+                    .addComponent(adminAddAdminNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(adminAddAdminPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel63)
+                    .addComponent(adminAddAdminAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(adminAddAdminPanelLayout.createSequentialGroup()
+                        .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel64)
+                            .addComponent(adminAddAdminEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(adminAddAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel65)
+                            .addComponent(adminAddAdminPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(adminAddAdminErrorMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(adminAddAdminButton)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("AddAdmin", adminAddAdminPanel);
+        jTabbedPane1.addTab("Add Admin", adminAddAdminPanel);
 
         javax.swing.GroupLayout adminAddUserPanelLayout = new javax.swing.GroupLayout(adminAddUserPanel);
         adminAddUserPanel.setLayout(adminAddUserPanelLayout);
@@ -1349,6 +1939,242 @@ public class main extends javax.swing.JFrame  {
 
         adminContent.add(adminAddCoursePanel, "card6");
 
+        adminCourseRegistrationTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Number", "Student", "ID", "Semester", "Date", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        adminCourseRegistrationTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane10.setViewportView(adminCourseRegistrationTable);
+
+        adminCourseRegistrationSelectButton.setText("Select Registration");
+        adminCourseRegistrationSelectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminCourseRegistrationSelectButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout adminCourseRegistrationPanelLayout = new javax.swing.GroupLayout(adminCourseRegistrationPanel);
+        adminCourseRegistrationPanel.setLayout(adminCourseRegistrationPanelLayout);
+        adminCourseRegistrationPanelLayout.setHorizontalGroup(
+            adminCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminCourseRegistrationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(adminCourseRegistrationSelectButton)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        adminCourseRegistrationPanelLayout.setVerticalGroup(
+            adminCourseRegistrationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminCourseRegistrationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(adminCourseRegistrationSelectButton)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
+        adminContent.add(adminCourseRegistrationPanel, "card8");
+
+        jLabel66.setText("Name:");
+
+        jLabel67.setText("Number:");
+
+        jLabel68.setText("Semester: ");
+
+        jLabel69.setText("ID:");
+
+        jLabel70.setText("Date:");
+
+        jLabel71.setText("Status:");
+
+        adminCourseRegistrationFinalTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name", "Semester", "Lecturer", "ECTS"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane11.setViewportView(adminCourseRegistrationFinalTable);
+
+        jLabel72.setText("Courses:");
+
+        adminCourseRegistrationFinalAcceptButton.setText("Accept");
+        adminCourseRegistrationFinalAcceptButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminCourseRegistrationFinalAcceptButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout adminCourseRegistrationFinalPanelLayout = new javax.swing.GroupLayout(adminCourseRegistrationFinalPanel);
+        adminCourseRegistrationFinalPanel.setLayout(adminCourseRegistrationFinalPanelLayout);
+        adminCourseRegistrationFinalPanelLayout.setHorizontalGroup(
+            adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel72)
+                    .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
+                        .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                            .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel68)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(adminCourseRegistrationFinalSemesterLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel67)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(adminCourseRegistrationFinalNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(60, 60, 60)
+                            .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel66)
+                                .addComponent(jLabel70))
+                            .addGap(18, 18, 18)
+                            .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(adminCourseRegistrationFinalNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(adminCourseRegistrationFinalDateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                            .addGap(42, 42, 42)
+                            .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel69)
+                                    .addGap(33, 33, 33)
+                                    .addComponent(adminCourseRegistrationFinalIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel71)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(adminCourseRegistrationFinalStatusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addComponent(adminCourseRegistrationFinalAcceptButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        adminCourseRegistrationFinalPanelLayout.setVerticalGroup(
+            adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminCourseRegistrationFinalNumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminCourseRegistrationFinalNameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminCourseRegistrationFinalIDLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(adminCourseRegistrationFinalPanelLayout.createSequentialGroup()
+                        .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel69)
+                            .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel66)
+                                .addComponent(jLabel67)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel68)
+                        .addComponent(jLabel70)
+                        .addComponent(adminCourseRegistrationFinalSemesterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminCourseRegistrationFinalDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(adminCourseRegistrationFinalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel71)
+                        .addComponent(adminCourseRegistrationFinalStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel72)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(adminCourseRegistrationFinalAcceptButton)
+                .addGap(135, 135, 135))
+        );
+
+        adminContent.add(adminCourseRegistrationFinalPanel, "card9");
+
+        adminGradesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lecturer", "Course", "Student ID", "Student Name", "Grade", "Reason", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane13.setViewportView(adminGradesTable);
+
+        adminGradesAcceptButton.setText("Accept");
+        adminGradesAcceptButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminGradesAcceptButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout adminGradesPanelLayout = new javax.swing.GroupLayout(adminGradesPanel);
+        adminGradesPanel.setLayout(adminGradesPanelLayout);
+        adminGradesPanelLayout.setHorizontalGroup(
+            adminGradesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminGradesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminGradesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
+                    .addGroup(adminGradesPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(adminGradesAcceptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        adminGradesPanelLayout.setVerticalGroup(
+            adminGradesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminGradesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addComponent(adminGradesAcceptButton)
+                .addGap(36, 36, 36))
+        );
+
+        adminContent.add(adminGradesPanel, "card10");
+
         mainAdmin.add(adminContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 710, 460));
 
         logoutButtonAdmin.setText("Logout");
@@ -1390,6 +2216,22 @@ public class main extends javax.swing.JFrame  {
             }
         });
         mainAdmin.add(adminDetailsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 120, -1));
+
+        adminCourseRegistrationButton.setText("Registrations");
+        adminCourseRegistrationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminCourseRegistrationButtonActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(adminCourseRegistrationButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, -1));
+
+        adminGradesButton.setText("Grades");
+        adminGradesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminGradesButtonActionPerformed(evt);
+            }
+        });
+        mainAdmin.add(adminGradesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 120, -1));
 
         jLayeredPane1.add(mainAdmin, "card5");
 
@@ -1561,14 +2403,32 @@ public class main extends javax.swing.JFrame  {
     }//GEN-LAST:event_adminAddStudentYearFieldActionPerformed
 
     private void adminAddStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddStudentButtonActionPerformed
-        if(adminAddStudentIDField.equals("") || adminAddStudentSurnameField.equals("") || adminAddStudentNameField.equals("") || adminAddStudentPasswordField.equals("") || adminAddStudentAddressField.equals("") || adminAddStudentEmailField.equals("") || adminAddStudentNameField.equals("") || adminAddStudentPhoneField.equals("") || adminAddStudentYearField.equals("") || adminAddStudentSemesterField.equals("") || adminAddStudentECTSField.equals(""))
+        start:
+        if(adminAddStudentIDField.getText().equals("") || adminAddStudentSurnameField.getText().equals("") || adminAddStudentNameField.getText().equals("") || adminAddStudentPasswordField.getText().equals("") || adminAddStudentAddressField.getText().equals("") || adminAddStudentEmailField.getText().equals("") || adminAddStudentPhoneField.getText().equals("") || adminAddStudentYearField.getText().equals("") || adminAddStudentSemesterField.getText().equals(""))
             adminAddStudentErrorMessage.setText("Please fill in all the fields");
         else
         {
-            db.userDB.add(new student(adminAddStudentIDField.getText(),adminAddStudentNameField.getText(),adminAddStudentSurnameField.getText(),adminAddStudentPasswordField.getText(),adminAddStudentAddressField.getText(),adminAddStudentEmailField.getText(),Integer.valueOf(adminAddStudentPhoneField.getText()),Integer.valueOf(adminAddStudentYearField.getText()),adminAddStudentSemesterField.getText(),Integer.valueOf(adminAddStudentECTSField.getText())));
+            for(Object o : db.userDB){
+                if(adminAddStudentIDField.getText().equals(((user)o).getId()))
+                {
+                    adminAddStudentErrorMessage.setText("This ID exists in the database");
+                    break start;
+                }               
+            }
+            db.userDB.add(new student(adminAddStudentIDField.getText(),adminAddStudentNameField.getText(),adminAddStudentSurnameField.getText(),adminAddStudentPasswordField.getText(),adminAddStudentAddressField.getText(),adminAddStudentEmailField.getText(),Integer.valueOf(adminAddStudentPhoneField.getText()),Integer.valueOf(adminAddStudentYearField.getText()),adminAddStudentSemesterField.getText()));
             adminAddStudentErrorMessage.setText("");
+            adminAddStudentIDField.setText("");
+            adminAddStudentSurnameField.setText("");
+            adminAddStudentNameField.setText("");
+            adminAddStudentPasswordField.setText("");
+            adminAddStudentAddressField.setText("");
+            adminAddStudentEmailField.setText("");
+            adminAddStudentPhoneField.setText("");
+            adminAddStudentSemesterField.setText("");
+            adminAddStudentYearField.setText("");
             db.serializeUsers("./data/obj.ser");
-        }                 
+        }  
+        
     }//GEN-LAST:event_adminAddStudentButtonActionPerformed
 
     private void adminBackToCourseListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBackToCourseListButtonActionPerformed
@@ -1690,6 +2550,309 @@ public class main extends javax.swing.JFrame  {
         
         adminLayout.show(adminContent, "adminDetailsPanel");
     }//GEN-LAST:event_adminDetailsButtonActionPerformed
+
+    private void staffMyCoursesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffMyCoursesButtonActionPerformed
+        staffMyCoursesComboBox.removeAllItems();
+        for(Object o : db.courseDB){
+            if(((course)o).getTeacher().getId().equals(loggedUser.getId()))
+                staffMyCoursesComboBox.addItem(((course)o).getName());
+        }
+        staffMyCoursesTableFill();
+        
+        staffLayout.show(staffContent, "staffMyCoursesPanel");
+    }//GEN-LAST:event_staffMyCoursesButtonActionPerformed
+
+    private void staffMyCoursesTableFill(){
+        DefaultTableModel staffStudentsInCourseDTable = (DefaultTableModel) staffStudentsInCourseTable.getModel();
+        staffStudentsInCourseDTable.setRowCount(0);
+        for(Object o : db.userDB){
+            if(o instanceof student){
+                for(Object x : (((student)o).getCourseList())){
+                    if (((studentCourse)x).getCourse().getName().equals(staffMyCoursesComboBox.getSelectedItem())){
+                        
+                        staffStudentsInCourseDTable.addRow(new Object[]{((student)o).getId(),((student)o).getSurname(), ((student)o).getName(), ((studentCourse)x).getGrade()});
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    private void studentCourseRegistrationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseRegistrationButtonActionPerformed
+        
+        studentLayout.show(studentContent, "studentCourseRegistrationPanel");
+        
+        
+    }//GEN-LAST:event_studentCourseRegistrationButtonActionPerformed
+
+    private void studentCourseRegistrationAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseRegistrationAddButtonActionPerformed
+        DefaultTableModel studentCourseRegistrationSelectedCoursesDTable = (DefaultTableModel) studentCourseRegistrationSelectedCoursesTable.getModel();
+        if(studentCourseRegistrationTable.getSelectedRow() != -1)
+        studentCourseRegistrationSelectedCoursesDTable.addRow(new Object[]{studentCourseRegistrationTable.getValueAt(studentCourseRegistrationTable.getSelectedRow(), 0), studentCourseRegistrationTable.getValueAt(studentCourseRegistrationTable.getSelectedRow(), 1), studentCourseRegistrationTable.getValueAt(studentCourseRegistrationTable.getSelectedRow(), 2), studentCourseRegistrationTable.getValueAt(studentCourseRegistrationTable.getSelectedRow(), 3)});
+        
+        
+            
+    }//GEN-LAST:event_studentCourseRegistrationAddButtonActionPerformed
+
+    private void staffMyCoursesComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_staffMyCoursesComboBoxItemStateChanged
+        staffMyCoursesTableFill();
+    }//GEN-LAST:event_staffMyCoursesComboBoxItemStateChanged
+
+    private void adminAddStaffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddStaffButtonActionPerformed
+        start:
+        if(adminAddStaffIDField.getText().equals("") || adminAddStaffSurnameField.getText().equals("") || adminAddStaffNameField.getText().equals("") || adminAddStaffPasswordField.getText().equals("") || adminAddStaffAddressField.getText().equals("") || adminAddStaffEmailField.getText().equals("") || adminAddStaffPhoneField.getText().equals(""))
+            adminAddStaffErrorMessage.setText("Please fill in all the fields");
+        else
+        {
+            for(Object o : db.userDB){
+                if(adminAddStaffIDField.getText().equals(((user)o).getId()))
+                {
+                    adminAddStaffErrorMessage.setText("This ID exists in the database");
+                    break start;
+                }               
+            }
+            db.userDB.add(new staff(adminAddStaffIDField.getText(),adminAddStaffNameField.getText(),adminAddStaffSurnameField.getText(),adminAddStaffPasswordField.getText(),adminAddStaffAddressField.getText(),adminAddStaffEmailField.getText(),Integer.valueOf(adminAddStaffPhoneField.getText())));
+            adminAddStaffErrorMessage.setText("");
+            adminAddStaffIDField.setText("");
+            adminAddStaffSurnameField.setText("");
+            adminAddStaffNameField.setText("");
+            adminAddStaffPasswordField.setText("");
+            adminAddStaffAddressField.setText("");
+            adminAddStaffEmailField.setText("");
+            adminAddStaffPhoneField.setText("");
+            db.serializeUsers("./data/obj.ser");
+        }
+    }//GEN-LAST:event_adminAddStaffButtonActionPerformed
+
+    private void adminAddAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddAdminButtonActionPerformed
+        start:
+        if(adminAddAdminIDField.getText().equals("") || adminAddAdminSurnameField.getText().equals("") || adminAddAdminNameField.getText().equals("") || adminAddAdminPasswordField.getText().equals("") || adminAddAdminAddressField.getText().equals("") || adminAddAdminEmailField.getText().equals("") || adminAddAdminPhoneField.getText().equals(""))
+            adminAddAdminErrorMessage.setText("Please fill in all the fields");
+        else
+        {
+            for(Object o : db.userDB){
+                if(adminAddAdminIDField.getText().equals(((user)o).getId()))
+                {
+                    adminAddAdminErrorMessage.setText("This ID exists in the database");
+                    break start;
+                }               
+            }
+            db.userDB.add(new administration(adminAddAdminIDField.getText(),adminAddAdminNameField.getText(),adminAddAdminSurnameField.getText(),adminAddAdminPasswordField.getText(),adminAddAdminAddressField.getText(),adminAddAdminEmailField.getText(),Integer.valueOf(adminAddAdminPhoneField.getText())));
+            adminAddAdminErrorMessage.setText("");
+            adminAddAdminIDField.setText("");
+            adminAddAdminSurnameField.setText("");
+            adminAddAdminNameField.setText("");
+            adminAddAdminPasswordField.setText("");
+            adminAddAdminAddressField.setText("");
+            adminAddAdminEmailField.setText("");
+            adminAddAdminPhoneField.setText("");
+            db.serializeUsers("./data/obj.ser");
+        } 
+    }//GEN-LAST:event_adminAddAdminButtonActionPerformed
+
+    private void studentNewCourseRegistrationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentNewCourseRegistrationButtonActionPerformed
+        DefaultTableModel studentCourseRegistrationDTable = (DefaultTableModel) studentCourseRegistrationTable.getModel();
+        studentCourseRegistrationDTable.setRowCount(0);
+        for(Object i : db.courseDB){
+            studentCourseRegistrationDTable.addRow(new Object[]{((course)i).getId(),((course)i).getName(),((course)i).getSemester(),((course)i).getECTS()});
+        }
+        
+        DefaultTableModel studentCourseRegistrationSelectedCoursesDTable = (DefaultTableModel) studentCourseRegistrationSelectedCoursesTable.getModel();
+        studentCourseRegistrationSelectedCoursesDTable.setRowCount(0);
+        studentLayout.show(studentContent, "studentNewCourseRegistrationPanel");
+        
+    }//GEN-LAST:event_studentNewCourseRegistrationButtonActionPerformed
+
+    private void studentNewCourseRegistrationNextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentNewCourseRegistrationNextButtonActionPerformed
+        DefaultTableModel studentCourseRegistrationFinalDTable = (DefaultTableModel) studentCourseRegistrationFinalTable.getModel();
+        studentCourseRegistrationFinalDTable.setRowCount(0);
+        ((student)loggedUser).setPendingRegistration(new CourseRegistration());
+        for(int i=0; i<studentCourseRegistrationSelectedCoursesTable.getRowCount(); i++){
+            studentCourseRegistrationFinalDTable.addRow(new Object[]{studentCourseRegistrationSelectedCoursesTable.getValueAt(i, 0),studentCourseRegistrationSelectedCoursesTable.getValueAt(i, 1),studentCourseRegistrationSelectedCoursesTable.getValueAt(i, 2),studentCourseRegistrationSelectedCoursesTable.getValueAt(i, 3)});
+            for(Object o : db.courseDB){
+                if(((course)o).getId() == studentCourseRegistrationSelectedCoursesTable.getValueAt(i, 0)){                    
+                    ((student)loggedUser).getPendingRegistration().list.add((course)o);
+                    break;
+                }
+            }
+            
+        }
+        
+        
+        studentLayout.show(studentContent, "studentCourseRegistrationFinalPanel");
+    }//GEN-LAST:event_studentNewCourseRegistrationNextButtonActionPerformed
+
+    private void studentCourseRegistrationFinalFinalizeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseRegistrationFinalFinalizeButtonActionPerformed
+        int sumEcts = 0;
+        
+        for(Object i : ((student)loggedUser).getPendingRegistration().list){
+            sumEcts+=((course)i).getECTS();
+        }
+        if(sumEcts<42){
+            
+            ((student)loggedUser).getPendingRegistration().setStudent((student)loggedUser);
+            ((student)loggedUser).getPendingRegistration().setDate();
+            
+            
+            ((student)loggedUser).getPendingRegistration().readRegisterNum();
+            
+            ((student)loggedUser).getPendingRegistration().writeRegisterNum();
+            db.cRegDB.add(((student)loggedUser).getPendingRegistration());
+            db.serializeCourseRegistrations("./data/registrations.ser");
+            
+            
+            ((student)loggedUser).setPendingRegistration(new CourseRegistration());
+            studentCourseRegistrationFinalErrorMessage.setText("");
+            studentLayout.show(studentContent, "studentHomePage");
+            
+            
+        }
+        else
+        {
+            studentCourseRegistrationFinalErrorMessage.setText("ECTS exceed 42");
+        }
+    }//GEN-LAST:event_studentCourseRegistrationFinalFinalizeButtonActionPerformed
+
+    private void studentCourseRegistrationFinalBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseRegistrationFinalBackButtonActionPerformed
+        ((student)loggedUser).setPendingRegistration(new CourseRegistration());
+        studentCourseRegistrationFinalErrorMessage.setText("");
+        studentLayout.show(studentContent, "studentNewCourseRegistrationPanel");
+    }//GEN-LAST:event_studentCourseRegistrationFinalBackButtonActionPerformed
+
+    private void adminCourseRegistrationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCourseRegistrationButtonActionPerformed
+        DefaultTableModel adminCourseRegistrationDTable = (DefaultTableModel) adminCourseRegistrationTable.getModel();
+        adminCourseRegistrationDTable.setRowCount(0);
+        for(Object o : db.cRegDB){
+            adminCourseRegistrationDTable.addRow(new Object[]{((CourseRegistration)o).getRegNum(), ((CourseRegistration)o).getStudent().getSurname() + " " + ((CourseRegistration)o).getStudent().getName(), ((CourseRegistration)o).getStudent().getId(), db.currentSemester, ((CourseRegistration)o).getDate(), ((CourseRegistration)o).getStatus()});
+        }
+        
+        adminLayout.show(adminContent,"adminCourseRegistrationPanel");
+    }//GEN-LAST:event_adminCourseRegistrationButtonActionPerformed
+
+    private void adminCourseRegistrationSelectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCourseRegistrationSelectButtonActionPerformed
+        DefaultTableModel adminCourseRegistrationFinalDTable = (DefaultTableModel) adminCourseRegistrationFinalTable.getModel();
+        adminCourseRegistrationFinalDTable.setRowCount(0);
+
+        CourseRegistration selectedRegistration=null;
+        
+        for(Object i : db.cRegDB){
+            if(((CourseRegistration)i).getRegNum() == (Integer)adminCourseRegistrationTable.getValueAt(adminCourseRegistrationTable.getSelectedRow(), 0)){
+                selectedRegistration = (CourseRegistration)i;
+                break;
+            }
+        }
+        
+        adminCourseRegistrationFinalNumberLabel.setText(String.valueOf(selectedRegistration.getRegNum()));
+        adminCourseRegistrationFinalNameLabel.setText(selectedRegistration.getStudent().getSurname()+ " "+ selectedRegistration.getStudent().getName());
+        adminCourseRegistrationFinalIDLabel.setText(selectedRegistration.getStudent().getId());
+        adminCourseRegistrationFinalSemesterLabel.setText(db.currentSemester);
+        adminCourseRegistrationFinalDateLabel.setText(selectedRegistration.getDate());
+        adminCourseRegistrationFinalStatusLabel.setText(selectedRegistration.getStatus());
+        
+        
+        
+        for(Object o : selectedRegistration.list){
+            adminCourseRegistrationFinalDTable.addRow(new Object[]{((course)o).getId(), ((course)o).getName(), ((course)o).getSemester(), ((course)o).getTeacher().getSurname() + " "+ ((course)o).getTeacher().getName(), ((course)o).getECTS()});
+        }
+        
+        
+        adminLayout.show(adminContent,"adminCourseRegistrationFinalPanel");
+    }//GEN-LAST:event_adminCourseRegistrationSelectButtonActionPerformed
+
+    private void studentCourseRegistrationRemoveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentCourseRegistrationRemoveButtonActionPerformed
+        DefaultTableModel studentCourseRegistrationSelectedCoursesDTable = (DefaultTableModel) studentCourseRegistrationSelectedCoursesTable.getModel();
+        if(((Integer)studentCourseRegistrationSelectedCoursesTable.getSelectedRow()) != -1)
+        studentCourseRegistrationSelectedCoursesDTable.removeRow(studentCourseRegistrationSelectedCoursesTable.getSelectedRow());
+    }//GEN-LAST:event_studentCourseRegistrationRemoveButtonActionPerformed
+
+    private void adminCourseRegistrationFinalAcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminCourseRegistrationFinalAcceptButtonActionPerformed
+        for(Object o : db.cRegDB){
+            if((((CourseRegistration)o).getRegNum() == Integer.valueOf(adminCourseRegistrationFinalNumberLabel.getText())) && (((CourseRegistration)o).getStatus().equals("Pending"))){
+                ((CourseRegistration)o).setStatus("Accepted");
+                for(Object i : ((CourseRegistration)o).list){
+                    ((CourseRegistration)o).getStudent().getCourseList().add(new studentCourse((course)i));
+                }
+                db.serializeCourseRegistrations("./data/registrations.ser");
+                db.serializeUsers("./data/obj.ser");
+                break;
+                                              
+            }
+        }
+    }//GEN-LAST:event_adminCourseRegistrationFinalAcceptButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if((((Integer)staffStudentsInCourseTable.getSelectedRow()) != -1) && !(staffMyCoursesNewGradeField.getText().equals(""))){
+
+            for(Object i : db.userDB){
+                if((i instanceof student) && (((student)i).getId().equals(staffStudentsInCourseTable.getValueAt(staffStudentsInCourseTable.getSelectedRow(), 0)))){
+                    for(Object x : ((student)i).getCourseList()){
+                        if(((studentCourse)x).getCourse().getName().equals(staffMyCoursesComboBox.getSelectedItem())){
+                            grade g = new grade((student)i,Double.valueOf(staffMyCoursesNewGradeField.getText()),(studentCourse)x,staffMyCoursesReasonComboBox.getSelectedItem().toString());
+                            db.gradesDB.add(g);
+                            db.serializeGrades("./data/grades.ser");
+                            break;
+                        }                           
+                    }
+                    break;
+                }
+            }
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void adminGradesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminGradesButtonActionPerformed
+        DefaultTableModel adminGradesDTable = (DefaultTableModel) adminGradesTable.getModel();
+        adminGradesDTable.setRowCount(0);
+        
+        for(Object i : db.gradesDB){
+            adminGradesDTable.addRow(new Object[]{((grade)i).getStudentCourse().getCourse().getTeacher().getSurname()+" "+((grade)i).getStudentCourse().getCourse().getTeacher().getName(),((grade)i).getStudentCourse().getCourse().getName(),((grade)i).getStudent().getId(),((grade)i).getStudent().getSurname()+" "+((grade)i).getStudent().getName(),((grade)i).getGrade(),((grade)i).getAction(),((grade)i).getStatus()});
+        }
+        
+        
+        adminLayout.show(adminContent,"adminGradesPanel");
+    }//GEN-LAST:event_adminGradesButtonActionPerformed
+
+    private void adminGradesAcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminGradesAcceptButtonActionPerformed
+        if((adminGradesTable.getSelectedRow() != -1) && (adminGradesTable.getValueAt(adminGradesTable.getSelectedRow(), 6).equals("Pending"))){
+            for(Object o : db.userDB){
+                if((o instanceof student) && (((student)o).getId().equals(adminGradesTable.getValueAt(adminGradesTable.getSelectedRow(), 2)))){
+                    for(Object i : ((student)o).getCourseList()){
+                        if(((studentCourse)i).getCourse().getName().equals(adminGradesTable.getValueAt(adminGradesTable.getSelectedRow(), 1))){
+                            ((studentCourse)i).setGrade((Double)adminGradesTable.getValueAt(adminGradesTable.getSelectedRow(), 4));
+                            adminGradesTable.getValueAt(adminGradesTable.getSelectedRow(), 6).equals("Accepted");
+                            if(((studentCourse)i).getGrade()>=5){
+                                ((studentCourse)i).setPassed(true);
+                            }                            
+                            break;
+                        }
+                    }
+                   break; 
+                }
+                
+            }
+            
+            
+            
+        }
+        db.serializeUsers("./data/obj.ser");
+        db.serializeGrades("./data/grades.ser");
+    }//GEN-LAST:event_adminGradesAcceptButtonActionPerformed
+
+    private void studentMyCoursesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentMyCoursesButtonActionPerformed
+        DefaultTableModel studentMyCoursesDTable = (DefaultTableModel) studentMyCoursesTable.getModel();
+        studentMyCoursesDTable.setRowCount(0);
+        
+        for(Object o : ((student)loggedUser).getCourseList()){
+            if(((studentCourse)o).getState())
+                studentMyCoursesDTable.addRow(new Object[]{((studentCourse)o).getCourse().getId(),((studentCourse)o).getCourse().getName(),((studentCourse)o).getCourse().getSemester(),((studentCourse)o).getGrade(),"Passed",((studentCourse)o).getCourse().getECTS()});
+            else
+                studentMyCoursesDTable.addRow(new Object[]{((studentCourse)o).getCourse().getId(),((studentCourse)o).getCourse().getName(),((studentCourse)o).getCourse().getSemester(),((studentCourse)o).getGrade(),"Not Passed",((studentCourse)o).getCourse().getECTS()});
+
+        }
+        
+        studentLayout.show(studentContent, "studentMyCoursesPanel");
+        
+    }//GEN-LAST:event_studentMyCoursesButtonActionPerformed
     
     
     
@@ -1736,24 +2899,24 @@ public class main extends javax.swing.JFrame  {
                 new main().setVisible(true);
                 db.deserializeCourses("./data/courses.ser");
                 db.deserializeUsers("./data/obj.ser");
+                db.deserializeCourseRegistrations("./data/registrations.ser");
+                db.deserializeGrades("./data/grades.ser");
                 /*
-                student s1 = new student("123456","Georgios","Pavlidis","123456789","Papandreou 5","GeorgePaul@gmail.com",694123123,2017,"H",160);
+                student s1 = new student("123456","Georgios","Pavlidis","123456789","Papandreou 5","GeorgePaul@gmail.com",694123123,2017,"H");
                 staff s2= new staff("741852963","Mike","Apostolidis","15948756","Vasilis Olgas 90","MikeApostolidis@gmail.com",694789123);
                 administration a1 = new administration("admin","grammateia","suregrammateia","admin123","Sindos 10","grammateia@teithe.gr",23101234);
                 
                 
-                db.writeUser(s1.toString(),"./data/userlist.txt");
-                db.writeUser(s2.toString(),"./data/userlist.txt");
-                db.writeUser(a1.toString(),"./data/userlist.txt");
+                
                 
                 db.userDB.add(s1);
                 db.userDB.add(s2);
                 db.userDB.add(a1);
                 
                 db.serializeUsers("./data/obj.ser"); 
-                */
-                /*
-                staff s2= new staff("741852963","Mike","Apostolidis","15948756","Vasilis Olgas 90","MikeApostolidis@gmail.com",694789123);
+                
+                
+                
                 course c1 = new course("101","Java 1","A",6,s2,"Info 2");
                 course c2 = new course("201","Java 2","B",6,s2,"Info 2");
                 
@@ -1763,6 +2926,10 @@ public class main extends javax.swing.JFrame  {
                 
                 
                 db.serializeCourses("./data/courses.ser");
+                
+                //db.writeUser(s1.toString(),"./data/userlist.txt");
+                //db.writeUser(s2.toString(),"./data/userlist.txt");
+                //db.writeUser(a1.toString(),"./data/userlist.txt");
                 */
                 
                 
@@ -1782,7 +2949,16 @@ public class main extends javax.swing.JFrame  {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField PasswordField2;
     private javax.swing.JPasswordField PasswordField3;
+    private javax.swing.JTextField adminAddAdminAddressField;
+    private javax.swing.JButton adminAddAdminButton;
+    private javax.swing.JTextField adminAddAdminEmailField;
+    private javax.swing.JLabel adminAddAdminErrorMessage;
+    private javax.swing.JTextField adminAddAdminIDField;
+    private javax.swing.JTextField adminAddAdminNameField;
     private javax.swing.JPanel adminAddAdminPanel;
+    private javax.swing.JTextField adminAddAdminPasswordField;
+    private javax.swing.JTextField adminAddAdminPhoneField;
+    private javax.swing.JTextField adminAddAdminSurnameField;
     private javax.swing.JButton adminAddCourseButton;
     private javax.swing.JTextField adminAddCourseECTSField;
     private javax.swing.JLabel adminAddCourseErrorMessage;
@@ -1793,10 +2969,18 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JTextField adminAddCourseNameField;
     private javax.swing.JPanel adminAddCoursePanel;
     private javax.swing.JComboBox<String> adminAddCourseSemesterField;
+    private javax.swing.JTextField adminAddStaffAddressField;
+    private javax.swing.JButton adminAddStaffButton;
+    private javax.swing.JTextField adminAddStaffEmailField;
+    private javax.swing.JLabel adminAddStaffErrorMessage;
+    private javax.swing.JTextField adminAddStaffIDField;
+    private javax.swing.JTextField adminAddStaffNameField;
     private javax.swing.JPanel adminAddStaffPanel;
+    private javax.swing.JTextField adminAddStaffPasswordField;
+    private javax.swing.JTextField adminAddStaffPhoneField;
+    private javax.swing.JTextField adminAddStaffSurnameField;
     private javax.swing.JTextField adminAddStudentAddressField;
     private javax.swing.JButton adminAddStudentButton;
-    private javax.swing.JTextField adminAddStudentECTSField;
     private javax.swing.JTextField adminAddStudentEmailField;
     private javax.swing.JLabel adminAddStudentErrorMessage;
     private javax.swing.JTextField adminAddStudentIDField;
@@ -1814,6 +2998,19 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel adminContent;
     private javax.swing.JButton adminCourseListButton;
     private javax.swing.JPanel adminCourseListPanel;
+    private javax.swing.JButton adminCourseRegistrationButton;
+    private javax.swing.JButton adminCourseRegistrationFinalAcceptButton;
+    private javax.swing.JLabel adminCourseRegistrationFinalDateLabel;
+    private javax.swing.JLabel adminCourseRegistrationFinalIDLabel;
+    private javax.swing.JLabel adminCourseRegistrationFinalNameLabel;
+    private javax.swing.JLabel adminCourseRegistrationFinalNumberLabel;
+    private javax.swing.JPanel adminCourseRegistrationFinalPanel;
+    private javax.swing.JLabel adminCourseRegistrationFinalSemesterLabel;
+    private javax.swing.JLabel adminCourseRegistrationFinalStatusLabel;
+    private javax.swing.JTable adminCourseRegistrationFinalTable;
+    private javax.swing.JPanel adminCourseRegistrationPanel;
+    private javax.swing.JButton adminCourseRegistrationSelectButton;
+    private javax.swing.JTable adminCourseRegistrationTable;
     private javax.swing.JTable adminCourseTable;
     private javax.swing.JLabel adminDetailAddressLabel;
     private javax.swing.JLabel adminDetailEmailLabel;
@@ -1823,6 +3020,10 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel adminDetailSurnameLabel;
     private javax.swing.JButton adminDetailsButton;
     private javax.swing.JPanel adminDetailsPanel;
+    private javax.swing.JButton adminGradesAcceptButton;
+    private javax.swing.JButton adminGradesButton;
+    private javax.swing.JPanel adminGradesPanel;
+    private javax.swing.JTable adminGradesTable;
     private javax.swing.JLabel adminHomeLogo;
     private javax.swing.JPanel adminHomePage;
     private javax.swing.JLabel adminLogo;
@@ -1833,6 +3034,7 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel changePassword;
     private javax.swing.JLabel confirmNewCode;
     private javax.swing.JLabel errorLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1880,8 +3082,30 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -1892,14 +3116,20 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginErrorMessage;
@@ -1932,12 +3162,29 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel staffHomeLogo;
     private javax.swing.JPanel staffHomePage;
     private javax.swing.JLabel staffLogo;
+    private javax.swing.JButton staffMyCoursesButton;
+    private javax.swing.JComboBox<String> staffMyCoursesComboBox;
+    private javax.swing.JTextField staffMyCoursesNewGradeField;
+    private javax.swing.JPanel staffMyCoursesPanel;
+    private javax.swing.JComboBox<String> staffMyCoursesReasonComboBox;
+    private javax.swing.JTable staffStudentsInCourseTable;
     private javax.swing.JButton staffUserListButton;
     private javax.swing.JPanel staffUserListPanel;
     private javax.swing.JTable staffUserTable;
     private javax.swing.JPanel studentContent;
     private javax.swing.JButton studentCourseListButton;
     private javax.swing.JPanel studentCourseListPanel;
+    private javax.swing.JButton studentCourseRegistrationAddButton;
+    private javax.swing.JButton studentCourseRegistrationButton;
+    private javax.swing.JButton studentCourseRegistrationFinalBackButton;
+    private javax.swing.JLabel studentCourseRegistrationFinalErrorMessage;
+    private javax.swing.JButton studentCourseRegistrationFinalFinalizeButton;
+    private javax.swing.JPanel studentCourseRegistrationFinalPanel;
+    private javax.swing.JTable studentCourseRegistrationFinalTable;
+    private javax.swing.JPanel studentCourseRegistrationPanel;
+    private javax.swing.JButton studentCourseRegistrationRemoveButton;
+    private javax.swing.JTable studentCourseRegistrationSelectedCoursesTable;
+    private javax.swing.JTable studentCourseRegistrationTable;
     private javax.swing.JTable studentCourseTable;
     private javax.swing.JLabel studentDetailAddressLabel;
     private javax.swing.JLabel studentDetailECTSLabel;
@@ -1953,6 +3200,12 @@ public class main extends javax.swing.JFrame  {
     private javax.swing.JLabel studentHomeLogo;
     private javax.swing.JPanel studentHomePage;
     private javax.swing.JLabel studentLogo;
+    private javax.swing.JButton studentMyCoursesButton;
+    private javax.swing.JPanel studentMyCoursesPanel;
+    private javax.swing.JTable studentMyCoursesTable;
+    private javax.swing.JButton studentNewCourseRegistrationButton;
+    private javax.swing.JButton studentNewCourseRegistrationNextButton;
+    private javax.swing.JPanel studentNewCourseRegistrationPanel;
     private javax.swing.JButton submit2;
     private javax.swing.JButton submitCode;
     // End of variables declaration//GEN-END:variables

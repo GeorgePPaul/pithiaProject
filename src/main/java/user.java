@@ -9,7 +9,7 @@ public class user implements java.io.Serializable{
     private String password;
     private String email;
     
-    ArrayList mathimata = new ArrayList<course>();
+    
     
     user(String id,String name,String surname,String password,String address,String email,int phone){
         this.id=id;
