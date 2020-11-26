@@ -13,7 +13,7 @@ import java.io.ObjectInputStream;
 
 
 
-public class dbHelper implements java.io.Serializable{
+public class Controller implements java.io.Serializable{
     public ArrayList userDB = new ArrayList<user>();
     public ArrayList courseDB = new ArrayList<course>();
     public ArrayList cRegDB = new ArrayList<CourseRegistration>();
@@ -21,7 +21,7 @@ public class dbHelper implements java.io.Serializable{
 
     public String currentSemester = "September-February";
 
-    dbHelper(){
+    Controller(){
         
     }
     

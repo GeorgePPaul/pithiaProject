@@ -4,7 +4,7 @@ public class course implements java.io.Serializable{
     private String name;
     private String semester;
     private int ECTS;
-    private staff teacher;  //IF TEACHER IS REMOVED FROM DB THIS BECOMES NULL, NEEDS WORKAROUND
+    private staff teacher;
     private String info;
     
     course(String id, String name, String semester, int ECTS, staff teacher, String info){

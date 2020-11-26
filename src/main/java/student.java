@@ -7,7 +7,7 @@ public class student extends user implements java.io.Serializable{
     
     private ArrayList courseList = new ArrayList<studentCourse>();
     
-    student(String id,String name,String surname,String password,String address,String email,int phone, int etos, String semester){
+    student(String id,String name,String surname,String password,String address,String email,long phone, int etos, String semester){
         super(id,name,surname,password,address,email,phone);
         etosEisagogis=etos;
         this.semester=semester;

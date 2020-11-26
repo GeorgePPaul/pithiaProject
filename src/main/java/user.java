@@ -4,14 +4,14 @@ public class user implements java.io.Serializable{
     private String name;
     private String surname;
     private String id;
-    private int phone;
+    private long phone;
     private String address;
     private String password;
     private String email;
     
     
     
-    user(String id,String name,String surname,String password,String address,String email,int phone){
+    user(String id,String name,String surname,String password,String address,String email,long phone){
         this.id=id;
         this.name=name;
         this.surname=surname;
@@ -51,7 +51,7 @@ public class user implements java.io.Serializable{
         return email;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return phone;
     }
 
@@ -72,7 +72,7 @@ public class user implements java.io.Serializable{
         this.email = email;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
     

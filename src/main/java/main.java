@@ -2310,7 +2310,7 @@ public class main extends javax.swing.JFrame  {
     private void studentDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentDetailsButtonActionPerformed
         studentDetailNameLabel.setText(((student)loggedUser).getName());
         studentDetailSurnameLabel.setText(((student)loggedUser).getSurname());
-        studentDetailPhoneLabel.setText(Integer.toString(((student)loggedUser).getPhone()));
+        studentDetailPhoneLabel.setText(Long.toString(((student)loggedUser).getPhone()));
         studentDetailAddressLabel.setText(((student)loggedUser).getAddress());
         studentDetailEmailLabel.setText(((student)loggedUser).getEmail());
         studentDetailIDLabel.setText(((student)loggedUser).getId());
@@ -2344,7 +2344,7 @@ public class main extends javax.swing.JFrame  {
     private void staffDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffDetailsButtonActionPerformed
         staffDetailNameLabel.setText(((staff)loggedUser).getName());
         staffDetailSurnameLabel.setText(((staff)loggedUser).getSurname());
-        staffDetailPhoneLabel.setText(Integer.toString(((staff)loggedUser).getPhone()));
+        staffDetailPhoneLabel.setText(Long.toString(((staff)loggedUser).getPhone()));
         staffDetailAddressLabel.setText(((staff)loggedUser).getAddress());
         staffDetailEmailLabel.setText(((staff)loggedUser).getEmail());
         staffDetailIDlabel.setText(((staff)loggedUser).getId());
@@ -2415,7 +2415,7 @@ public class main extends javax.swing.JFrame  {
                     break start;
                 }               
             }
-            db.userDB.add(new student(adminAddStudentIDField.getText(),adminAddStudentNameField.getText(),adminAddStudentSurnameField.getText(),adminAddStudentPasswordField.getText(),adminAddStudentAddressField.getText(),adminAddStudentEmailField.getText(),Integer.valueOf(adminAddStudentPhoneField.getText()),Integer.valueOf(adminAddStudentYearField.getText()),adminAddStudentSemesterField.getText()));
+            db.userDB.add(new student(adminAddStudentIDField.getText(),adminAddStudentNameField.getText(),adminAddStudentSurnameField.getText(),adminAddStudentPasswordField.getText(),adminAddStudentAddressField.getText(),adminAddStudentEmailField.getText(),Long.valueOf(adminAddStudentPhoneField.getText()),Integer.valueOf(adminAddStudentYearField.getText()),adminAddStudentSemesterField.getText()));
             adminAddStudentErrorMessage.setText("");
             adminAddStudentIDField.setText("");
             adminAddStudentSurnameField.setText("");
@@ -2542,7 +2542,7 @@ public class main extends javax.swing.JFrame  {
     private void adminDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDetailsButtonActionPerformed
         adminDetailNameLabel.setText(((administration)loggedUser).getName());
         adminDetailSurnameLabel.setText(((administration)loggedUser).getSurname());
-        adminDetailPhoneLabel.setText(Integer.toString(((administration)loggedUser).getPhone()));
+        adminDetailPhoneLabel.setText(Long.toString(((administration)loggedUser).getPhone()));
         adminDetailAddressLabel.setText(((administration)loggedUser).getAddress());
         adminDetailEmailLabel.setText(((administration)loggedUser).getEmail());
         adminDetailIDLabel.setText(((administration)loggedUser).getId());
@@ -2611,7 +2611,7 @@ public class main extends javax.swing.JFrame  {
                     break start;
                 }               
             }
-            db.userDB.add(new staff(adminAddStaffIDField.getText(),adminAddStaffNameField.getText(),adminAddStaffSurnameField.getText(),adminAddStaffPasswordField.getText(),adminAddStaffAddressField.getText(),adminAddStaffEmailField.getText(),Integer.valueOf(adminAddStaffPhoneField.getText())));
+            db.userDB.add(new staff(adminAddStaffIDField.getText(),adminAddStaffNameField.getText(),adminAddStaffSurnameField.getText(),adminAddStaffPasswordField.getText(),adminAddStaffAddressField.getText(),adminAddStaffEmailField.getText(),Long.valueOf(adminAddStaffPhoneField.getText())));
             adminAddStaffErrorMessage.setText("");
             adminAddStaffIDField.setText("");
             adminAddStaffSurnameField.setText("");
@@ -2637,7 +2637,7 @@ public class main extends javax.swing.JFrame  {
                     break start;
                 }               
             }
-            db.userDB.add(new administration(adminAddAdminIDField.getText(),adminAddAdminNameField.getText(),adminAddAdminSurnameField.getText(),adminAddAdminPasswordField.getText(),adminAddAdminAddressField.getText(),adminAddAdminEmailField.getText(),Integer.valueOf(adminAddAdminPhoneField.getText())));
+            db.userDB.add(new administration(adminAddAdminIDField.getText(),adminAddAdminNameField.getText(),adminAddAdminSurnameField.getText(),adminAddAdminPasswordField.getText(),adminAddAdminAddressField.getText(),adminAddAdminEmailField.getText(),Long.valueOf(adminAddAdminPhoneField.getText())));
             adminAddAdminErrorMessage.setText("");
             adminAddAdminIDField.setText("");
             adminAddAdminSurnameField.setText("");
@@ -2778,6 +2778,7 @@ public class main extends javax.swing.JFrame  {
                                               
             }
         }
+        adminLayout.show(adminContent, "adminCourseRegistrationPanel");
     }//GEN-LAST:event_adminCourseRegistrationFinalAcceptButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -2861,7 +2862,7 @@ public class main extends javax.swing.JFrame  {
      */
     
     
-    static dbHelper db = new dbHelper();
+    static Controller db = new Controller();
     ImageIcon mini = new ImageIcon("./images/logo-Mini.png");
     CardLayout studentLayout;
     CardLayout staffLayout;
@@ -2902,28 +2903,37 @@ public class main extends javax.swing.JFrame  {
                 db.deserializeCourseRegistrations("./data/registrations.ser");
                 db.deserializeGrades("./data/grades.ser");
                 /*
-                student s1 = new student("123456","Georgios","Pavlidis","123456789","Papandreou 5","GeorgePaul@gmail.com",694123123,2017,"H");
-                staff s2= new staff("741852963","Mike","Apostolidis","15948756","Vasilis Olgas 90","MikeApostolidis@gmail.com",694789123);
-                administration a1 = new administration("admin","grammateia","suregrammateia","admin123","Sindos 10","grammateia@teithe.gr",23101234);
+                student s1 = new student("123456","Georgios","Pavlidis","123456789","Papandreou 5","GeorgePaul@gmail.com",694123123,2017,"A");
+                student s2 = new student("student2","Kostas","Papadopoulos","111222","Plastira 13","info2@gmail.com",6941205005L,2017,"A");
+                student s3 = new student("student3","Giannis","Dimitriou","222333","M. Alexandrou 3","info3@gmail.com",6941287526L,2017,"A");
+                staff st1 = new staff("staff1","Dimitris","Papanastasiou","staff1","Martiou 23","dimPapa@gmail.com",6977283991L);
+                staff st2= new staff("741852963","Mike","Apostolidis","15948756","Vasilis Olgas 90","MikeApostolidis@gmail.com",6947891237L);
+                administration a1 = new administration("admin","grammateia","suregrammateia","admin123","Sindos 10","grammateia@teithe.gr",2310123408L);
                 
                 
                 
                 
                 db.userDB.add(s1);
                 db.userDB.add(s2);
+                db.userDB.add(s3);
+                db.userDB.add(st1);
+                db.userDB.add(st2);
                 db.userDB.add(a1);
                 
                 db.serializeUsers("./data/obj.ser"); 
                 
                 
                 
-                course c1 = new course("101","Java 1","A",6,s2,"Info 2");
-                course c2 = new course("201","Java 2","B",6,s2,"Info 2");
+                course c1 = new course("101","Java 1","A",6,st2,"Info");
+                course c2 = new course("201","Java 2","B",6,st2,"Info 2");
+                course c3 = new course("102","SQL 1","A",6,st1,"Info");
+                course c4 = new course("202","SQL 2","B",6,st1,"Info 2");
                 
                 
                 db.courseDB.add(c1);
                 db.courseDB.add(c2);
-                
+                db.courseDB.add(c3);
+                db.courseDB.add(c4);
                 
                 db.serializeCourses("./data/courses.ser");
                 
